@@ -10,8 +10,7 @@ class User(models.Model):
     country = models.CharField(max_length=45, default='')
     city = models.CharField(max_length=45, blank=True, default='')
     phone_number = models.CharField(max_length=45, default='')
-    birthday = models.DateField(input_formats=settings.DATE_INPUT_FORMATS,
-                                auto_now=False, null=True, blank=True)
+    birthday = models.DateField(auto_now=False, null=True, blank=True)
     summary = models.CharField(max_length=250, default='')
     linkedin_url = models.URLField(max_length=200, blank=True)
     portfolio_url = models.URLField(max_length=200, blank=True)
@@ -42,31 +41,27 @@ class Project(models.Model):
     project_name = models.CharField(max_length=45, blank=True)
     description = models.CharField(max_length=250, blank=True)
     project_url = models.URLField(max_length=200, blank=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Professional(models.Model):
     id = models.AutoField(primary_key=True)
     company = models.CharField(max_length=45)
     role = models.CharField(max_length=100)
-    initial_date = models.DateField(input_formats=settings.DATE_INPUT_FORMATS,
-                                    auto_now=False, null=True, blank=True)
-    final_date =  models.DateField(input_formats=settings.DATE_INPUT_FORMATS,
-                                   auto_now=False, null=True, blank=True)
+    initial_date = models.DateField(auto_now=False, null=True, blank=True)
+    final_date =  models.DateField(auto_now=False, null=True, blank=True)
     description = models.TextField()
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    project_id = models.ForeignKey(Project, on_delete=models.CASCADE)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+    projectID = models.ForeignKey(Project, on_delete=models.CASCADE)
 
 
 class Education(models.Model):
     id = models.AutoField(primary_key=True)
     institution = models.CharField(max_length=100)
     degree = models.CharField(max_length=100)
-    initial_date = models.DateField(input_formats=settings.DATE_INPUT_FORMATS,
-                                    auto_now=False, null=True, blank=True)
-    final_date = models.DateField(input_formats=settings.DATE_INPUT_FORMATS,
-                                  auto_now=False, null=True, blank=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    initial_date = models.DateField(auto_now=False, null=True, blank=True)
+    final_date = models.DateField(auto_now=False, null=True, blank=True)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Language(models.Model):
@@ -117,8 +112,7 @@ class Vacancy(models.Model):
     requirements = models.TextField()
     salary = models.FloatField()
     description = models.TextField()
-    published_at = models.DateField(input_formats=settings.DATE_INPUT_FORMATS,
-                                    auto_now=False, null=True, blank=True)
+    published_at = models.DateField(auto_now=False, null=True, blank=True)
     vacancy_url = models.URLField(max_length=200)
 
 
@@ -140,4 +134,4 @@ class Login(models.Model):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=45)
     password = models.CharField(max_length=64)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
