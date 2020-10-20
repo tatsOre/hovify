@@ -1,30 +1,32 @@
+.about, .form-about {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: auto;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
 .about {
-  width: 90% !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  background-color: ghostwhite;
+  max-width: 75%;
+  grid-template-areas:
+  "stepper branding"
+  "about-title ."
+  "form-about form-about";
 }
+.form-about {
+  grid-template-areas:
+  "section aside"
+  "nav nav";
+}
+.stepper { grid-area: stepper; }
+.branding { grid-area: branding; }
+.about-title { grid-area: about-title; }
+.form-about { grid-area: form-about; }
 
-h1 {
-  margin: 20px auto;
-}
-
-.about-content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.form-questions {
-  width: 75%;
-}
-
-.form-hobby {
-  width: 25%;
-}
+/* Form container items */
+.about-user__questions { grid-area: section; }
+.about-user__interests { grid-area: aside; }
+.form-about .about-nav { grid-area: nav; }
 
 .navigation {
   width: 80%;
@@ -32,7 +34,62 @@ h1 {
   margin: 20px auto;
   justify-content: space-between;
 }
-
+/* Font Styles */
+h1.about-title {
+  font-size: 2.25em;
+  font-weight: 300;
+  color: #262AD1;
+  line-height: .3em;
+  margin: 80px 0 10px;
+}
+h2.about-questions__text {
+  margin: 10px 0;
+  font-size: 1.35em;
+  font-weight: 400;
+  color: #321880;
+  line-height: 1.3em;
+}
+.about-title, .about-user__questions { 
+  padding-right: 40px;
+}
+h3.about-interests__title {
+  font-size: 1.5em;
+  font-weight: 600;
+  opacity: .65;
+  color: #321880;
+  line-height: 1.25em;
+  padding-right: 20px;
+}
+.about-interests__title span {
+  font-weight: 400;
+  color: #321880;
+  opacity: 1;
+}
+.about-user__questions span{
+  opacity: .65;
+  font-weight: 600;
+}
+.checkbox-wrapper {
+  margin: 15px 0;
+  display: flex;
+  justify-content: left;
+}
+.about-user__interests .checkbox-wrapper {
+  margin: 8px;
+}
+.checkbox-label {
+  font-size: 1.15em;
+}
+.checkbox {
+  margin: 3px 15px;
+}
+.info {
+  margin: 20px auto;
+}
+/* Navigation Bar */
+.about-nav {
+  padding-top: 80px;
+}
 .btn-nav {
   display: block;
   color: #262ad1;
@@ -51,17 +108,4 @@ h1 {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-}
-.checkbox-wrapper {
-  margin: 10px 10px;
-  display: flex;
-  justify-content: left;
-}
-
-.checkbox {
-  margin: 3px 15px;
-}
-
-.info {
-  margin: 20px auto;
 }

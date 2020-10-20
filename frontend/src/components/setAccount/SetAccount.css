@@ -1,50 +1,76 @@
 .account {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  background-color: ghostwhite;
-  border-radius: 2% / 3%;
+  display: grid;
+  max-width: 75%;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: auto;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
+.account {
+  grid-template-areas: 
+  ". branding"
+  "title title"
+  "form form";
+}
+.branding { grid-area: branding; }
+.account-title { grid-area: title; }
+.form-account { grid-area: form; }
 
+.form-account {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: auto;
+  padding-top: 45px;
+}
+.form-account {
+  grid-template-areas:
+  "labels  fields"
+  "nav nav";
+}
+.label-content { grid-area: labels; }
+.textF-content { grid-area: fields; }
+.nav-account{ grid-area: nav; }
+
+.account-title span {
+  color: #321880;
+  font-size: 3.5rem;
+}
+h1.account-title {
+  font-size: 2em;
+  font-weight: 300;
+  color: #262AD1;
+  line-height: 1.1;
+  margin: 60px 50px 10px;
+}
 .account-content {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
-.form-account {
-  width: 80%;
-  display: flex;
-}
 .label-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
-  left: 5%;
-  width: 40%;
+  width: 100%;
 }
-
 .textF-content {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   flex-direction: column;
-  align-items: center;
-  width: 60%;
 }
-
 .acount-label {
-  width: 100%;
+  font-size: 1.5em;
+  width: 85%;
   text-align: right;
-  margin: 5px auto;
-  height: 70%;
+  margin: 10px auto;
 }
 .textField-account {
   width: 70%;
   position: relative;
   right: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 20px;
+}
+.navigation {
+  padding-top: 100px;
 }

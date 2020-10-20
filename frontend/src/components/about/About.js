@@ -1,105 +1,96 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import HorizontalStepper from '../steppernav/Stepper';
 import './About.css';
 
 export default function About() {
     /* Function to manager the login form */
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit } = useForm({
       criteriaMode: "all",
       mode: "onBlur"
   });
 
   const onLogin = data => console.log(data);
-
   /* Login form to modal */
-  
   return (
-    <div  className="about">
-      <h1>Please complete this fields:</h1>
-      <div className="about-content">
-        <form onSubmit={handleSubmit(onLogin)} className="form-questions">
-          <div>
+    <section className="about">
+      <HorizontalStepper className='stepper'/>
+      <aside className='branding'>HoviFy</aside>
+      <h1 className="about-title">Please, complete this fields:</h1>
+        <form onSubmit={handleSubmit(onLogin)} className="form-about">
+          <section className="about-user__questions">
             <div className="info">
-                <h3>We know that you are super awesome,but let us know you. What <strong>paragraph/sentence</strong> describes you better?</h3>
+                <h2 className="about-questions__text">We are sure that you are super awesome, but let us know you.<br/><span>Which paragraphs/sentences describes you better?</span></h2>
             </div>
             <div className="question-wrapper">
-              <div className="question">Select all the impressionist artists.</div>
-              <div className="question-label">Mark the answers that apply:</div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Claude Monet" id="question-1-option-1"/>
-                <label className="checkbox-label" for="question-1-option-1">When someone tells you they are sad, do you feel sad too?</label>
+                <input type="checkbox" className="checkbox" name={`About_User[1].description`} value="1" id="about-option-1" ref={register}/>
+                <label className="checkbox-label" for="about-option-1">When someone tells you they are sad, do you feel sad too?</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Auguste Renoir" id="question-1-option-2"/>
-                <label className="checkbox-label" for="question-1-option-2">When you have a lot of work to do, do you make a schedule and stick to it?</label>
+                <input type="checkbox" className="checkbox" name={`About_User[2].description`} value="2" id="about-option-2" ref={register} />
+                <label className="checkbox-label" for="about-option-2">Even when you're giving negative feedback, you try to be nice about it.</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Vincent Van Gogh" id="question-1-option-3"/>
-                <label className="checkbox-label" for="question-1-option-3">When you cook, do you always follow the recipe?</label>
+                <input type="checkbox" className="checkbox" name={`About_User[3].description`} value="3" id="about-option-3" ref={register} />
+                <label className="checkbox-label" for="about-option-3">When you're in a crowded place, you usually get overwhelmed.</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Diego Rivera" id="question-1-option-4"/>
-                <label className="checkbox-label" for="question-1-option-4">When people you know are having an argument, do they each come to you to vent?</label>
+                <input type="checkbox" className="checkbox" name={`About_User[4].description`} value="4" id="about-option-4" ref={register} />
+                <label className="checkbox-label" for="about-option-4">When you're in the same room with other people, you can easily focus and not be distracted by the group.</label>
               </div>
-              <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Diego Rivera" id="question-1-option-4"/>
-                <label className="checkbox-label" for="question-1-option-4">When the group is discussing how to tackle a big project, you listen and think of a plan before speaking up.</label>
+              <div className="checkbox-wrapper">   
+                <input type="checkbox" className="checkbox" name={`About_User[5].description`} value="5" id="about-option-5" ref={register} />
+                <label className="checkbox-label" for="about-option-5">When you're talking with friends, you don't mind having a point of view that nobody else shares. In fact, you like it.</label>
               </div>
             </div>
-          </div>
-        </form>
-        <form className="form-hobby">
-          <div>
+          </section>
+          <aside className="about-user__interests">
             <div className="info">
-                <h3>Do you love something?</h3>
-                <h3>Tell us about it:</h3>
+                <h3 className="about-interests__title">Do you love something?<br/><span>Tell us about it:</span></h3>
             </div>
             <div className="question-wrapper">
-              <div className="question">Select all the impressionist artists.</div>
-              <div className="question-label">Mark the answers that apply:</div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Travel" id="question-1-hobby-1"/>
-                <label className="checkbox-label" for="question-1-hobby-1">Travel</label>
+                <input type="checkbox" className="checkbox" name={`Interest[1].name`} value="1" id="interest-option-1" ref={register}/>
+                <label className="checkbox-label" for="interest-option-1">Travel</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Music" id="question-1-hobby-2"/>
-                <label className="checkbox-label" for="question-1-hobby-2">Music</label>
+                <input type="checkbox" className="checkbox" name={`Interest[2].name`} value="2"  id="iinterest-option-2" ref={register} />
+                <label className="checkbox-label" for="interest-option-2">Music</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Reading" id="question-1-hobby-3"/>
-                <label className="checkbox-label" for="question-1-hobby-3">Reading</label>
+                <input type="checkbox" className="checkbox" name={`Interest[3].name`} value="3" id="interest-option-3" ref={register} />
+                <label className="checkbox-label" for="interest-option-3">Reading</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Writing" id="question-1-hobby-4"/>
-                <label className="checkbox-label" for="question-1-hobby-4">Writing</label>
+                <input type="checkbox" className="checkbox" name={`Interest[4].name`} value="4"  id="interest-option-4" ref={register} />
+                <label className="checkbox-label" for="interest-option-4">Writing</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Sports" id="question-1-hobby-4"/>
-                <label className="checkbox-label" for="question-1-hobby-4">Sports</label>
+                <input type="checkbox" className="checkbox" name={`Interest[5].name`} value="5" id="interest-option-5" ref={register}/>
+                <label className="checkbox-label" for="interest-option-5">Sports</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Videogames" id="question-1-hobby-4"/>
-                <label className="checkbox-label" for="question-1-hobby-4">Videogames</label>
+                <input type="checkbox" className="checkbox" name={`Interest[6].name`} value="6" id="interest-option-6" ref={register}/>
+                <label className="checkbox-label" for="interest-option-6">Videogames</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Languages" id="question-1-hobby-4"/>
-                <label className="checkbox-label" for="question-1-hobby-4">Languages</label>
+                <input type="checkbox" className="checkbox" name={`Interest[7].name`} value="7" id="interest-option-7" ref={register} />
+                <label className="checkbox-label" for="interest-option-7">Languages</label>
               </div>
               <div className="checkbox-wrapper">
-                <input type="checkbox" className="checkbox" name="Movies" id="question-1-hobby-4"/>
-                <label className="checkbox-label" for="question-1-hobby-4">Movies & TV Swhows</label>
+                <input type="checkbox" className="checkbox" name={`Interest[8].name`} value="8" id="interest-option-8" ref={register} />
+                <label className="checkbox-label" for="interest-option-8">Movies & TV Shows</label>
               </div>
             </div>
-            
-          </div>
-        </form>
-      </div>
-      <div className="navigation">
+          </aside>
+          <nav className="navigation about-nav">
+          <button type="submit">submit</button>
             <Link to="/hello" className="btn-nav" >Prev</Link>
             <Link to="/motivation" className="btn-nav">Next</Link>
-      </div>
-
-    </div>
+          </nav>
+        </form>
+    </section>
   );
 }

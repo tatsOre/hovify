@@ -5,27 +5,17 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import './selectors.css';
 
-// ISO 3166-1 alpha-2
-// ⚠️ No support for IE 11
-function countryToFlag(isoCode) {
-  return typeof String.fromCodePoint !== 'undefined'
-    ? isoCode
-        .toUpperCase()
-        .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
-    : isoCode;
-}
-
 const useStyles = makeStyles({
   option: {
-    fontSize: 14,
+    fontSize: 16,
     '& > span': {
       marginRight: 10,
-      fontSize: 14,
+      fontSize: 16,
     },
   },
 });
 
-export default function CountrySelect(props) {
+export default function LocationSelector(props) {
   const {name, register} = props;
   const classes = useStyles();
 
@@ -41,16 +31,15 @@ export default function CountrySelect(props) {
       getOptionLabel={(option) => option.label}
       renderOption={(option) => (
         <React.Fragment>
-          <span>{countryToFlag(option.code)}</span>
-          {option.label} ({option.code}) +{option.phone}
+          {option.label}
         </React.Fragment>
       )}
       renderInput={(params) => (
         <TextField
-          className='location_selector'
+          className='desired-job__location'
           name={name}
           {...params}
-          label="Choose your current location:"
+          defaultValue='To infinity and beyond!'
           inputProps={{
             ...params.inputProps,
             autoComplete: 'new-password', // disable autocomplete and autofill
@@ -64,6 +53,7 @@ export default function CountrySelect(props) {
 
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries = [
+  { code: 'GL', label: 'All Locations', phone: '000' },
   { code: 'AD', label: 'Andorra', phone: '376' },
   { code: 'AE', label: 'United Arab Emirates', phone: '971' },
   { code: 'AF', label: 'Afghanistan', phone: '93' },

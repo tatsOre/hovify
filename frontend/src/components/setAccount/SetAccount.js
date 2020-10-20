@@ -5,51 +5,48 @@ import { Link } from 'react-router-dom';
 import './SetAccount.css';
 
 export default function SetAccount() {
-    /* Function to manager the login form */
+    /* Function to handle the login form */
   const { register, handleSubmit, errors } = useForm({
       criteriaMode: "all",
       mode: "onBlur"
   });
-
   const onLogin = data => console.log(data);
-
-  /* Login form to modal */
   
   return (
-  <div  className="account">
-    <h1>Juan, we need the last details to create an account</h1>
-    <div className="account-content">
-      <form onSubmit={handleSubmit(onLogin)} className="form-account">
-        <div className="label-content">
-            <label className="acount-label" for="question-1-hobby-1">Email</label>
-            <label className="acount-label" for="question-1-hobby-1">Password</label>
-            <label className="acount-label" for="question-1-hobby-1">Confirm Password</label>
-        </div>
-        <div className="textF-content">
-          <TextField
+  <section className="account">
+    <aside className='branding'>HoviFy</aside>
+    <h1 className="account-title"><span>Maria Fernanda,<br/></span>we need the last details to create an account:</h1>
+    <form onSubmit={handleSubmit(onLogin)} className="form-account">
+      <div className="label-content">
+          <label className="acount-label" for="UserName">Your e-mail:</label>
+          <label className="acount-label" for="password">Password:</label>
+          <label className="acount-label" for="confirm-password">Confirm Password:</label>
+      </div>
+      <div className="textF-content">
+        <TextField
+          id="UserName"
+          className="textField-account"
+          type="email"
+          name="Email"
+          inputRef={register({required: true, maxLength: 80})} />  
+        <TextField
+            id="password"
             className="textField-account"
-            type="text"
-            name="lasteName"
-            inputRef={register({required: true, maxLength: 80})} />  
-          <TextField
-              className="textField-account"
-              type="text"
-              name="lasteName"
-              inputRef={register({required: true, maxLength: 80})} />
-          <TextField
-            className="textField-account"
-            type="text"
-            name="lasteName"
+            type="password"
+            name="Password"
             inputRef={register({required: true, maxLength: 80})} />
-        </div>
-        
-      </form>
-    </div>
-    <div className="navigation">
-          <Link to="/motivation" className="btn-nav" >Prev</Link>
-          <Link to="/builder" className="btn-nav">Next</Link>
-    </div>
-
-  </div>
+        <TextField
+          id="confirm-password"
+          className="textField-account"
+          type="password"
+          name="Password"
+          inputRef={register({required: true, maxLength: 80})} />
+      </div>
+      <nav className="navigation nav-account">
+        <Link to="/motivation" className="btn-nav" >Prev</Link>
+        <Link to="/builder" className="btn-nav">Next</Link>
+      </nav>
+    </form>
+  </section>
   );
 }
