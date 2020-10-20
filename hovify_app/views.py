@@ -27,91 +27,74 @@ from django.shortcuts import get_object_or_404
 from rest_framework_extensions.mixins import NestedViewSetMixin
 from django.contrib.auth import authenticate
 
+
 class UserCreate(generics.CreateAPIView):
     authentication_classes = ()
     permission_classes = ()
     serializer_class = UserSerializer
 
-class UserViewSet(viewsets.ModelViewSet):
+
+class UserViewSet(NestedViewSetMixin, mixins.ListModelMixin,
+                  mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
 
 class ProjectViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
+
 class ProfessionalViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Professional.objects.all()
     serializer_class = ProfessionalSerializer
+
 
 class EducationViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
 
+
 class LanguagesViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
+
 
 class TechSkillViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = TechSkill.objects.all()
     serializer_class = TechSkillSerializer
 
+
 class AboutUserViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = AboutUser.objects.all()
     serializer_class = AboutUserSerializer
+
 
 class InterestViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Interest.objects.all()
     serializer_class = InterestSerializer
 
+
 class MotivationViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Motivation.objects.all()
     serializer_class = MotivationSerializer
+
 
 class DesiredJobFieldViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = DesiredJobField.objects.all()
     serializer_class = DesireJobFieldSerializer
 
+
 class DesiredJobLocationViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = DesiredJobLocation.objects.all()
     serializer_class = DesireJobLocationSerializer
 
-class LoggedCurriculum(APIView):
-    def get_queryset(self):
-        user = self.request.user
-        return Profile.objects.filter(user=user)
 
-    def post(self, request):
-        data_list = [[] for x in range(10)]
-        tasks = [request.data.get("Education"), request.data.get("Professional"), request.data.get("Skills"), request.data.get("Languages"), request.data.get("Projects"),
-        request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
-        serializers = [EducationSerializer, ProfessionalSerializer, TechSkillSerializer, LanguageSerializer,
-        ProjectSerializer, AboutUserSerializer, MotivationSerializer, InterestSerializer, DesireJobFieldSerializer, DesireJobLocationSerializer]
-        userserializer = ProfileSerializer(data=request.data.get("User"))
+class LoggedCurriculum(APIView):
+    def delete(self, request):
         user = self.request.user
-        profile = Profile.objects.get(user=user)
-        userserializer = ProfileSerializer(profile, data=request.data.get('User'))
-        if userserializer.is_valid():
-            userserializer.save()
-            user_id = userserializer.data["id"]
-            for i in range(len(tasks)):
-                for instance in tasks[i]:
-                    for key in instance:
-                        if type(instance[key]) is str:
-                            instance[key] = instance[key].encode('ascii', 'ignore').decode()
-                    instance["userID"] = user_id
-                    data = serializers[i](data=instance)
-                    if not data.is_valid():
-                        print(data)
-                        User.objects.get(user_id=user_id).delete()
-                        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
-                    data_list[i].append(data)
-            for array in data_list:
-                for data in array:
-                    data.save()
-            return Response(userserializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(userserializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
     def get(self, request):
         user = self.request.user
@@ -145,66 +128,78 @@ class LoggedCurriculum(APIView):
         }
         return Response(curriculum_dict)
 
-    def put(self, request, format=None):
+    def post(self, request, format=None):
         data_list = [[] for x in range(10)]
         tasks = [request.data.get("Education"), request.data.get("Professional"), request.data.get("Skills"), request.data.get("Languages"), request.data.get("Projects"),
-        request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
-        object_list = [Education, Professional, TechSkill, Language, Project, AboutUser, Motivation, Interest, DesiredJobField, DesiredJobLocation]
-        serializers = [EducationSerializer, ProfessionalSerializer, TechSkillSerializer, LanguageSerializer, ProjectSerializer, AboutUserSerializer, MotivationSerializer, InterestSerializer, DesireJobFieldSerializer, DesireJobLocationSerializer]
-        key_list = ['education_id', 'professional_id', 'techskill_id', 'language_id', 'project_id','aboutuser_id', 'motivation_id', 'interest_id', 'desirejobfield_id', 'desiredjobloc_id']
+                 request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
+        object_list = [
+            Education,
+            Professional,
+            TechSkill,
+            Language,
+            Project,
+            AboutUser,
+            Motivation,
+            Interest,
+            DesiredJobField,
+            DesiredJobLocation]
+        serializers = [
+            EducationSerializer,
+            ProfessionalSerializer,
+            TechSkillSerializer,
+            LanguageSerializer,
+            ProjectSerializer,
+            AboutUserSerializer,
+            MotivationSerializer,
+            InterestSerializer,
+            DesireJobFieldSerializer,
+            DesireJobLocationSerializer]
+        key_list = [
+            'education_id',
+            'professional_id',
+            'techskill_id',
+            'language_id',
+            'project_id',
+            'aboutuser_id',
+            'motivation_id',
+            'interest_id',
+            'desirejobfield_id',
+            'desiredjobloc_id']
         user = self.request.user
         profile = Profile.objects.get(user=user)
         profiledata = ProfileSerializer(profile)
-        userserializer = ProfileSerializer(profile, data=request.data.get("User"))
-        if userserializer.is_valid():
-            userserializer.save()
-            user_id = userserializer.data["id"]
-            for i in range(len(tasks)):
-                for instance in tasks[i]:
-                    instance["userID"] = user_id
-                    about = object_list[i].objects.get(pk=instance[key_list[i]])
-                    if about:
-                        data = serializers[i](about, data=instance)
-                    if not data or not data.is_valid():
-                        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
-                    data_list[i].append(data)
-            for array in data_list:
-                for data in array:
-                    data.save()
-            return Response(userserializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(userserializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class CurriculumViewSet(APIView):
-
-    def post(self, request):
-        data_list = [[] for x in range(10)]
-        tasks = [request.data.get("Education"), request.data.get("Professional"), request.data.get("Skills"), request.data.get("Languages"), request.data.get("Projects"),
-        request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
-        serializers = [EducationSerializer, ProfessionalSerializer, TechSkillSerializer, LanguageSerializer,
-        ProjectSerializer, AboutUserSerializer, MotivationSerializer, InterestSerializer, DesireJobFieldSerializer, DesireJobLocationSerializer]
-        new_user = UserSerializer(data=request.data.get("User"))
-        userserializer = ProfileSerializer(data=request.data.get("User"))
+        userserializer = ProfileSerializer(
+            profile, data=request.data.get("User"))
         if userserializer.is_valid():
             userserializer.save()
             user_id = userserializer.data["id"]
             for i in range(len(tasks)):
                 for instance in tasks[i]:
                     for key in instance:
-                        if type(instance[key]) is str:
-                            instance[key] = instance[key].encode('ascii', 'ignore').decode()
+                        if isinstance(instance[key], str):
+                            instance[key] = instance[key].encode(
+                                'ascii', 'ignore').decode()
                     instance["userID"] = user_id
-                    data = serializers[i](data=instance)
-                    if not data.is_valid():
-                        User.objects.get(user_id=user_id).delete()
-                        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+                    if key_list[i] in instance:
+                        about = object_list[i].objects.get(
+                            pk=instance[key_list[i]])
+                        if about:
+                            data = serializers[i](about, data=instance)
+                    else:
+                        data = serializers[i](data=instance)
+                    if not data or not data.is_valid():
+                        return Response(
+                            data.errors, status=status.HTTP_400_BAD_REQUEST)
                     data_list[i].append(data)
             for array in data_list:
                 for data in array:
                     data.save()
-            return Response(userserializer.data, status=status.HTTP_201_CREATED)
+            return Response(userserializer.data,
+                            status=status.HTTP_201_CREATED)
         else:
-            return Response(userserializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(userserializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
+
 
 class CurriculumDetail(APIView):
     def delete(self, request, pk, format=None):
@@ -215,10 +210,40 @@ class CurriculumDetail(APIView):
     def put(self, request, pk, format=None):
         data_list = [[] for x in range(10)]
         tasks = [request.data.get("Education"), request.data.get("Professional"), request.data.get("Skills"), request.data.get("Languages"), request.data.get("Projects"),
-        request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
-        object_list = [Education, Professional, TechSkill, Language, Project, AboutUser, Motivation, Interest, DesiredJobField, DesiredJobLocation]
-        serializers = [EducationSerializer, ProfessionalSerializer, TechSkillSerializer, LanguageSerializer, ProjectSerializer, AboutUserSerializer, MotivationSerializer, InterestSerializer, DesireJobFieldSerializer, DesireJobLocationSerializer]
-        key_list = ['education_id', 'professional_id', 'techskill_id', 'language_id', 'project_id','aboutuser_id', 'motivation_id', 'interest_id', 'desirejobfield_id', 'desiredjobloc_id']
+                 request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
+        object_list = [
+            Education,
+            Professional,
+            TechSkill,
+            Language,
+            Project,
+            AboutUser,
+            Motivation,
+            Interest,
+            DesiredJobField,
+            DesiredJobLocation]
+        serializers = [
+            EducationSerializer,
+            ProfessionalSerializer,
+            TechSkillSerializer,
+            LanguageSerializer,
+            ProjectSerializer,
+            AboutUserSerializer,
+            MotivationSerializer,
+            InterestSerializer,
+            DesireJobFieldSerializer,
+            DesireJobLocationSerializer]
+        key_list = [
+            'education_id',
+            'professional_id',
+            'techskill_id',
+            'language_id',
+            'project_id',
+            'aboutuser_id',
+            'motivation_id',
+            'interest_id',
+            'desirejobfield_id',
+            'desiredjobloc_id']
         user = get_object_or_404(User, pk=pk)
         userserializer = UserSerializer(user, data=request.data.get("User"))
         if userserializer.is_valid():
@@ -227,18 +252,22 @@ class CurriculumDetail(APIView):
             for i in range(len(tasks)):
                 for instance in tasks[i]:
                     instance["userID"] = user_id
-                    about = object_list[i].objects.get(pk=instance[key_list[i]])
+                    about = object_list[i].objects.get(
+                        pk=instance[key_list[i]])
                     if about:
                         data = serializers[i](about, data=instance)
                     if not data or not data.is_valid():
-                        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+                        return Response(
+                            data.errors, status=status.HTTP_400_BAD_REQUEST)
                     data_list[i].append(data)
             for array in data_list:
                 for data in array:
                     data.save()
-            return Response(userserializer.data, status=status.HTTP_201_CREATED)
+            return Response(userserializer.data,
+                            status=status.HTTP_201_CREATED)
         else:
-            return Response(userserializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(userserializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, pk):
         user = get_object_or_404(User, pk=pk)
@@ -269,22 +298,15 @@ class CurriculumDetail(APIView):
         }
         return Response(curriculum_dict)
 
-class VacancyUserViewSet(NestedViewSetMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
+
+class VacancyUserViewSet(NestedViewSetMixin, mixins.ListModelMixin,
+                         mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = Vacancy.objects.all()
     serializer_class = VacancySerializer
+
 
 class VacancyViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
+    authentication_classes = ()
+    permission_classes = ()
     queryset = Vacancy.objects.all()
     serializer_class = VacancySerializer
-
-class LoginView(APIView):
-    permission_classes = ()
-
-    def post(self, request,):
-        email = request.data.get("email")
-        password = request.data.get("password")
-        user = authenticate(email=email, password=password)
-        if user:
-            return Response({"token": user.auth_token.key})
-        else:
-            return Response({"error": "Wrong Credentials"}, status=status.HTTP_400_BAD_REQUEST)
