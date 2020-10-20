@@ -28,10 +28,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "npm run build",
+    "postinstall": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "engines":{
+      "node": "14.14.0",
+      "npm": "6.14.8"
   },
   "browserslist": {
     "production": [
