@@ -1,5 +1,6 @@
 
-from django.urls import path
+from django.urls import path, include, re_path
+from data.views import FrontendAppView
 from rest_framework.routers import DefaultRouter
 from .views import UserViewSet, ProjectViewSet, ProfessionalViewSet, EducationViewSet, LanguagesViewSet, UserCreate, LoggedCurriculum
 from .views import TechSkillViewSet, InterestViewSet, MotivationViewSet, AboutUserViewSet, VacancyViewSet, CurriculumDetail, CurriculumViewSet
@@ -29,6 +30,7 @@ urlpatterns = [
         path('api/v1/curriculums/', CurriculumViewSet.as_view(), name='setcurriculum'),
         path('api/v1/curriculum/', LoggedCurriculum.as_view(), name='getcurriculum'),
         path("api/v1/login/", views.obtain_auth_token, name="login"),
+        re_path(r'^', views.FrontendAppView.as_view()),
 ]
 
 urlpatterns += router.urls

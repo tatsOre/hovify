@@ -1,0 +1,19 @@
+{
+  "name": "hovify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "author": "Your Name",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "heroku-prebuild": "NODE_ENV=production cd frontend/ && yarn install && yarn build && cd .."
+  },
+  "engines":{
+      "node": "12.19.0",
+      "npm": "6.14.8"
+  },
+  "cacheDirectories": [
+    "frontend/node_modules"
+  ]
+}
