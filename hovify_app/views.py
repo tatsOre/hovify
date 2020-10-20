@@ -270,7 +270,7 @@ class CurriculumDetail(APIView):
                             status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, pk):
-        user = get_object_or_404(User, pk=pk)
+        profile = get_object_or_404(Profile, pk=pk)
         education = Education.objects.filter(userID=pk)
         professional = Professional.objects.filter(userID=pk)
         skills = TechSkill.objects.filter(userID=pk)
@@ -283,7 +283,7 @@ class CurriculumDetail(APIView):
         desired_job_location = DesiredJobLocation.objects.filter(userID=pk)
         vacancy = Vacancy.objects.filter(users=pk)
         curriculum_dict = {
-            "User": UserSerializer(user).data,
+            "User": ProfileSerializer(profile).data,
             "Education": EducationSerializer(education, many=True).data,
             "Professional": ProfessionalSerializer(professional, many=True).data,
             "Skills": TechSkillSerializer(skills, many=True).data,
@@ -297,6 +297,84 @@ class CurriculumDetail(APIView):
             "Vacancy": VacancySerializer(vacancy, many=True).data,
         }
         return Response(curriculum_dict)
+
+class CurriculumViewSet(APIView):
+    authentication_classes = ()
+    permission_classes = ()
+
+    def post(self, request):
+        data_list = [[] for x in range(10)]
+        tasks = [request.data.get("Education"), request.data.get("Professional"), request.data.get("Skills"), request.data.get("Languages"), request.data.get("Projects"),
+                 request.data.get("About_User"), request.data.get("Motivation"), request.data.get("Interest"), request.data.get("Desired_Job_Fields"), request.data.get("Desired_Job_Location")]
+        object_list = [
+            Education,
+            Professional,
+            TechSkill,
+            Language,
+            Project,
+            AboutUser,
+            Motivation,
+            Interest,
+            DesiredJobField,
+            DesiredJobLocation]
+        serializers = [
+            EducationSerializer,
+            ProfessionalSerializer,
+            TechSkillSerializer,
+            LanguageSerializer,
+            ProjectSerializer,
+            AboutUserSerializer,
+            MotivationSerializer,
+            InterestSerializer,
+            DesireJobFieldSerializer,
+            DesireJobLocationSerializer]
+        key_list = [
+            'education_id',
+            'professional_id',
+            'techskill_id',
+            'language_id',
+            'project_id',
+            'aboutuser_id',
+            'motivation_id',
+            'interest_id',
+            'desirejobfield_id',
+            'desiredjobloc_id']
+
+        new_user = UserSerializer(data=request.data.get("User").get("user"))
+        if new_user.is_valid():
+            newuser_id = new_user.save()
+        else:
+            return Response(new_user.errors, status=status.HTTP_400_BAD_REQUEST)
+        profile = Profile.objects.get(user=newuser_id.pk)
+        userserializer = ProfileSerializer(profile, data=request.data.get("User"))
+        if userserializer.is_valid():
+            userserializer.save()
+            user_id = userserializer.data["id"]
+            for i in range(len(tasks)):
+                for instance in tasks[i]:
+                    for key in instance:
+                        if isinstance(instance[key], str):
+                            instance[key] = instance[key].encode('ascii', 'ignore').decode()
+                    instance["userID"] = user_id
+                    if key_list[i] in instance:
+                        about = object_list[i].objects.get(pk=instance[key_list[i]])
+                        if about:
+                            data = serializers[i](about, data=instance)
+                    else:
+                        data = serializers[i](data=instance)
+                    if not data or not data.is_valid():
+                        user = get_object_or_404(User, pk=newuser_id.pk)
+                        user.delete()
+                        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+                    data_list[i].append(data)
+            for array in data_list:
+                for data in array:
+                    data.save()
+            return Response(userserializer.data,
+                            status=status.HTTP_201_CREATED)
+        else:
+            return Response(userserializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class VacancyUserViewSet(NestedViewSetMixin, mixins.ListModelMixin,

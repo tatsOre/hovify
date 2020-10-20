@@ -2,7 +2,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 from .views import UserViewSet, ProjectViewSet, ProfessionalViewSet, EducationViewSet, LanguagesViewSet, UserCreate, LoggedCurriculum
-from .views import TechSkillViewSet, InterestViewSet, MotivationViewSet, AboutUserViewSet, VacancyViewSet, CurriculumDetail
+from .views import TechSkillViewSet, InterestViewSet, MotivationViewSet, AboutUserViewSet, VacancyViewSet, CurriculumDetail, CurriculumViewSet
 from .views import DesiredJobFieldViewSet, DesiredJobLocationViewSet, VacancyUserViewSet
 from rest_framework_extensions.routers import ExtendedSimpleRouter
 from rest_framework.authtoken import views
@@ -26,6 +26,7 @@ router = ExtendedSimpleRouter()
 urlpatterns = [
         path('api/v1/signup/', UserCreate.as_view(), name='createuser'),
         path('api/v1/curriculums/<int:pk>/', CurriculumDetail.as_view(), name='professional_view'),
+        path('api/v1/curriculums/', CurriculumViewSet.as_view(), name='setcurriculum'),
         path('api/v1/curriculum/', LoggedCurriculum.as_view(), name='getcurriculum'),
         path("api/v1/login/", views.obtain_auth_token, name="login"),
 ]
