@@ -133,11 +133,11 @@ export default function Cvbuilder () {
   return (
     <main className='main-container'>
       <HorizontalStepper className='stepper'/>
-      <aside className='branding'>LOGO</aside>
+      <aside className='branding'>HoviFy</aside>
       <section className='welcome-user'>
         <h1>{userData.User.FirstName},</h1>
-        <h2>this is the info we got for you:</h2>
-        <h3>On this Hovify, we have auto-filled some segments and build up some content as we best see fit for you, yet is yours to keep or edit:</h3>
+        <h2>This is your Hovify!</h2>
+        <h3>We have auto-filled some content as we best see fit. Yet, the Hovify is yours to keep or edit. Saying that, don't be afraid to interact with all the editable options we have for you:</h3>
       </section>
       
       <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
@@ -214,23 +214,8 @@ export default function Cvbuilder () {
           }
       </section>   
       <aside className='secondary_info'>
-        <p>All good?</p>
-        <button className="btn-submit" type="submit">Save and CRY!!!!!!!!</button >
-
-        <fieldset className='secondary-info__form'>
-          <legend>Let's add some social media links:</legend>
-          <TextFieldSocial errors={errors} register={register} />
-        </fieldset>
-
-        <fieldset className='secondary-info__form'>
-          <legend>Personal Information: </legend>
-          <CountrySelect name='User.Location' register={register}/>
-          <PhoneNumberV1 register={register} />
-          <DayMonthYearPicker name='User.Birthday' register={register} />
-        </fieldset>
-
         <fieldset className='secondary-info__form technical-skills'>
-          <legend>Technical skills:</legend>
+          <legend>Technical Skills:</legend>
           <MultipleSelect
             dataList={TECHSKILLS}
             ratingData={SKILL_LEVEL}
@@ -242,6 +227,28 @@ export default function Cvbuilder () {
           <legend>Languages:</legend>
           <MultipleSelect dataList={LANGUAGES} />
         </fieldset>
+
+        <fieldset className='secondary-info__form'>
+          <legend>Social Media:</legend>
+          <TextFieldSocial errors={errors} register={register} />
+        </fieldset>
+
+        <fieldset className='secondary-info__form'>
+          <legend>Personal Information: </legend>
+          <TextField
+            fullWidth className='email'
+            defaultValue='ddfa@g.com'
+            label='Email Address:' name='email'
+            style={{ marginBottom: 5 }} margin="dense"
+            InputLabelProps={{ shrink: true, }}
+            error={errors.Email && true} type='email'
+            inputRef={register({ required: true, maxLength: 200 })}
+           />
+          <CountrySelect name='User.Location' register={register}/>
+          <PhoneNumberV1 register={register} />
+          <DayMonthYearPicker name='User.Birthday' register={register} />
+        </fieldset>
+        <button className="btn-submit" type="submit">Save</button >
       </aside>
       </form>
     </main>

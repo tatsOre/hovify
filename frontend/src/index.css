@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
 
 * {box-sizing: border-box;}
@@ -20,4 +19,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.branding {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+  color: gray;
+  opacity: .5;
+  font-weight: 400;
+  font-size: 3em;
+  margin: 0 auto;
 }

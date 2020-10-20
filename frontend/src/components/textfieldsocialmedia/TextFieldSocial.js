@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    margin: '15px 5px',
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -21,40 +20,31 @@ export default function TextFieldSocial(props) {
   const acc_items = [
     {
       className: 'personal-site',
-      label: 'Portfolio Site:',
+      label: 'Portfolio Site URL:',
       name: 'PortfolioURL',
-      type: 'url'
+      type: 'text'
     },
     {
       className: 'linkedin-acc',
-      label: 'LinkedIn Account:',
+      label: 'LinkedIn Account URL:',
       name: 'LinkedIn',
-      type: 'url'
+      type: 'text'
     },
     {
       className: 'github-acc',
       label: 'Github Account:',
       name: 'GitHubURL',
-      type: 'url'
+      type: 'text'
     },
     {
       className: 'twitter-acc',
       label: 'Twitter Account:',
       name: 'TwitterURL',
-      type: 'url'
+      type: 'text'
     }
   ]
   return (
     <div className={classes.root}>
-      <TextField
-        fullWidth className='email'
-        defaultValue='ddfa@g.com'
-        label='Email Address:' name='email'
-        style={{ marginBottom: 5 }} margin="dense"
-        InputLabelProps={{ shrink: true, }}
-        error={errors.Email && true} type='Email'
-        inputRef={register({ required: true, maxLength: 200 })}
-      />
       {
         acc_items.map((acc, index) => 
           <TextField key={acc.name + index}
