@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+from os import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'hovify_app',
+    'hovify_app.apps.HovifyAppConfig',
+    'rest_framework_swagger',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -73,13 +75,13 @@ WSGI_APPLICATION = 'hovify.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hovify_db',
-        'USER': 'hovify_admin',
-        'PASSWORD': 'hovifypass',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': environ.get('HOVIFY_DB'),
+        'USER': environ.get('HOVIFY_USER'),
+        'PASSWORD': environ.get('HOVIFY_PASS'),
+        'HOST': environ.get('HOVIFY_HOST'),
+        'PORT': environ.get('HOVIFY_PORT'),
+        },
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -118,3 +120,14 @@ DATE_INPUT_FORMATS = ['%d-%m-%Y']
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}

@@ -1,137 +1,122 @@
 from django.db import models
 from hovify import settings
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    FirstName = models.CharField(max_length=45)
+    LastName = models.CharField(max_length=45)
+    Country = models.CharField(max_length=45, default='')
+    City = models.CharField(max_length=45, null=True, blank=True, default='')
+    PhoneNumber = models.CharField(max_length=45, null=True, default='')
+    Birthday = models.DateField(auto_now=False, null=True, blank=True)
+    Summary = models.CharField(max_length=1000, default='')
+    LinkedIn = models.URLField(max_length=200, null=True, blank=True)
+    PortfolioURL = models.URLField(max_length=200, null=True, blank=True)
+    GitHubURL = models.URLField(max_length=200, null=True, blank=True)
+    TwitterURL = models.URLField(max_length=200, null=True, blank=True)
 
-class User(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=45)
-    lastname = models.CharField(max_length=45)
-    email = models.EmailField(max_length=100)
-    country = models.CharField(max_length=45, default='')
-    city = models.CharField(max_length=45, blank=True, default='')
-    phone_number = models.CharField(max_length=45, default='')
-    birthday = models.DateField(auto_now=False, null=True, blank=True)
-    summary = models.CharField(max_length=250, default='')
-    linkedin_url = models.URLField(max_length=200, blank=True)
-    portfolio_url = models.URLField(max_length=200, blank=True)
-    github_url = models.URLField(max_length=200, blank=True)
-    twitter_url = models.URLField(max_length=200, blank=True)
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
 
-    """Many-to-many relationships: ---"""
-    about = models.ManyToManyField('AboutUser',
-                                   related_name='users', blank=True)
-    interests = models.ManyToManyField('Interest',
-                                       related_name='users', blank=True)
-    tech_skills = models.ManyToManyField('TechSkill',
-                                         related_name='users', blank=True)
-    languages = models.ManyToManyField('Language',
-                                       related_name='users', blank=True)
-    motivations = models.ManyToManyField('Motivation',
-                                         related_name='users', blank=True)
-    job_fields = models.ManyToManyField('DesiredJobField',
-                                       related_name='users', blank=True)
-    job_locations = models.ManyToManyField('DesiredJobLocation',
-                                           related_name='users', blank=True)
-    vacancies = models.ManyToManyField('Vacancy',
-                                       related_name='users', blank=True)
-
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
 
 class Project(models.Model):
-    id = models.AutoField(primary_key=True)
-    project_name = models.CharField(max_length=45, blank=True)
-    description = models.CharField(max_length=250, blank=True)
-    project_url = models.URLField(max_length=200, blank=True)
-    userID = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    project_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100, blank=True)
+    description = models.CharField(max_length=1000, blank=True, null=True)
+    link = models.URLField(max_length=200, blank=True, null=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class Professional(models.Model):
-    id = models.AutoField(primary_key=True)
-    company = models.CharField(max_length=45)
-    role = models.CharField(max_length=100)
-    initial_date = models.DateField(auto_now=False, null=True, blank=True)
-    final_date =  models.DateField(auto_now=False, null=True, blank=True)
-    description = models.TextField()
-    userID = models.ForeignKey(User, on_delete=models.CASCADE)
-    projectID = models.ForeignKey(Project, on_delete=models.CASCADE)
-
+    professional_id = models.AutoField(primary_key=True)
+    company = models.CharField(max_length=100)
+    role = models.CharField(max_length=100, null=True, blank=True)
+    start_year	= models.IntegerField(null=True, blank=True)
+    end_year = models.IntegerField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class Education(models.Model):
-    id = models.AutoField(primary_key=True)
-    institution = models.CharField(max_length=100)
+    education_id = models.AutoField(primary_key=True)
+    school = models.CharField(max_length=100)
     degree = models.CharField(max_length=100)
-    initial_date = models.DateField(auto_now=False, null=True, blank=True)
-    final_date = models.DateField(auto_now=False, null=True, blank=True)
-    userID = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    start_year	= models.IntegerField(null=True, blank=True)
+    end_year = models.IntegerField(null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class Language(models.Model):
     """Ex: Spanish, English, French, etc
        Proficiency: level according stepper component(Curriculum Dashboard)
        Hay que checkear con qué escala se guardará, porcentajes? escala Cambridge?"""
-    id = models.AutoField(primary_key=True)
+    language_id = models.AutoField(primary_key=True)
     language = models.CharField(max_length=45)
-    proficiency = models.CharField(max_length=20)
-
+    proficiency = models.CharField(max_length=20, null=True, blank=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class TechSkill(models.Model):
     """Ex: Python, AWS, CSS, etc
        Level: level according stepper component(Curriculum Dashboard)"""
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=45)
-    level = models.CharField(max_length=20)
-
+    techskill_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    level = models.CharField(max_length=20, null=True, blank=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class AboutUser(models.Model):
     """User description according selection form
     page ->> about that describes user//Interests"""
-    id = models.AutoField(primary_key=True)
-    description = models.TextField()
+    aboutuser_id = models.AutoField(primary_key=True)
+    description = models.TextField(null=True, blank=True)
     status = models.BooleanField(default=False)
-
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class Interest(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=45)
+    interest_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
     status = models.BooleanField(default=False)
-
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class Motivation(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=45)
+    motivation_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
     status = models.BooleanField(default=False)
-
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class Vacancy(models.Model):
-    id = models.AutoField(primary_key=True)
+    vacancy_id = models.AutoField(primary_key=True)
     job_title = models.CharField(max_length=45)
-    journalism_type = models.CharField(max_length=45)
-    company = models.CharField(max_length=45)
-    company_url = models.URLField(max_length=200)
+    schedule_type = models.CharField(max_length=45)
+    company = models.CharField(max_length=100)
     category = models.CharField(max_length=45)
     location_required = models.CharField(max_length=45)
     requirements = models.TextField()
-    salary = models.FloatField()
+    salary = models.CharField(max_length=45, blank=True)
     description = models.TextField()
     published_at = models.DateField(auto_now=False, null=True, blank=True)
     vacancy_url = models.URLField(max_length=200)
-
+    users = models.ManyToManyField('Profile', related_name='vacancies', blank=True)
 
 class DesiredJobField(models.Model):
     """Desired Tech Field
     Page ---> Motivation/Dream Job/Desired Location"""
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=45)
+    desirejobfield_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
     status = models.BooleanField(default=False)
-
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 class DesiredJobLocation(models.Model):
     """Country or global, latin America? check this?"""
-    id = models.AutoField(primary_key=True)
-    location = models.CharField(max_length=45)
+    desiredjobloc_id = models.AutoField(primary_key=True)
+    location = models.CharField(max_length=100, null=True, blank=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
-
-class Login(models.Model):
-    id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=45)
-    password = models.CharField(max_length=64)
-    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+class Curriculum(models.Model):
+    """Country or global, latin America? check this?"""
+    user = models.ForeignKey('Profile', on_delete=models.CASCADE)
