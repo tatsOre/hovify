@@ -13,10 +13,10 @@ class Profile(models.Model):
     PhoneNumber = models.CharField(max_length=45, null=True, default='')
     Birthday = models.DateField(auto_now=False, null=True, blank=True)
     Summary = models.CharField(max_length=1000, default='')
-    LinkedIn = models.URLField(max_length=200, null=True, blank=True)
-    PortfolioURL = models.URLField(max_length=200, null=True, blank=True)
-    GitHubURL = models.URLField(max_length=200, null=True, blank=True)
-    TwitterURL = models.URLField(max_length=200, null=True, blank=True)
+    LinkedIn = models.CharField(max_length=200, null=True, blank=True)
+    PortfolioURL = models.CharField(max_length=200, null=True, blank=True)
+    GitHubURL = models.CharField(max_length=200, null=True, blank=True)
+    TwitterURL = models.CharField(max_length=200, null=True, blank=True)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
