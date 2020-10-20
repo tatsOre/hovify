@@ -1,0 +1,7 @@
+.rating-box {
+    display: flex;
+}
+
+.ratingLabel {
+    color: royalblue;
+}

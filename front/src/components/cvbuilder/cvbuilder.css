@@ -1,0 +1,154 @@
+.main-container, .form-container {
+    display: grid;
+    grid-template-columns: 66% 33%;
+    grid-template-rows: auto;
+    margin: 0 auto;
+}
+.main-container {
+    max-width: 75%;
+    grid-template-areas:
+    "stepper branding"
+    "welcome ."
+    "form form"
+}
+.form-container{
+    grid-template-areas: 
+    "primary_info secondary_info";
+}
+.stepper { grid-area: stepper; }
+.branding { grid-area: branding; }
+.welcome-user { grid-area: welcome; }
+.form-container { grid-area: form; }
+
+/* Section Primary Info */
+.primary_info {
+    grid-area: primary_info;
+    padding: 0 10px;
+}
+
+/* Welcome User Section */
+.welcome-user {
+    padding: 20px 8px;
+}
+.welcome-user h1 {
+    font-size: 4em;
+    font-weight: 300;
+    color: #262AD1;
+    line-height: .3em;
+}
+.welcome-user h2 {
+    font-size: 1.75em;
+    display: inline-block;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #321880;
+    line-height: 1.25em;
+}
+.welcome-user h3 {
+    color: #565674;
+    padding-top: 5px;
+    font-weight: 400;
+    line-height: 1.25em;
+}
+/* Sections Pro/Edu/Proj titles */
+.professional-title, .education-title, .projects-title {
+    text-transform: uppercase;
+    color: #321880;
+    margin: 30px 0px;
+    display: inline-block;
+    font-weight: 400;
+}
+/* Fieldset Styles */
+.experience-item, .degree-item, .project-item {
+    background-color: rgba(1, 4, 24, 0.02);
+    outline: thick solid rgba(1, 4, 24, 0.02);
+    position: relative;
+}
+.fieldset-block {
+    max-width: 95%;
+    margin-bottom: 25px;
+}
+.fieldset-block__header {
+    display: flex;
+    flex-direction: row wrap;
+}
+.header-info {
+    flex-basis: 75%;
+    padding-right: 15px;
+}
+.header-date {
+    flex-basis: 25%;
+}
+/* Aside Secondary Info */
+.secondary-info {
+    grid-area: secondary_info;
+}
+.secondary-info__form {
+    max-width: 90%;
+    margin: 10px auto;
+}
+.secondary-info legend {
+    color: #FE5F55;
+    font-weight: 400;
+    font-size: 1.25em;
+}
+.technical-skills, .languages {
+    margin-top: 30px;
+    padding-top: 10px;
+}
+/* General */
+h1, h2, h3, legend, p {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+.input {
+    margin-bottom: 15px;
+}
+.middle_width {
+    width: 50%;
+    padding-right: 5px;
+}
+/* Buttons */
+.btn-submit {
+    display: block;
+    color: #262AD1;
+    background-color: white;
+    border: 1px solid rgba(63, 81, 181, 0.5);
+    border-radius: 3px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    margin: 20px auto;
+    padding: 5px;
+    width: 70%;
+    cursor: pointer;
+}
+.icon-button__add {
+    color: #9999C1;
+    margin-top: -10px;
+}
+.icon-button__remove {
+    color: rgba(254, 95, 85,1);
+    position: absolute;
+    top: -7px;
+    right: -7px;
+}
+
+.icon-button__remove:hover::after {
+    content: 'Delete field';
+    background-color:rgba(254, 95, 85, 1);
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: .06em;
+    width: 100px;
+    border-radius: 2px;
+    color: white;
+    position: absolute;
+    padding: 3px;
+    right: 50px;
+    top: 10px;
+}

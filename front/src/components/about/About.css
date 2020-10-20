@@ -1,0 +1,67 @@
+.about {
+  width: 90% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: ghostwhite;
+}
+
+h1 {
+  margin: 20px auto;
+}
+
+.about-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-questions {
+  width: 75%;
+}
+
+.form-hobby {
+  width: 25%;
+}
+
+.navigation {
+  width: 80%;
+  display: flex;
+  margin: 20px auto;
+  justify-content: space-between;
+}
+
+.btn-nav {
+  display: block;
+  color: #262ad1;
+  background-color: white;
+  border: 1px solid rgba(63, 81, 181, 0.5);
+  border-radius: 3px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  margin: 0 10px;
+  padding: 5px;
+  width: 30%;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.checkbox-wrapper {
+  margin: 10px 10px;
+  display: flex;
+  justify-content: left;
+}
+
+.checkbox {
+  margin: 3px 15px;
+}
+
+.info {
+  margin: 20px auto;
+}

@@ -1,0 +1,50 @@
+.account {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: ghostwhite;
+  border-radius: 2% / 3%;
+}
+
+.account-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-account {
+  width: 80%;
+  display: flex;
+}
+.label-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 5%;
+  width: 40%;
+}
+
+.textF-content {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.acount-label {
+  width: 100%;
+  text-align: right;
+  margin: 5px auto;
+  height: 70%;
+}
+.textField-account {
+  width: 70%;
+  position: relative;
+  right: 0px;
+  margin-bottom: 2px;
+}

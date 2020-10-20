@@ -1,0 +1,241 @@
+﻿{
+  "FirstName": "Juan Sebastián",
+  "LastName": "Llano Gallego",
+  "Role": "Full-stack Software Developer",
+  "Location": "Colombia",
+  "Summary": "Software Engineer with more than two years of experience in customer service and software technical support. I am interested in understanding how people consume digital products that we find in our environment and keen to create products through technology",
+  "Education": [
+    {
+      "degree": "Technologist in analysis and development of information systems",
+      "school": "Servicio Nacional de Aprendizaje (SENA)",
+      "start_year": 2017,
+      "end_year": 2020,
+      "description": null
+    },
+    {
+      "degree": "Full Stack Engineer",
+      "school": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2022,
+      "description": "Learning the Linux Kernel capabilities by reproducing C standard library functions and command-line tools. Fundamentals of network communication, parallel programming, and advanced data structures and algorithms."
+    },
+    {
+      "degree": "Grado en Ingeniería",
+      "school": "Universidad de San Buenaventura",
+      "start_year": 2012,
+      "end_year": 2017,
+      "description": "Distinction of Academic Excellence - 2017"
+    },
+    {
+      "degree": "Pedagogy Program for Non-Licensed Professionals",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2015,
+      "end_year": 2015,
+      "description": "Provide the non-licensed professionals who participate in the study, the necessary tools for adequate knowledge of the teaching work in order to optimize their profession at the service of the educational institutions of which they will be part."
+    },
+    {
+      "degree": "Technological Specialization Quality Methodologies for Software Development",
+      "school": "National Learning Service known as (SENA)",
+      "start_year": 2019,
+      "end_year": 2019,
+      "description": "In this program, the review and contextualization of different methodologies for software development were carried out, focusing on SCRUM, PSP and TSP."
+    },
+    {
+      "degree": "Electronic Technologist",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2011,
+      "end_year": 2014,
+      "description": "Electronic technologist with training in research, design and execution of projects in different areas with multidisciplinary teams in order to seek comprehensive solutions. Foundation in digital electronics, Microcontrollers, PLC, power electronics, among others."
+    },
+    {
+      "degree": "Software Engineer ",
+      "school": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "Holberton School is a software school headquartered in San Francisco with campuses in Colombia, France, Mexico, Uruguay, and Tunisia. Its goal is to empower the software developers of the future with a curriculum created to give students hands-on programming experience and help them develop soft skills to make a difference in the world of technology and software development. The Holberton School methodology uses project-based learning and peers learning to provide the tools necessary to adapt to the future and ever-changing technologies."
+    },
+    {
+      "degree": "Information Systems Technologist",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2017,
+      "end_year": 2021,
+      "description": null
+    },
+    {
+      "degree": "English Course I",
+      "school": "Unidad Central de Valle",
+      "start_year": 2014,
+      "end_year": 2014,
+      "description": null
+    }
+  ],
+  "Professional": [
+  ],
+  "Skills": [
+    {
+      "type": "Soft",
+      "name": "Git"
+    },
+    {
+      "type": "Soft",
+      "name": "VHDL"
+    },
+    {
+      "type": "Hard",
+      "name": "c"
+    },
+    {
+      "type": "Hard",
+      "name": "JavaScript"
+    },
+    {
+      "type": "Soft",
+      "name": "Gestión de proyectos"
+    },
+    {
+      "type": "Soft",
+      "name": "Programación C"
+    },
+    {
+      "type": "Soft",
+      "name": "Software embebido"
+    },
+    {
+      "type": "Soft",
+      "name": "JSON"
+    },
+    {
+      "type": "Soft",
+      "name": "Control de calidad"
+    },
+    {
+      "type": "Soft",
+      "name": "Sistemas embebidos"
+    },
+    {
+      "type": "Soft",
+      "name": "Microsoft Excel"
+    },
+    {
+      "type": "Hard",
+      "name": "Linux"
+    },
+    {
+      "type": "Soft",
+      "name": "Pruebas"
+    },
+    {
+      "type": "Soft",
+      "name": "Microsoft PowerPoint"
+    },
+    {
+      "type": "Soft",
+      "name": "Programación"
+    },
+    {
+      "type": "Hard",
+      "name": "Bash"
+    },
+    {
+      "type": "Soft",
+      "name": "HTML"
+    },
+    {
+      "type": "Soft",
+      "name": "Optimización"
+    },
+    {
+      "type": "Hard",
+      "name": "Python"
+    },
+    {
+      "type": "Soft",
+      "name": "Microsoft Word"
+    },
+    {
+      "type": "Soft",
+      "name": "Trabajo en equipo"
+    },
+    {
+      "type": "Soft",
+      "name": "Formación de personal"
+    },
+    {
+      "type": "Hard",
+      "name": "C"
+    },
+    {
+      "type": "Soft",
+      "name": "Electrónica"
+    },
+    {
+      "type": "Soft",
+      "name": "Customer Service"
+    },
+    {
+      "type": "Soft",
+      "name": "Investigación y desarrollo"
+    },
+    {
+      "type": "Soft",
+      "name": "HTML5"
+    },
+    {
+      "type": "Soft",
+      "name": "Atención al cliente"
+    },
+    {
+      "type": "Soft",
+      "name": "Liderazgo"
+    },
+    {
+      "type": "Soft",
+      "name": "Sistemas operativos"
+    },
+    {
+      "type": "Soft",
+      "name": "HTML"
+    },
+    {
+      "type": "Soft",
+      "name": "Bases de datos"
+    },
+    {
+      "type": "Soft",
+      "name": "Implementación de software"
+    },
+    {
+      "type": "Soft",
+      "name": "Hardware"
+    },
+    {
+      "type": "Hard",
+      "name": "Python"
+    },
+    {
+      "type": "Soft",
+      "name": "Proyectos de investigación"
+    },
+    {
+      "type": "Hard",
+      "name": "Linux"
+    }
+  ],
+  "Languages": [
+    {
+      "language": "Español",
+      "proficiency": null
+    },
+    {
+      "language": "Inglés",
+      "proficiency": null
+    }
+  ],
+  "Projects": [
+    {
+      "name": null,
+      "url": null,
+      "description": null
+    }
+  ]
+}

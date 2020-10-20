@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.log
+*.pot
+*.pyc
+.env
+.env.staging
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# don't track virtualenv, ever!
+venv/
+
+# On our project configuration, the output of the collectstatic will be stored in 
+# staticfiles directory. We are ignoring files inside staticfiles but we'll track this # folder itself so that collectstatic can work on Heroku
+staticfiles/*

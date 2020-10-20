@@ -1,0 +1,311 @@
+﻿{
+  "FirstName": "Juan Sebastián",
+  "LastName": "Llano Gallego",
+  "Role": "Full-stack Software Developer",
+  "Location": "Colombia",
+  "Summary": "Software Engineer with more than two years of experience in customer service and software technical support. I am interested in understanding how people consume digital products that we find in our environment and keen to create products through technology",
+  "Education": [
+    {
+      "degree": "Technologist in analysis and development of information systems",
+      "school": "Servicio Nacional de Aprendizaje (SENA)",
+      "start_year": 2017,
+      "end_year": 2020,
+      "description": null
+    },
+    {
+      "degree": "Full Stack Engineer",
+      "school": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2022,
+      "description": "Learning the Linux Kernel capabilities by reproducing C standard library functions and command-line tools. Fundamentals of network communication, parallel programming, and advanced data structures and algorithms."
+    },
+    {
+      "degree": "Grado en Ingeniería",
+      "school": "Universidad de San Buenaventura",
+      "start_year": 2012,
+      "end_year": 2017,
+      "description": "Distinction of Academic Excellence - 2017"
+    },
+    {
+      "degree": "Pedagogy Program for Non-Licensed Professionals",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2015,
+      "end_year": 2015,
+      "description": "Provide the non-licensed professionals who participate in the study, the necessary tools for adequate knowledge of the teaching work in order to optimize their profession at the service of the educational institutions of which they will be part."
+    },
+    {
+      "degree": "Technological Specialization Quality Methodologies for Software Development",
+      "school": "National Learning Service known as (SENA)",
+      "start_year": 2019,
+      "end_year": 2019,
+      "description": "In this program, the review and contextualization of different methodologies for software development were carried out, focusing on SCRUM, PSP and TSP."
+    },
+    {
+      "degree": "Electronic Technologist",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2011,
+      "end_year": 2014,
+      "description": "Electronic technologist with training in research, design and execution of projects in different areas with multidisciplinary teams in order to seek comprehensive solutions. Foundation in digital electronics, Microcontrollers, PLC, power electronics, among others."
+    },
+    {
+      "degree": "Software Engineer ",
+      "school": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "Holberton School is a software school headquartered in San Francisco with campuses in Colombia, France, Mexico, Uruguay, and Tunisia. Its goal is to empower the software developers of the future with a curriculum created to give students hands-on programming experience and help them develop soft skills to make a difference in the world of technology and software development. The Holberton School methodology uses project-based learning and peers learning to provide the tools necessary to adapt to the future and ever-changing technologies."
+    },
+    {
+      "degree": "Information Systems Technologist",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2017,
+      "end_year": 2021,
+      "description": null
+    },
+    {
+      "degree": "English Course I",
+      "school": "Unidad Central de Valle",
+      "start_year": 2014,
+      "end_year": 2014,
+      "description": null
+    }
+  ],
+  "Professional": [
+    {
+      "role": " Project optimization assistant",
+      "company": "UNIVERSIDAD DE SAN BUENAVENTURA CALI",
+      "start_year": 2016,
+      "end_year": 2017,
+      "description": "Maintenance of solar system for home lights the energization.\nReprogramming and schematization of an intruder security system based on the ATMEGA2560."
+    },
+    {
+      "role": " Electromagnetism physics monitor",
+      "company": "Universidad de San Buenaventura Cali",
+      "start_year": 2014,
+      "end_year": 2014,
+      "description": "Class preparation and group management to resolve doubts regarding electromagnetic and mechanics phenomena."
+    },
+    {
+      "role": "Development Engineer",
+      "company": "Real Group Interactive",
+      "start_year": 2018,
+      "end_year": 2020,
+      "description": "Solving challenges to integrate LiDAR technology to georeference 3D scenaries.\nSelect and apply new technologies to increase performance analyzing LiDAR data."
+    },
+    {
+      "role": null,
+      "company": "Women in Data Science (WiDS) at Stanford University",
+      "start_year": 2019,
+      "end_year": 2019,
+      "description": "Volunteer for the WIDS 2019 event realized in Cali - Colombia.\nStaff helper and attended to Flask workshop."
+    },
+    {
+      "role": "Logistics - Project \"Competencias Ciudadanas\"",
+      "company": "Universidad del Valle (CO)",
+      "start_year": 2014,
+      "end_year": 2014,
+      "description": "Support in the planning, execution, coordination and logistics of the dialogue events of a formative and cultural nature developed in the project, as well as the events held in the project's visibility phase."
+    },
+    {
+      "role": "Software Engineering Student",
+      "company": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "Writer of topics on Software Development:\n• Posted in Analytics Vidhya in Medium: C libraries, a brief summary! — Part 1 (Static libraries).\n• C libraries, a brief summary! — Part 2 (Dinamyc libraries). \n• Posted in The StartUp in Medium: The Magic Behind the Command ls -l.\n• Am I a Robot or an object In Python? understanding objects in python."
+    },
+    {
+      "role": "Software Engineering Student",
+      "company": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "In this program, I have carried out projects based on low-level languages (C), high-level languages (Python), web development (Html, CSS, SQL Databases), and DevOps (Linux, Bash).\n➡These are the featured projects:\n• Static AirBnB website: Replica of the Airbnb website with pure HTML and CSS.\n• AirBnB Console: Implementation of a storage system for Python objects stored in JSON files, performing the basic operations of a database (Create, Read, Update, Delete).\n• SQL databases: Introduction to structured query language and some complex queries.\n• Simple Shell: In this project, we will create a simple UNIX command interpreter in programming language C.\n• C implementations have been carried out on the most common data structures: hash tables, linked list, double linked list, sorting algorithms, binary trees, among other projects."
+    },
+    {
+      "role": "Implementation Leader / Electronic Billing Support. ",
+      "company": "QUALITYCOLOMBIA BUSINESS SOLUTION S.A.",
+      "start_year": 2019,
+      "end_year": 2019,
+      "description": "➡In this company I had the opportunity to learn and strengthen my soft skills in management, customer service and leadership.\n• Manage the development of new functionalities and bug fixes at the level of electronic billing software.\n• Documentation of bugs and generation of test scenarios for developments.\n• Assignment of projects to implementation consultants.\n• Support creating internal protocols and facing the end customer, in order to optimize processes electronic billing"
+    },
+    {
+      "role": "Insurance Agent",
+      "company": "SURA insurance company",
+      "start_year": 2017,
+      "end_year": 2017,
+      "description": "➡In this job I had the opportunity to get to know my clients better and the way to approach them thinking about their needs and according to their profile.\nResponsibilities:\n• Approach, generation of prospects and relationships with potential clients.\n• Sale of life, business, auto insurance and other solutions offered by the company."
+    },
+    {
+      "role": null,
+      "company": "QUALITYCOLOMBIA BUSINESS SOLUTION S.A.",
+      "start_year": 2018,
+      "end_year": 2019,
+      "description": null
+    }
+  ],
+  "Skills": [
+    {
+      "type": "Soft",
+      "name": "Git"
+    },
+    {
+      "type": "Soft",
+      "name": "VHDL"
+    },
+    {
+      "type": "Hard",
+      "name": "c"
+    },
+    {
+      "type": "Hard",
+      "name": "JavaScript"
+    },
+    {
+      "type": "Soft",
+      "name": "Gestión de proyectos"
+    },
+    {
+      "type": "Soft",
+      "name": "Programación C"
+    },
+    {
+      "type": "Soft",
+      "name": "Software embebido"
+    },
+    {
+      "type": "Soft",
+      "name": "JSON"
+    },
+    {
+      "type": "Soft",
+      "name": "Control de calidad"
+    },
+    {
+      "type": "Soft",
+      "name": "Sistemas embebidos"
+    },
+    {
+      "type": "Soft",
+      "name": "Microsoft Excel"
+    },
+    {
+      "type": "Hard",
+      "name": "Linux"
+    },
+    {
+      "type": "Soft",
+      "name": "Pruebas"
+    },
+    {
+      "type": "Soft",
+      "name": "Microsoft PowerPoint"
+    },
+    {
+      "type": "Soft",
+      "name": "Programación"
+    },
+    {
+      "type": "Hard",
+      "name": "Bash"
+    },
+    {
+      "type": "Soft",
+      "name": "HTML"
+    },
+    {
+      "type": "Soft",
+      "name": "Optimización"
+    },
+    {
+      "type": "Hard",
+      "name": "Python"
+    },
+    {
+      "type": "Soft",
+      "name": "Microsoft Word"
+    },
+    {
+      "type": "Soft",
+      "name": "Trabajo en equipo"
+    },
+    {
+      "type": "Soft",
+      "name": "Formación de personal"
+    },
+    {
+      "type": "Hard",
+      "name": "C"
+    },
+    {
+      "type": "Soft",
+      "name": "Electrónica"
+    },
+    {
+      "type": "Soft",
+      "name": "Customer Service"
+    },
+    {
+      "type": "Soft",
+      "name": "Investigación y desarrollo"
+    },
+    {
+      "type": "Soft",
+      "name": "HTML5"
+    },
+    {
+      "type": "Soft",
+      "name": "Atención al cliente"
+    },
+    {
+      "type": "Soft",
+      "name": "Liderazgo"
+    },
+    {
+      "type": "Soft",
+      "name": "Sistemas operativos"
+    },
+    {
+      "type": "Soft",
+      "name": "HTML"
+    },
+    {
+      "type": "Soft",
+      "name": "Bases de datos"
+    },
+    {
+      "type": "Soft",
+      "name": "Implementación de software"
+    },
+    {
+      "type": "Soft",
+      "name": "Hardware"
+    },
+    {
+      "type": "Hard",
+      "name": "Python"
+    },
+    {
+      "type": "Soft",
+      "name": "Proyectos de investigación"
+    },
+    {
+      "type": "Hard",
+      "name": "Linux"
+    }
+  ],
+  "Languages": [
+    {
+      "language": "Español",
+      "proficiency": null
+    },
+    {
+      "language": "Inglés",
+      "proficiency": null
+    }
+  ],
+  "Projects": [
+    {
+      "name": null,
+      "url": null,
+      "description": null
+    }
+  ]
+}

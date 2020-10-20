@@ -1,0 +1,145 @@
+{
+    "User": {
+    "FirstName": "Maria Fernanda",
+    "LastName": "Crespo Martinez",
+    "Email": null,
+    "Role": "Industrial Engineer | Full Stack Software Developer",
+    "Location": "Colombia",
+    "City": null,
+    "PhoneNumber": null,
+    "Birthday": null,
+    "Summary": "I´m Industrial Engineering, an expert in the supply chain, customer service, e-commerce, and social media marketing. I dedicate myself to generate and manage change processes based on making results and profits. I support the content generation processes, brand positioning and planning. I focus myself in improvement company´s processes, according to the needs of the environment.\n\nI strongly believe in teamwork, being strategic, thinking outside the box, and following discipline until you get the result that adds value to the company. I am passionate about leading teams and working in a matrix environment, as part of a global organization where there are many media outlets. I have passion for results and connectivity.\n\nMy academic background is B.E. in Industrial Engineering from the Pontificia Universidad Javeriana, Logistics Management from the Universidad del Valle and Software Developer from Holberton School. ",
+    "LinkedIn": null,
+    "PortfolioURL": null,
+    "GitHubURL": null,
+    "TwitterURL": null
+    },
+    "Education": [
+    {
+    "degree": "Full Stack Engineer",
+    "school": "Holberton School",
+    "start_year": 2020,
+    "end_year": 2022,
+    "description": "Learning the Linux Kernel capabilities by reproducing C standard library functions and command-line tools. Fundamentals of network communication, parallel programming, and advanced data structures and algorithms."
+    },
+    {
+    "degree": "Grado en Ingeniería",
+    "school": "Universidad de San Buenaventura",
+    "start_year": 2012,
+    "end_year": 2017,
+    "description": "Distinction of Academic Excellence - 2017"
+    }
+    ],
+    "Professional": [
+    {
+    "role": " Project optimization assistant",
+    "company": "UNIVERSIDAD DE SAN BUENAVENTURA CALI",
+    "start_year": 2016,
+    "end_year": 2017,
+    "description": "Maintenance of solar system for home lights the energization.\nReprogramming and schematization of an intruder security system based on the ATMEGA2560."
+    },
+    {
+    "role": " Electromagnetism physics monitor",
+    "company": "Universidad de San Buenaventura Cali",
+    "start_year": 2014,
+    "end_year": 2014,
+    "description": "Class preparation and group management to resolve doubts regarding electromagnetic and mechanics phenomena."
+    },
+    {
+    "role": "Software Engineering Student",
+    "company": "Holberton School",
+    "start_year": 2020,
+    "end_year": 2020,
+    "description": "In this program, I have carried out projects based on low-level languages (C), high-level languages (Python), web development (Html, CSS, SQL Databases), and DevOps (Linux, Bash).\n➡These are the featured projects:\n• Static AirBnB website: Replica of the Airbnb website with pure HTML and CSS.\n• AirBnB Console: Implementation of a storage system for Python objects stored in JSON files, performing the basic operations of a database (Create, Read, Update, Delete).\n• SQL databases: Introduction to structured query language and some complex queries.\n• Simple Shell: In this project, we will create a simple UNIX command interpreter in programming language C.\n• C implementations have been carried out on the most common data structures: hash tables, linked list, double linked list, sorting algorithms, binary trees, among other projects."
+    },
+    {
+    "role": "Implementation Leader / Electronic Billing Support. ",
+    "company": "QUALITYCOLOMBIA BUSINESS SOLUTION S.A.",
+    "start_year": 2019,
+    "end_year": 2019,
+    "description": "➡In this company I had the opportunity to learn and strengthen my soft skills in management, customer service and leadership.\n• Manage the development of new functionalities and bug fixes at the level of electronic billing software.\n• Documentation of bugs and generation of test scenarios for developments.\n• Assignment of projects to implementation consultants.\n• Support creating internal protocols and facing the end customer, in order to optimize processes electronic billing"
+    },
+    {
+    "role": "Insurance Agent",
+    "company": "SURA insurance company",
+    "start_year": 2017,
+    "end_year": 2017,
+    "description": "➡In this job I had the opportunity to get to know my clients better and the way to approach them thinking about their needs and according to their profile.\nResponsibilities:\n• Approach, generation of prospects and relationships with potential clients.\n• Sale of life, business, auto insurance and other solutions offered by the company."
+    },
+    {
+    "role": "Coordinator of the Procurement Consolidation Program",
+    "company": "CIAT Centro Internacional de Agricultura Tropical",
+    "start_year": 2000,
+    "end_year": 2001,
+    "description": "Implemented the supplier certification policy\n\nI Decreased stocks of the General Warehouse by 75%.\n\nI managed to increase the level of acceptance and application of the processes among users.\n\nImproved the delivery times of orders to users by 65%"
+    }
+    ],
+    "Skills": [
+    {
+    "name": null,
+    "level": null
+    }
+    ],
+    "Languages": [
+    {
+    "language": null,
+    "proficiency": null
+    }
+    ],
+    "Projects": [
+    {
+    "name": "Simple shell",
+    "description": "Simple replication of the command-line interpreter Shell. All files are written in C language.",
+    "link": "https://github.com/mfcrespo/simple_shell"
+    },
+    {
+    "name": "Airbnb Clone",
+    "description": "The goal of the project is to deploy on your server a simple copy of the website. This project must be composed at the end of its development by:\n\nA command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)\nA website (the front-end) that shows the final product to everybody: static and dynamic\nA database or files that store data (data = objects)\nAn API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)",
+    "link": "https://github.com/mfcrespo/AirBnB_clone"
+    }
+    ],
+    "About_User": [
+    {
+    "description": null,
+    "status": false
+    }
+    ],
+    "Motivation": [
+    {
+    "name": null,
+    "status": false
+    }
+    ],
+    "Interest": [
+    {
+    "name": null,
+    "status": false
+    }
+    ],
+    "Desired_Job_Fields": [
+    {
+    "name": null,
+    "status": false
+    }
+    ],
+    "Desired_Job_Location": [
+    {
+    "location": null
+    }
+    ],
+    "Vacancy": [
+    {
+    "job_title": null,
+    "journalism_type": null,
+    "company": null,
+    "company_url": null,
+    "category": null,
+    "location_required": null,
+    "requirements": null,
+    "salary": null,
+    "description": null,
+    "published_at": null,
+    "vacancy_url": null
+    }
+    ]
+    }

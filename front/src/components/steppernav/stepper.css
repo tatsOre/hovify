@@ -1,0 +1,12 @@
+.stepper-link {
+    color: #565674;
+    text-decoration: none;
+    cursor: pointer;
+}
+.stepper-nav {
+    padding-bottom: 0;
+    padding-left: 0;
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+    color: #FE5F55;
+}
