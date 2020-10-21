@@ -27,7 +27,7 @@ def make_header(data={}):
             "Location": "",             # string
             "City": "",                 # string
             "PhoneNumber": "",          # string
-            "Birthday": "Date",           # string - formated YYYY-MM-DD
+            "Birthday": "Date",         # string - formated YYYY-MM-DD
             "Summary": "",              # string
             "LinkedIn": "URL",          # string - url
             "PortfolioURL": "URL",      # string - url
