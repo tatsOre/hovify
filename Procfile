@@ -1,1 +1,1 @@
-web: gunicorn hovify.wsgi --log-file -
+web: gunicorn --workers 3 hovify.wsgi --log-file -
