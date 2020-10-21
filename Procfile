@@ -1,3 +1,1 @@
-release: python manage.py migrate
-web: frontend/ npm start
-worker: python manage.py runserver
+web: gunicorn hovify.wsgi --log-file -
