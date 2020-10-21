@@ -115,6 +115,7 @@ class LinkedinScraper(object):
         browser_parsed = self.__browser.get_current_page().find_all('code')
         self.__browser.launch_browser()
         if len(browser_parsed) == 0:
+            print(self.__browser.get_current_page())
             print("Error cookies blocked")
             raise ConnectionError("Session login failed")
         if len(browser_parsed) <= 31:
