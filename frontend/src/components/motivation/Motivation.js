@@ -2,17 +2,22 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import HorizontalStepper from '../steppernav/Stepper';
 import LocationSelector from '../countryselector/LocationSelector';
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Motivation.css';
 
 export default function Motivation() {
-    /* Function to manage the login form */
+  const history = useHistory();
   const { register, handleSubmit } = useForm({
       criteriaMode: "all",
       mode: "onBlur"
   });
-
-  const onLogin = data => console.log(data);
+  const onLogin = (data, event) => {
+    event.preventDefault();
+    console.log(data);
+    history.push('/account');
+  };
 
   return (
     <section className="motivations">
@@ -78,9 +83,8 @@ export default function Motivation() {
           </div>
         </aside>
         <div className="nav-motivation">
-          <button type="submit">submit</button>
-          <Link to="/about" className="btn-nav" >Prev</Link>
-          <Link to="/account" className="btn-nav">Next</Link>
+          <Button component={Link} to="/about" className="btn-link">Prev</Button>
+          <Button type="submit" className="btn-link">Next</Button>
         </div>
       </form>
     </section>

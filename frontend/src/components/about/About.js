@@ -2,17 +2,23 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import HorizontalStepper from '../steppernav/Stepper';
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import './About.css';
 
 export default function About() {
-    /* Function to manager the login form */
+  const history = useHistory();
   const { register, handleSubmit } = useForm({
       criteriaMode: "all",
       mode: "onBlur"
   });
+  // Submit stored data from the user and move to the next view:
+  const onLogin = (data, event) => {
+    event.preventDefault();
+    console.log(data);
+    history.push('/motivation');
+  };
 
-  const onLogin = data => console.log(data);
-  /* Login form to modal */
   return (
     <section className="about">
       <HorizontalStepper className='stepper'/>
@@ -86,9 +92,8 @@ export default function About() {
             </div>
           </aside>
           <nav className="nav-about">
-          <button type="submit">submit</button>
-            <Link to="/hello" className="btn-nav" >Prev</Link>
-            <Link to="/motivation" className="btn-nav">Next</Link>
+            <Button component={Link} to="/hello" className="btn-link">Prev</Button>
+            <Button type="submit" className="btn-link">Next</Button>
           </nav>
         </form>
     </section>

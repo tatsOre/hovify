@@ -24,7 +24,7 @@ export default function DayMonthYearPicker(props) {
           margin="dense"
           id="date-picker-dialog"
           label="Select your Birthday Date:"
-          format="MM/dd/yyyy"
+          format="yyyy-MM-dd"
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
