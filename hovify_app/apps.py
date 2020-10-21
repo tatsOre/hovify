@@ -7,3 +7,4 @@ class HovifyAppConfig(AppConfig):
     def ready(self):
         from getjobs import updater
         updater.start()
+
