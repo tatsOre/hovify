@@ -29,3 +29,10 @@ code {
   font-size: 3em;
   margin: 0 auto;
 }
+.date-picker__field {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.date-picker {
+  width: 100%;
+}

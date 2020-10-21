@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import './Home.css';
+import './logo_2.png';
 import Modal from '@material-ui/core/Modal';
 import { StylesProvider } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';

@@ -27,14 +27,8 @@
 /* Form container items */
 .motivation-questions { grid-area: section; }
 .desired-job { grid-area: aside; }
-.form-motivations .motivation-nav { grid-area: nav; }
+.nav-motivation { grid-area: nav; }
 
-.navigation {
-    width: 80%;
-    display: flex;
-    margin: 20px auto;
-    justify-content: space-between;
-}
 .motivations > p { margin-top: 65px; }
 
 /* Font Styles */
@@ -49,6 +43,12 @@
 }
 .desired-location__title {
     margin-top: 50px;
+}
+.wrapper-motivation {
+    margin: 20px 0;
+}
+.wrapper-jobfield {
+    margin: 10px 0;
 }
 .btn-nav {
   display: block;
@@ -68,4 +68,10 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+}
+.nav-motivation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
 }

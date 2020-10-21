@@ -42,7 +42,7 @@ export default function SetAccount() {
           name="Password"
           inputRef={register({required: true, maxLength: 80})} />
       </div>
-      <nav className="navigation nav-account">
+      <nav className="nav-account">
         <Link to="/motivation" className="btn-nav" >Prev</Link>
         <Link to="/builder" className="btn-nav">Next</Link>
       </nav>

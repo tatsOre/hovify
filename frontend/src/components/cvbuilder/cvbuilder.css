@@ -34,7 +34,7 @@
     font-size: 4em;
     font-weight: 300;
     color: #262AD1;
-    line-height: .3em;
+    line-height: .55em;
     margin: 35px 0 10px;
 } 
 .welcome-user h2 {
@@ -135,7 +135,6 @@ h1, h2, h3, legend, p {
     top: -7px;
     right: -7px;
 }
-
 .icon-button__remove:hover::after {
     content: 'Delete field';
     background-color:rgba(254, 95, 85, 1);

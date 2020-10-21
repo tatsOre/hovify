@@ -1,14 +1,10 @@
 .chip {
     margin-top: 5px;
-
     margin-right: 5px;
 }
-
 .multipleSelect {
-    width: 100%;
-    
+    width: 100%; 
 }
-
 .selectContainer { 
     display: flex;
     flex-wrap: wrap;

@@ -85,7 +85,7 @@ export default function About() {
               </div>
             </div>
           </aside>
-          <nav className="navigation about-nav">
+          <nav className="nav-about">
           <button type="submit">submit</button>
             <Link to="/hello" className="btn-nav" >Prev</Link>
             <Link to="/motivation" className="btn-nav">Next</Link>

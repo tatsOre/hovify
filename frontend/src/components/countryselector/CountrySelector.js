@@ -50,12 +50,12 @@ export default function CountrySelect(props) {
           className='location_selector'
           name={name}
           {...params}
-          label="Choose your current location:"
+          label="Choose your Current Location:"
           inputProps={{
             ...params.inputProps,
             autoComplete: 'new-password', // disable autocomplete and autofill
           }}
-          inputRef={register({ required: true})}
+          inputRef={register({ required: true })}
         />
       )}
     />

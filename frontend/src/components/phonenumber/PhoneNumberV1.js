@@ -31,7 +31,8 @@ class CreateUserDialog extends React.Component {
           defaultCountry={"us"}
           value={this.state.phone}
           onChange={this.handlePhoneChange}
-          inputRef={this.props.register({ required: true})}
+          // La siguiente línea es el problema del teléfono:
+          //inputRef={this.props.register({ required: true})}
         />
       </div> 
     );
