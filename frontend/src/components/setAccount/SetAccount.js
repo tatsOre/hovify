@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import './SetAccount.css';
 
 export default function SetAccount() {
-    /* Function to handle the login form */
   const { register, handleSubmit, errors } = useForm({
       criteriaMode: "all",
       mode: "onBlur"
   });
+  // Submit stored data from the user and move to the CV Builder:
   const onLogin = data => console.log(data);
   
   return (
@@ -43,8 +43,8 @@ export default function SetAccount() {
           inputRef={register({required: true, maxLength: 80})} />
       </div>
       <nav className="nav-account">
-        <Link to="/motivation" className="btn-nav" >Prev</Link>
-        <Link to="/builder" className="btn-nav">Next</Link>
+        <Link to="/motivation" className="btn-link" >Prev</Link>
+        <Link to="/builder" className="btn-link">Next</Link>
       </nav>
     </form>
   </section>
