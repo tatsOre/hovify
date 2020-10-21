@@ -8,7 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     FirstName = models.CharField(max_length=45)
     LastName = models.CharField(max_length=45)
-    Country = models.CharField(max_length=45, default='')
+    Location = models.CharField(max_length=45, default='')
     City = models.CharField(max_length=45, null=True, blank=True, default='')
     PhoneNumber = models.CharField(max_length=45, null=True, default='')
     Birthday = models.DateField(auto_now=False, null=True, blank=True)
@@ -120,3 +120,6 @@ class DesiredJobLocation(models.Model):
 class Curriculum(models.Model):
     """Country or global, latin America? check this?"""
     user = models.ForeignKey('Profile', on_delete=models.CASCADE)
+    pdf_path = models.CharField(max_length=100, null=True, blank=True)
+    preview_path = models.CharField(max_length=100, null=True, blank=True)
+    cover_letter = models.CharField(max_length=100, null=True, blank=True)

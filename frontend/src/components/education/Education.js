@@ -1,20 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
-import YearMonthPicker from '../datepicker/DateSelector';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
+import {DatePicker} from '@material-ui/pickers';
+
 
 export default function Education(props) {
     const {degree, errors, register, degree_id, onRemoveDegree} = props;
-    const inputids = {
-        degree: "degree" + degree_id,
-        school: "school" + degree_id,
-        description: "description" + degree_id
-    }
     const handleRemoveDegree = () => {
       onRemoveDegree(degree_id);
     };
-    console.log(errors);
+
+    const [selectedStartDate, handleStartDateChange] = useState(null);
+    const [selectedEndDate, handleEndDateChange] = useState(null);
+
     return(
       <article className='degree-item'>
       <IconButton onClick={handleRemoveDegree}
@@ -39,12 +38,16 @@ export default function Education(props) {
               inputRef={register({required: true, maxLength: 80})} />
           </div>
           <div className="header-date">
-            <YearMonthPicker label='Start date:'
+            <DatePicker className="date-picker__field"
+              views={["year", "month"]} value={selectedStartDate}
+              onChange={handleStartDateChange} label="Start date:"
               name={`Education[${degree_id}].start_year`}
-               />
-            <YearMonthPicker label='End date:'
+              inputRef={register()} />
+            <DatePicker className="date-picker__field"
+              views={["year", "month"]} value={selectedEndDate}
+              onChange={handleEndDateChange} label="End date:"
               name={`Education[${degree_id}].end_year`}
-               />
+              inputRef={register()} />
           </div>
         </div>
         <TextField

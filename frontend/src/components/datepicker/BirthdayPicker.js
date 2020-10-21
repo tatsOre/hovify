@@ -6,11 +6,11 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
-import './datepicker.css';
 
+// ---> Muestra de formato string para enviar Date('2014-08-18T21:11:54')
 export default function DayMonthYearPicker(props) {
   const {name, register} = props;
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [selectedDate, setSelectedDate] = React.useState(null);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -24,7 +24,7 @@ export default function DayMonthYearPicker(props) {
           margin="dense"
           id="date-picker-dialog"
           label="Select your Birthday Date:"
-          format="MM/dd/yyyy"
+          format="yyyy-MM-dd"
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{

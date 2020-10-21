@@ -3,13 +3,10 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import Chip from '@material-ui/core/Chip';
-import CustomizedRatings from '../ratingselector/Rating';
 import RatingSkill from '../ratingselector/Rating';
 import Checkbox from '@material-ui/core/Checkbox';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import './MultipleSelect.css';
-
-
 
 
 export default function MultipleSelect(props) {

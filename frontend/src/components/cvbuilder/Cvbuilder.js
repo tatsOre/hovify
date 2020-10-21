@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm, FormProvider, useFormContext } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
@@ -144,33 +144,34 @@ export default function Cvbuilder () {
       <section className='primary_info'>
       <TextField
             className='input middle_width'
-            error={errors.FirstName && true}
+            error={ errors && errors.User && errors.User.FirstName && Boolean(errors.User.FirstName) }
+            //error={errors.FirstName && true}
             defaultValue={userData.User.FirstName}
             type='text'
-            label='Name' name='User.FirstName'
+            label='Name(s):' name='User.FirstName'
             inputRef={register({ required: true, maxLength: 80 })}
           />
           <TextField
             className='input middle_width'
-            error={errors.LastName && true}
+            error={ errors && errors.User && errors.User.LastName && Boolean(errors.User.LastName) }
             defaultValue={userData.User.LastName} type='text'
-            label='Last Name' name='User.LastName'
+            label='Last Name(s):' name='User.LastName'
             inputRef={register({ required: true, maxLength: 80 })}
           />
           <TextField
             fullWidth
             className='input'
-            error={errors.Role && true}
+            error={ errors && errors.User && errors.User.Role && Boolean(errors.User.Role) }
             defaultValue={userData.User.Role} type='text'
-            label='Actual Role' name='User.Role'
+            label='Actual Role:' name='User.Role'
             inputRef={register({ required: true, maxLength: 100 })}
           />
           <TextField
             multiline fullWidth
             className='input'
-            error={errors.Summary && true}
+            error={ errors && errors.User && errors.User.Summary && Boolean(errors.User.Summary) }
             defaultValue={userData.User.Summary}
-            label='Summary' name='User.Summary'
+            label='Summary:' name='User.Summary'
             inputRef={register({ required: true })}
           />
           <h2 className='professional-title'>Professional Experience:</h2>
@@ -238,7 +239,7 @@ export default function Cvbuilder () {
           <TextField
             fullWidth className='email'
             defaultValue='ddfa@g.com'
-            label='Email Address:' name='email'
+            label='Email Address:' name='User.Email'
             style={{ marginBottom: 5 }} margin="dense"
             InputLabelProps={{ shrink: true, }}
             error={errors.Email && true} type='email'

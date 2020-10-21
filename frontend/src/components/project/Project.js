@@ -5,11 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 export default function Project(props) {
     const {project, errors, register, project_id, onRemoveProject} = props;
-    const inputids = {
-        name: "name" + project_id,
-        link: "link" + project_id,
-        description: "description" + project_id
-    }
+
     const handleRemoveProject = () => {
       onRemoveProject(project_id);
     };

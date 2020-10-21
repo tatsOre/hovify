@@ -26,7 +26,7 @@
 /* Form container items */
 .about-user__questions { grid-area: section; }
 .about-user__interests { grid-area: aside; }
-.form-about .about-nav { grid-area: nav; }
+.form-about .nav-about{ grid-area: nav; }
 
 .navigation {
   width: 80%;
@@ -43,11 +43,11 @@ h1.about-title {
   margin: 80px 0 10px;
 }
 h2.about-questions__text {
-  margin: 10px 0;
   font-size: 1.35em;
   font-weight: 400;
   color: #321880;
   line-height: 1.3em;
+  padding-bottom: 15px;
 }
 .about-title, .about-user__questions { 
   padding-right: 40px;
@@ -70,7 +70,7 @@ h3.about-interests__title {
   font-weight: 600;
 }
 .checkbox-wrapper {
-  margin: 15px 0;
+  margin: 20px 0;
   display: flex;
   justify-content: left;
 }
@@ -87,25 +87,9 @@ h3.about-interests__title {
   margin: 20px auto;
 }
 /* Navigation Bar */
-.about-nav {
-  padding-top: 80px;
-}
-.btn-nav {
-  display: block;
-  color: #262ad1;
-  background-color: white;
-  border: 1px solid rgba(63, 81, 181, 0.5);
-  border-radius: 3px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  margin: 0 10px;
-  padding: 5px;
-  width: 30%;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
+.nav-about {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
 }

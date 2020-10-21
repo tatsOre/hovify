@@ -2,17 +2,22 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import HorizontalStepper from '../steppernav/Stepper';
 import LocationSelector from '../countryselector/LocationSelector';
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Motivation.css';
 
 export default function Motivation() {
-    /* Function to manage the login form */
+  const history = useHistory();
   const { register, handleSubmit } = useForm({
       criteriaMode: "all",
       mode: "onBlur"
   });
-
-  const onLogin = data => console.log(data);
+  const onLogin = (data, event) => {
+    event.preventDefault();
+    console.log(data);
+    history.push('/account');
+  };
 
   return (
     <section className="motivations">
@@ -26,19 +31,19 @@ export default function Motivation() {
           </div>
           <div className="question-wrapper">
             <p className="question-label">These should be the specifications for your job matching:</p>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[1].name`} value="1" id="motivations-option-1" ref={register} />
               <label className="checkbox-label" for="motivations-option-1">I’m currently looking for local job </label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[2].name`} value="2" id="motivations-option-2" ref={register} />
               <label className="checkbox-label" for="qmotivations-option-2">I’m looking for remote jobs </label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[3].name`} value="3" id="motivations-option-3" ref={register} />
               <label className="checkbox-label" for="motivations-option-3">I’m looking for half-time jobs </label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[4].name`} value="4" id="motivations-option-4" ref={register} />
               <label className="checkbox-label" for="motivations-option-4">I just want to check my profile with the market </label>
             </div>
@@ -48,25 +53,25 @@ export default function Motivation() {
           <div className="info">
               <h3 className="desired-job__title">I want my dream job in</h3>
           </div>
-          <div className="question-wrapper">
+          <div className="question-wrapper__motivation">
             <p className="question-label">Select the fields that apply:</p>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[1].name`} value="devops" id="jobField-option-1" ref={register} />
               <label className="checkbox-label" for="jobField-option-1">DevOps</label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[2].name`} value="frontend" id="jobField-option-2" ref={register} />
               <label className="checkbox-label" for="jobField-option-2">FrontEnd</label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[3].name`} value="backend" id="jobField-option-3" ref={register} />
               <label className="checkbox-label" for="jobField-option-3">Backend</label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[4].name`} value="security" id="jobField-option-4" ref={register} />
               <label className="checkbox-label" for="jobField-option-4">system Security</label>
             </div>
-            <div className="checkbox-wrapper">
+            <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[5].name`} value="webdesigner" id="jobField-option-5" ref={register} />
               <label className="checkbox-label" for="jobField-option-5">Web Designer</label>
             </div>
@@ -77,10 +82,9 @@ export default function Motivation() {
             <LocationSelector name='Desired_Job_Location.location' register={register}/>
           </div>
         </aside>
-        <div className="navigation motivation-nav">
-          <button type="submit">submit</button>
-          <Link to="/about" className="btn-nav" >Prev</Link>
-          <Link to="/account" className="btn-nav">Next</Link>
+        <div className="nav-motivation">
+          <Button component={Link} to="/about" className="btn-link">Prev</Button>
+          <Button type="submit" className="btn-link">Next</Button>
         </div>
       </form>
     </section>

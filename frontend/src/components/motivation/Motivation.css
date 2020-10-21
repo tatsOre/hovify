@@ -27,14 +27,8 @@
 /* Form container items */
 .motivation-questions { grid-area: section; }
 .desired-job { grid-area: aside; }
-.form-motivations .motivation-nav { grid-area: nav; }
+.nav-motivation { grid-area: nav; }
 
-.navigation {
-    width: 80%;
-    display: flex;
-    margin: 20px auto;
-    justify-content: space-between;
-}
 .motivations > p { margin-top: 65px; }
 
 /* Font Styles */
@@ -50,22 +44,15 @@
 .desired-location__title {
     margin-top: 50px;
 }
-.btn-nav {
-  display: block;
-  color: #262ad1;
-  background-color: white;
-  border: 1px solid rgba(63, 81, 181, 0.5);
-  border-radius: 3px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  margin: 0 10px;
-  padding: 5px;
-  width: 30%;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
+.wrapper-motivation {
+    margin: 20px 0;
+}
+.wrapper-jobfield {
+    margin: 10px 0;
+}
+.nav-motivation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
 }

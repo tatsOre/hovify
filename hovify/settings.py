@@ -26,7 +26,7 @@ SECRET_KEY = 'r=5&#-mk2%#j)-tp_+(dc6k^wvzh6d(eq(&&517=i#_tsm&hyf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hovify.works', '0.0.0.0', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['hovify.herokuapp.com', '0.0.0.0', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -142,4 +142,5 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_WHITELIST = (
      'localhost:3000/',
+     'hovify.works',
  )
