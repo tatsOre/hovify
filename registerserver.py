@@ -28,8 +28,7 @@ response = browser.submit_selected()
 if response.status_code != 200:
     raise ValueError("Response status is not 200, check credentials")
 browser.select_form()
-print(browser.get_current_page())
-print(browser.get_current_form().print_summary())
-
 val = input("Enter your value: ")
-print(val)
+browser["pin"] = val
+response = browser.submit_selected()
+print(browser.get_current_page())
