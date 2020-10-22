@@ -19,7 +19,7 @@ and the user-agent to use.
 
 
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'
-browser = mechanicalsoup.StatefulBrowser()
+browser = mechanicalsoup.StatefulBrowser(user_agent)
 browser.open("https://www.linkedin.com/checkpoint/lg/login?trk=hb_signin")
 browser.select_form('form[action="/checkpoint/lg/login-submit"]')
 browser["session_key"] = environ.get('USER_LINKEDIN')
@@ -28,6 +28,7 @@ response = browser.submit_selected()
 if response.status_code != 200:
     raise ValueError("Response status is not 200, check credentials")
 browser.select_form()
+print(self.__browser.get_current_page())
 print(browser.get_current_form().print_summary())
 
 val = input("Enter your value: ")
