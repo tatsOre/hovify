@@ -14,7 +14,7 @@ import CountrySelect from '../countryselector/CountrySelector';
 import PhoneNumberV1 from '../phonenumber/PhoneNumberV1';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 
-import apiuserdata from '../../api/maria.json';
+import apiuserdata from '../../api/david.json';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
 import './cvbuilder.css';
@@ -136,7 +136,7 @@ export default function Cvbuilder () {
       <aside className='branding'>HoviFy</aside>
       <section className='welcome-user'>
         <h1>{userData.User.FirstName},</h1>
-        <h2>This is your Hovify!</h2>
+        <h2>This is your HoviFy!</h2>
         <h3>We have auto-filled some content as we best see fit. Yet, the Hovify is yours to keep or edit. Saying that, don't be afraid to interact with all the editable options we have for you:</h3>
       </section>
       

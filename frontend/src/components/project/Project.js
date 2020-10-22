@@ -23,14 +23,14 @@ export default function Project(props) {
               className='input middle_width'
               error={errors && errors.Projects && errors.Projects[project_id] && Boolean(errors.Projects[project_id].name)}
               defaultValue={(project && project.name) || ''} type='text'
-              label='Project Name' name={`Projects[${project_id}].name`}
+              label='Project Name:' name={`Projects[${project_id}].name`}
               inputRef={register({ required: true, maxLength: 80 })}
             />
             <TextField
               className='input middle_width'
               error={errors && errors.Projects && errors.Projects[project_id] && Boolean(errors.Projects[project_id].link)}
               defaultValue={(project && project.link) || ''} type='url'
-              label='Project Link' name={`Projects[${project_id}].link`}
+              label='Project URL Link:' name={`Projects[${project_id}].link`}
               inputRef={register({required: true, maxLength: 200 })}
             />
           </div>
@@ -39,7 +39,7 @@ export default function Project(props) {
           multiline fullWidth
           error={errors && errors.Projects && errors.Projects[project_id] && Boolean(errors.Projects[project_id].description)}
           defaultValue={(project && project.description) || ''}
-          label='Description' name={`Projects[${project_id}].description`}
+          label='Description:' name={`Projects[${project_id}].description`}
           inputRef={register({required: true})}
         />
       </fieldset>
