@@ -16,7 +16,7 @@ import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 
 import apiuserdata from '../../api/maria.json';
 
-import { LANGUAGES, TECHSKILLS, SKILL_LEVEL } from '../multiplechipselector/data.js';
+import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
 import './cvbuilder.css';
 
 export default function Cvbuilder () {
@@ -219,14 +219,16 @@ export default function Cvbuilder () {
           <legend>Technical Skills:</legend>
           <MultipleSelect
             dataList={TECHSKILLS}
-            ratingData={SKILL_LEVEL}
+            range={SKILL_LEVEL}
             defaultSelection={userData.Skills ? userData.Skills : []}
             onHandleChange={onMultipleSelectChange} />
         </fieldset>
 
         <fieldset className='secondary-info__form languages'>
           <legend>Languages:</legend>
-          <MultipleSelect dataList={LANGUAGES} />
+          <MultipleSelect
+            dataList={LANGUAGES}
+            range={PROFICIENCY} />
         </fieldset>
 
         <fieldset className='secondary-info__form'>

@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import IconButton from '@material-ui/core/IconButton';
 
 export default function Project(props) {
@@ -13,7 +13,7 @@ export default function Project(props) {
       <article className='project-item'>
       <IconButton onClick={handleRemoveProject}
         disableRipple className='icon-button__remove'>
-        <RemoveCircleOutlineIcon
+        <HighlightOffIcon
         className='icon-button' fontSize="small"/>
       </IconButton>
       <fieldset className="fieldset-block">

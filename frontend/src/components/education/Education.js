@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
-import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import IconButton from '@material-ui/core/IconButton';
 import {DatePicker} from '@material-ui/pickers';
 
@@ -18,7 +18,7 @@ export default function Education(props) {
       <article className='degree-item'>
       <IconButton onClick={handleRemoveDegree}
         disableRipple className='icon-button__remove'>
-        <RemoveCircleOutlineIcon
+        <HighlightOffIcon
         className='icon-button' fontSize="small"/>
       </IconButton>
       <fieldset className="fieldset-block">
