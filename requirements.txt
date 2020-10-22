@@ -1,3 +1,4 @@
+django-cors-headers==3.5.0
 amqp==5.0.1
 anyjson==0.3.3
 APScheduler==3.6.3

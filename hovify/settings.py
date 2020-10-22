@@ -41,10 +41,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'hovify_app.apps.HovifyAppConfig',
     'rest_framework_swagger',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'scrap_linkedin',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,7 +144,4 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
 
-CORS_ORIGIN_WHITELIST = (
-     'localhost:3000/',
-     'hovify.works',
- )
+CORS_ORIGIN_ALLOW_ALL = True

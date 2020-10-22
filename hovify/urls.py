@@ -23,6 +23,7 @@ schema_view = get_swagger_view(title='Hovify API')
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^', include('hovify_app.urls')),
+    re_path(r'^', include('scrap_linkedin.urls')),
     path(r'swagger-docs/', schema_view),
     path(r'docs/', include_docs_urls(title='Hovify API')),
 ]
