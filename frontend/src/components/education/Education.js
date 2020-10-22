@@ -28,13 +28,13 @@ export default function Education(props) {
               className="input" fullWidth
               error={errors && errors.Education && errors.Education[degree_id] && Boolean(errors.Education[degree_id].degree) }
               defaultValue={(degree && degree.degree) || ''} type="text"
-              label="Degree" name={`Education[${degree_id}].degree`}
+              label="Degree:" name={`Education[${degree_id}].degree`}
               inputRef={register({required: true, maxLength: 80})} />
             <TextField
               className="input" fullWidth
               error={errors && errors.Education && errors.Education[degree_id] && Boolean(errors.Education[degree_id].school) }
               defaultValue={(degree && degree.school) || ''} type="text"
-              label="School" name={`Education[${degree_id}].school`}
+              label="School:" name={`Education[${degree_id}].school`}
               inputRef={register({required: true, maxLength: 80})} />
           </div>
           <div className="header-date">
@@ -51,11 +51,10 @@ export default function Education(props) {
           </div>
         </div>
         <TextField
-          multiline
-          fullWidth
+          multiline fullWidth
           error={errors && errors.Education && errors.Education[degree_id] && Boolean(errors.Education[degree_id].description) }
           defaultValue={(degree && degree.description) || ''}
-          label="Description" name={`Education[${degree_id}].description`}
+          label="Description:" name={`Education[${degree_id}].description`}
           inputRef={register({required: true})}/> 
       </fieldset>
       </article>

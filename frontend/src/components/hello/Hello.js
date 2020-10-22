@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './Hello.css';
-import apiuserdata from '../../api/maria.json';
+import apiuserdata from '../../api/david.json';
 
 const userData = apiuserdata;
 

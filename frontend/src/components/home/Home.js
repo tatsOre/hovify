@@ -7,7 +7,6 @@ import Modal from '@material-ui/core/Modal';
 import { StylesProvider } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { useGetFetch, useLoginApi } from '../';
-import axios from 'axios';
 
 
 export default function Home() {
@@ -25,9 +24,6 @@ export default function Home() {
   //const headers = { 'Authorization': `${AuthStr}`};
   const curriculum = useGetFetch(AuthStr);
   console.log("curriculum" + JSON.stringify(curriculum));
- 
-
-  
   /* Form login Modal Hook */
   const [showLog, setShowLogin] = React.useState(false);
   /* Function to manager the login modal */
