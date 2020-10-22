@@ -163,7 +163,7 @@ export default function Cvbuilder () {
             className='input'
             error={ errors && errors.User && errors.User.Role && Boolean(errors.User.Role) }
             defaultValue={userData.User.Role} type='text'
-            label='Actual Role:' name='User.Role'
+            label='Current Role:' name='User.Role'
             inputRef={register({ required: true, maxLength: 100 })}
           />
           <TextField
