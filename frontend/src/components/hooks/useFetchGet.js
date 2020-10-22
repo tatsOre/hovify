@@ -1,11 +1,6 @@
 import {useState, useEffect} from 'react'
 
 export default function  useGetFetch(token) {
-    console.log("*");
-    console.log(token.length)
-    console.log("*");
-    const isLongEnough = token.length > 40;
-    //const {data, isLoading} = useQuery(['search', searchString], getSearchResults, {enabled: isLongEnough})
     const [ query, setQuery ] = useState([])
     
     useEffect(() => {
