@@ -1,6 +1,7 @@
 .chip {
     margin-top: 5px;
     margin-right: 5px;
+    background-color: rgba(63, 81, 181, 0.15);
 }
 .multipleSelect {
     width: 100%; 

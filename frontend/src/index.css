@@ -8,7 +8,6 @@ h1, h2, h3, fieldset, legend {
   padding: 0;
   margin: 0;
   min-width: 0;
-  line-height: 0;
 }
 body {
   margin: 0;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './Hello.css';
-import apiuserdata from '../../api/maria.json';
+import apiuserdata from '../../api/david.json';
 
 const userData = apiuserdata;
 
@@ -27,7 +27,7 @@ export default function Hello() {
       <aside className='branding'>HoviFy</aside>
       <form className="form-hello" onSubmit={handleSubmit(onLogin)}>
         <h1 className="hello-title"><span>Hello,</span> Hovifier</h1>
-        <h2 className="hello-text">Check or fill your Name and Last Name:</h2>
+        <h2 className="hello-text">Fill and/or verify your Name and Last Name:</h2>
         <div className="FirstName-field">
           <label className="hello-FirstName" for="hello-FirstName">Name(s):</label>
           <TextField

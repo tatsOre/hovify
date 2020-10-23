@@ -11,7 +11,7 @@ import './MultipleSelect.css';
 
 export default function MultipleSelect(props) {
   const [userSelection, setUserSelection] = React.useState([]);
-  const { dataList } = props;
+  const { dataList, range } = props;
 
   const handleChange = (event) => {
     setUserSelection(event.target.value)
@@ -53,7 +53,7 @@ export default function MultipleSelect(props) {
             </MenuItem>
           ))}
         </Select>
-        {userSelection.map((selection, index) => <RatingSkill  key={index} selection={selection}></RatingSkill>)}
+        {userSelection.map((selection, index) => <RatingSkill key={index} selection={selection} range={range}></RatingSkill>)}
     </>
   );
 }

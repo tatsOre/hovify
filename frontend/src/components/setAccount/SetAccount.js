@@ -18,9 +18,9 @@ export default function SetAccount() {
     <h1 className="account-title"><span>Maria Fernanda,<br/></span>we need the last details to create an account:</h1>
     <form onSubmit={handleSubmit(onLogin)} className="form-account">
       <div className="label-content">
-          <label className="acount-label" for="UserName">Your e-mail:</label>
-          <label className="acount-label" for="password">Password:</label>
-          <label className="acount-label" for="confirm-password">Confirm Password:</label>
+        <label className="acount-label" for="UserName">Your e-mail:</label>
+        <label className="acount-label" for="password">Password:</label>
+        <label className="acount-label" for="confirm-password">Confirm Password:</label>
       </div>
       <div className="textF-content">
         <TextField
@@ -30,11 +30,11 @@ export default function SetAccount() {
           name="Email"
           inputRef={register({required: true, maxLength: 80})} />  
         <TextField
-            id="password"
-            className="textField-account"
-            type="password"
-            name="Password"
-            inputRef={register({required: true, maxLength: 80})} />
+          id="password"
+          className="textField-account"
+          type="password"
+          name="Password"
+          inputRef={register({required: true, maxLength: 80})} />
         <TextField
           id="confirm-password"
           className="textField-account"
