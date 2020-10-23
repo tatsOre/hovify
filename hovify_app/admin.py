@@ -4,7 +4,6 @@ from .models import Project, Professional, Education, Language, TechSkill, About
 from .models import Motivation, DesiredJobField, DesiredJobLocation, Interest, Curriculum, Profile
 
 # Register your models here.
-admin.site.register(Profile)
 admin.site.register(Project)
 admin.site.register(Professional)
 admin.site.register(Education)
@@ -16,3 +15,4 @@ admin.site.register(DesiredJobField)
 admin.site.register(DesiredJobLocation)
 admin.site.register(Interest)
 admin.site.register(Vacancy)
+admin.site.register(Curriculum)

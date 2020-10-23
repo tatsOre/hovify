@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'hovify_app.apps.HovifyAppConfig',
     'rest_framework_swagger',
     'rest_framework.authtoken',
-    'scrap_linkedin',
     'corsheaders',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,15 +123,6 @@ DATE_INPUT_FORMATS = ['%d-%m-%Y']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
-
-STATICFILES_DIRS = [
-    os.path.join(REACT_APP_DIR, 'build', 'static'),
-]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -145,3 +136,20 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+AWS_ACCESS_KEY_ID = environ.get('AWS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_KEY_SECRET')
+AWS_STORAGE_BUCKET_NAME = environ.get('AWS_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_LOCATION = 'data/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+AWS_PRIVATE_MEDIA_LOCATION = 'resumes/private'
+PRIVATE_FILE_STORAGE = 'hovify.storage_backends.PrivateMediaStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # <-- here is where we reference it

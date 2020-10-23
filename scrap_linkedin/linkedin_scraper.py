@@ -110,7 +110,8 @@ class LinkedinScraper(object):
             "level": "",
             "name": ""
         }
-        print(self.__browser.get_current_page())
+        if not url or len(url) == 0:
+            return None
         self.__browser.open(url)
         valid_data = 0
         browser_parsed = self.__browser.get_current_page().find_all('code')

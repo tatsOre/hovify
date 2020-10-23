@@ -97,19 +97,6 @@ class VacancySerializer(serializers.ModelSerializer):
 
 
 class CurriculumSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
-    education = EducationSerializer(many=True, required=False)
-    professional = ProfessionalSerializer(many=True, required=False)
-    skills = TechSkillSerializer(many=True, required=False)
-    languages = LanguageSerializer(many=True, required=False)
-    projects = ProjectSerializer(many=True, required=False)
-    about_user = AboutUserSerializer(many=True, required=False)
-    motivation = MotivationSerializer(many=True, required=False)
-    interest = InterestSerializer(many=True, required=False)
-    desired_job_fields = DesireJobFieldSerializer(many=True, required=False)
-    desired_job_locations = DesireJobLocationSerializer(
-        many=True, required=False)
-    vacancies = VacancySerializer(many=True, required=False)
-
-    def create(self, validated_data):
-        return Comment(**validated_data)
+    class Meta:
+        model = Curriculum
+        fields = '__all__'
