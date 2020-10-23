@@ -113,5 +113,8 @@ def create_resume(color="Red", data={}, file_name="default"):
                      compiler='pdflatex', compiler_args=['-shell-escape', ])
 
     if os.path.isfile(file_path + ".pdf"):
-        cmd = 'convert -flatten ' + file_path + ".pdf" + '[0] thumbnails/' + f_name + '.png'
+        cmd = 'convert -flatten ' + file_path + ".pdf" + '[0] -resize 200x260 thumbnails/' + f_name + '.png'
         os.system(cmd)
+        return [file_path + ".pdf", 'thumbnails/' + f_name + '.png']
+        
+    return None

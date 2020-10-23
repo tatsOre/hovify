@@ -32,6 +32,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework_extensions.mixins import NestedViewSetMixin
 from django.contrib.auth import authenticate
 from .resume_render.render import create_resume
+from django.core.files import File
 
 
 class UserCreate(generics.CreateAPIView):
@@ -198,7 +199,24 @@ class LoggedCurriculum(APIView):
             for array in data_list:
                 for data in array:
                     data.save()
-            create_resume(color="Red", data=request.data, file_name=profile.FirstName)
+            paths = create_resume(color="Red", data=request.data, file_name=profile.FirstName)
+            # print(os.path.isfile(paths[0]))
+            # print(paths[0])
+            # file_dict = {
+            #     "pdf_path": File(open(paths[0], encoding="utf-8")),
+            #     "preview_path": File(open(paths[1], encoding="utf-8")),
+            #     "userID": user_id
+            # }
+            curriculum = Curriculum.objects.get(userID=user)
+            curriculum.pdf_path.name = paths[0]
+            curriculum.preview_path.name = paths[1]
+            curriculum.userID = user
+            new_curriculum = CurriculumSerializer(curriculum)
+            if new_curriculum.is_valid():
+                new_curriculum.save()
+            else:
+                return Response(new_curriculum.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
             return Response(userserializer.data,
                             status=status.HTTP_201_CREATED)
         else:
