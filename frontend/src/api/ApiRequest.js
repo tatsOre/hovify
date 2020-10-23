@@ -9,36 +9,22 @@ const getLogin = async (data) => {
     headers: {
         'Content-Type': 'application/json'
     }
-  })
+  });
   const result = await response.json();
   //console.log("-->" + JSON.stringify(result))
-  return result
+  return result;
 };
 
-
-
-  /* Login implementation
- const login = {
-    "username": "juanllano93@gmail.com",
-    "password": "123456"
-  };
-
-  useEffect(() => {
-    getLogin(JSON.stringify(login))
-    .then(response => console.log(response.token))
-    .catch()
-  }, []);
-  */
-
-
-const getUser = token => {
-    const user = fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
+const getUser = async (token) => {
+    const response = await fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
             headers: {
                 'Authorization': token,
                 'Content-Type' : 'application/json',
             }
-    })
-    return user;
+    });
+    const result = await response.json();
+    //console.log("->user data \n" + JSON.stringify(result));
+    return result;
 }
 
 export { getLogin, getUser };

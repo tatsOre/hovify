@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
+
 /* Login Modal: */
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -15,8 +16,41 @@ import CloseIcon from '@material-ui/icons/Close';
 import './Home.css';
 import './logo_2.png';
 
+/* API */
+import { getLogin, getUser } from '../../api/ApiRequest.js';
 
 export default function Home() {
+  /* --------------Api Test------------------- */
+  /* Login implementation */
+  let userToken = "Token "
+  let userData = ""
+  const login = {
+    "username": "juanllano93@gmail.com",
+    "password": "123456"
+  };
+
+  React.useEffect(() => {
+    getLogin(JSON.stringify(login))
+    .then(response => {
+      userToken += String(response.token)
+      console.log(userToken)
+      /*------ Fetch to curriculum with header  authorization ------*/
+      getUser(userToken)
+      .then(response => {
+            userData = response
+            console.log(userData)
+          }
+        )
+      /*-----------------------*/
+    })
+    .catch()
+  }, []);
+
+
+
+
+
+  /* ------------------------------------------------------ */
   const history = useHistory();
   /* ------------------------------------------------------ */
   /* Form Sign in Modal Hook */
