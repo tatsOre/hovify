@@ -128,3 +128,10 @@ staticfiles/*
 # **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py
+
+# pylatex stuff
+*.pdf
+*.xml
+*.tex
+*.xmpi
+*thumbnails/*
