@@ -18,14 +18,24 @@ class Profile(models.Model):
     GitHubURL = models.CharField(max_length=200, null=True, blank=True)
     TwitterURL = models.CharField(max_length=200, null=True, blank=True)
 
+class Curriculum(models.Model):
+    """Country or global, latin America? check this?"""
+    userID = models.OneToOneField(User, on_delete=models.CASCADE)
+    pdf_path = models.FileField(storage=PrivateMediaStorage(), blank=True)
+    preview_path = models.FileField(storage=PrivateMediaStorage(), blank=True)
+    cover_letter = models.FileField(storage=PrivateMediaStorage(), blank=True)
+    csv_data = models.FileField(storage=PrivateMediaStorage(), blank=True)
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+        Curriculum.objects.create(userID=instance)
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+    instance.curriculum.save()
 
 class Project(models.Model):
     project_id = models.AutoField(primary_key=True)
@@ -116,11 +126,3 @@ class DesiredJobLocation(models.Model):
     desiredjobloc_id = models.AutoField(primary_key=True)
     location = models.CharField(max_length=100, null=True, blank=True)
     userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
-
-class Curriculum(models.Model):
-    """Country or global, latin America? check this?"""
-    userID = models.OneToOneField(Profile, on_delete=models.CASCADE)
-    pdf_path = models.FileField(storage=PrivateMediaStorage(), blank=True)
-    preview_path = models.FileField(storage=PrivateMediaStorage(), blank=True)
-    cover_letter = models.FileField(storage=PrivateMediaStorage(), blank=True)
-    csv_data = models.FileField(storage=PrivateMediaStorage(), blank=True)
