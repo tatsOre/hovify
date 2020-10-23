@@ -1,0 +1,149 @@
+{
+    "User": {
+        "FirstName": "David",
+        "LastName": "Orejuela",
+        "Role": "Electronic Engineer | Software Developer",
+        "Location": null,
+        "Summary": "Electronic Engineer and Software developer continuously creating tech and sharing knowledge, motivated by a sense of competition, appreciates achievements, work quality, and mental health.\n\nPassionate about computer sciences, algorithms, and being someone determined to produce consistently strong work. Wherever I go, I build friendships that rise together to learn and make a real difference.",
+        "LinkedIn": "https://www.linkedin.com/in/davidorejuela14/"
+    },
+    "Education": [
+        {
+            "degree": "Technologist in analysis and development of information systems",
+            "school": "Servicio Nacional de Aprendizaje (SENA)",
+            "start_year": 2017,
+            "end_year": 2020,
+            "description": null
+        },
+        {
+            "degree": "Full Stack Engineer",
+            "school": "Holberton School",
+            "start_year": 2020,
+            "end_year": 2022,
+            "description": "Learning the Linux Kernel capabilities by reproducing C standard library functions and command-line tools. Fundamentals of network communication, parallel programming, and advanced data structures and algorithms."
+        },
+        {
+            "degree": "Grado en Ingeniería",
+            "school": "Universidad de San Buenaventura",
+            "start_year": 2012,
+            "end_year": 2017,
+            "description": "Distinction of Academic Excellence - 2017"
+        }
+    ],
+    "Professional": [
+        {
+            "role": " Project optimization assistant",
+            "company": "UNIVERSIDAD DE SAN BUENAVENTURA CALI",
+            "start_year": 2016,
+            "end_year": 2017,
+            "description": "Maintenance of solar system for home lights the energization.\nReprogramming and schematization of an intruder security system based on the ATMEGA2560."
+        },
+        {
+            "role": " Electromagnetism physics monitor",
+            "company": "Universidad de San Buenaventura Cali",
+            "start_year": 2014,
+            "end_year": 2014,
+            "description": "Class preparation and group management to resolve doubts regarding electromagnetic and mechanics phenomena."
+        },
+        {
+            "role": "Development Engineer",
+            "company": "Real Group Interactive",
+            "start_year": 2018,
+            "end_year": 2020,
+            "description": "Solving challenges to integrate LiDAR technology to georeference 3D scenaries.\nSelect and apply new technologies to increase performance analyzing LiDAR data."
+        }
+    ],
+    "Skills": [
+        {
+            "level": "Mid",
+            "name": "Git"
+        },
+        {
+            "level": "Mid",
+            "name": "VHDL"
+        },
+        {
+            "level": "Decent",
+            "name": "c"
+        },
+        {
+            "level": "Decent",
+            "name": "JavaScript"
+        },
+        {
+            "level": "Mid",
+            "name": "Gestión de proyectos"
+        },
+        {
+            "level": "Mid",
+            "name": "Programación C"
+        },
+        {
+            "level": "Mid",
+            "name": "Software embebido"
+        },
+        {
+            "level": "Mid",
+            "name": "JSON"
+        },
+        {
+            "level": "Mid",
+            "name": "Control de calidad"
+        },
+        {
+            "level": "Mid",
+            "name": "Sistemas embebidos"
+        },
+        {
+            "level": "Mid",
+            "name": "Django"
+        },
+        {
+            "level": "Decent",
+            "name": "Linux"
+        },
+        {
+            "level": "Mid",
+            "name": "Pruebas"
+        },
+        {
+            "level": "Mid",
+            "name": "Object-Oriented Programming (OOP)"
+        },
+        {
+            "level": "Mid",
+            "name": "Programación"
+        },
+        {
+            "level": "Decent",
+            "name": "Bash"
+        },
+        {
+            "level": "Mid",
+            "name": "HTML"
+        },
+        {
+            "level": "Mid",
+            "name": "Optimización"
+        },
+        {
+            "level": "Decent",
+            "name": "Python"
+        },
+        {
+            "level": "Decent",
+            "name": "MySQL"
+        }
+    ],
+    "Languages": [
+        {
+            "language": "Español",
+            "proficiency": null
+        },
+        {
+            "language": "Inglés",
+            "proficiency": null
+        }
+    ],
+    "Projects": []
+}

@@ -1,134 +1,125 @@
+/* Home and grid items structure */
 .home {
-  max-width: 100%;
-  display: "flex";
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header"
+    "main"
+    "team-section"
+    "footer";
+  font-family: 'Roboto', sans-serif;
+  max-width: 75%;
+  margin: 0 auto;
 }
 
-.navBar {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.home-header { grid-area: header; }
+.main-content { grid-area: main; }
+.hovify-team { grid-area: team-section; }
+.foonavbar { grid-area: footer; }
 
-.firstBar {
-  width: 90%;
+/* Header: Logo and Sign in Modal styles: */
+.home-header {
   display: flex;
+  padding: 25px 0;
   justify-content: space-between;
+ }
+.signin-text {
+  margin-right: 25px;
+  display: inline;
+}
+.modal-signin, .modal {
   position: relative;
-  align-items: center;
-}
-
-.logo {
-  height: 100%;
-  align-items: center;
-  position: relative;
-  top: 50px;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
-.secondBar {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 30px;
-  height: 90px;
-}
-
-.link {
-  margin: 0px 50px;
-}
-
-.main {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row !important;
-  align-items: center;
-}
-
-.firstContent {
-  width: 90%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.imgHome {
-  display: block;
-  position: relative;
-  left: 0%;
-}
-
-.contentHome {
-  width: 55%;
+  margin: 15% auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
-}
-
-.divBtnContent {
-  display: flex;
-  justify-content: space-around;
-}
-
-.modal {
-  position: absolute;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  left: 50%;
-  padding: 1em 1.5em;
-  min-width: 25em;
-  max-width: 35em;
+  padding: .5em 2em;
+  min-width: 20em;
+  max-width: 25em;
   background-color: #fff;
-  border-radius: 1em;
-  transform: translate(-50%, -50%);
   outline: transparent;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
-.rights {
-  text-align: center;
+/* Sign in Modal */
+.modal-signin > form > p {
+  font-size: .85em;
+}
+.modal-signin > form > p ~ p {
+  font-size: 1.15em;
+  line-height: 0;
+  color: #321880;
+  font-weight: 600;
+}
+.username, .password {
+  width: 100%;
+  margin: 8px 0;
+}
+.sign-modal__icon {
+  opacity: .15;
+}
+.modal-close__icon {
+  opacity: .4;
+  width: 30px;
+  margin-right: -20px;
+  float: right;
+}
+.divBtnContent p{
+  font-family: 'Roboto', sans-serif;
+  font-size: .85em;
+}
+/* LinkedIn Modal */
+.modal-linkedIn {
+  max-width: 30em;
 }
 
 /* Buttons */
-.btn-home {
+.btn-signin,
+.btn-primary_linkedin,
+.btn-modal__linkedin,
+.btn-modal__signin,
+.btn-primary_zero {
   display: block;
-  color: #262ad1;
-  background-color: white;
-  border: 1px solid rgba(63, 81, 181, 0.5);
-  border-radius: 3px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
+  color: whitesmoke;
+  background-color: rgba(63, 81, 181, 1);
+  border: none;
+  border-radius: 2px;
+  font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.75;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  margin: 0 10px;
-  padding: 5px;
+  margin: 15px auto;
+  padding: 7px;
   width: 90%;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
 }
-.btn-modal {
-  display: block;
-  color: #262ad1;
-  background-color: white;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
+.btn-modal__linkedin,
+.btn-modal__signin {
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
+}
+.btn-primary_linkedin,
+.btn-primary_zero {
+  display: inline;
+  max-width: 25%;
+  letter-spacing: 0.05em;
+}
+.btn-primary_zero {
+  background-color: #FE5F55;
+}
+.btn-primary_zero__link {
+  color: whitesmoke;
   text-decoration: none;
 }
-.route-link {
-  width: 100%;
-  height: 100%;
+/* Footer styles */
+.foonavbar {
+  padding: 25px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+.foonavbar-link, .foonavbar span {
+  padding: 0 30px;
+}
+.foonavbar-link {
+  text-decoration: none;
 }

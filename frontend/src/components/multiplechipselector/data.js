@@ -1,11 +1,29 @@
 export const LANGUAGES = ['Arabic', 'Bengali', 'English', 'French', 'German', 'Hindi', 'Indonesian', 'Italian', 'Japanese',
                           'Mandarin Chinese', 'Marathi', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swahili', 'Tamil',
                           'Telugu', 'Turkish', 'Ukrainian', 'Urdu'];
-export const PROFICIENCY = ['A1', 'A2','B1', 'B2', 'C1', 'C2'];    
+
+export const PROFICIENCY = {
+    1: 'A1',
+    2: 'A2',
+    3: 'B1',
+    4: 'B2',
+    5: 'C1',
+    6: 'C2',
+};
+
+   
 export const TECHSKILLS = ['Git', 'C', 'C++', 'C#', 'JavaScript', 'React', 'Vue', 'Angular', 'NodeJS', 'Linux', 'Bash',
                            'HTML', 'CSS', 'Sass', 'Python', 'Go', 'Kotlin', 'Java', 'TypeScript', 'Swift', 'BASIC',
                            'Dart', 'PEARL', 'PHP', 'Scala'];
-export const SKILL_LEVEL = ['Low', 'Regular','Decent', 'Mid', 'Pro', 'Expert'];
+export const SKILL_LEVEL = {
+    1: 'Low',
+    2: 'Regular',
+    3: 'Decent',
+    4: 'Mid',
+    5: 'Pro',
+    6: 'Expert',
+};
+
 export const COUNTRIES = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina",
                           "Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados",
                           "Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina",

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
-import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import IconButton from '@material-ui/core/IconButton';
 import {DatePicker} from '@material-ui/pickers';
 
@@ -18,7 +18,7 @@ export default function Experience(props) {
       <article className='experience-item'>
         <IconButton onClick={handleRemoveExperience}
           disableRipple className='icon-button__remove'>
-          <RemoveCircleOutlineIcon
+          <HighlightOffIcon
           className='icon-button' fontSize="small"/>
         </IconButton>
         <fieldset className="fieldset-block">
@@ -28,13 +28,13 @@ export default function Experience(props) {
                     className="input" fullWidth
                     error={errors && errors.Professional && errors.Professional[experience_id] && Boolean(errors.Professional[experience_id].role)}
                     defaultValue={(professional && professional.role) || ''} type="text"
-                    label="Role" name={`Professional[${experience_id}].role`}
+                    label="Role:" name={`Professional[${experience_id}].role`}
                     inputRef={register({required: true, maxLength: 80})}/>
                   <TextField
                     className="input" fullWidth
                     error={errors && errors.Professional && errors.Professional[experience_id] && Boolean(errors.Professional[experience_id].company)}
                     defaultValue={(professional && professional.company) || ''} type="text"
-                    label="Company" name={`Professional[${experience_id}].company`}
+                    label="Company:" name={`Professional[${experience_id}].company`}
                     inputRef={register({required: true, maxLength: 80})} />
                 </div>
                 <div className="header-date">
@@ -54,7 +54,7 @@ export default function Experience(props) {
                 multiline fullWidth
                 error={errors && errors.Professional && errors.Professional[experience_id] && Boolean(errors.Professional[experience_id].description)}
                 defaultValue={(professional && professional.description) || ''}
-                label="Description" name={`Professional[${experience_id}].description`}
+                label="Description:" name={`Professional[${experience_id}].description`}
                 inputRef={register({required: true})}/>
         </fieldset>
       </article>
