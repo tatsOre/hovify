@@ -421,7 +421,7 @@ class LoggedDashboard(APIView):
         profiledata = ProfileSerializer(profile)
         pk = profiledata.data['id']
         vacancy = Vacancy.objects.filter(users=pk)
-        curriculum = Curriculum.objects.get(userID=pk)
+        curriculum = Curriculum.objects.get(userID=user)
         curriculum_dict = {
             "User": ProfileSerializer(profile).data,
             "Vacancy": VacancySerializer(vacancy, many=True).data,
