@@ -9,6 +9,7 @@ class Profile(models.Model):
     FirstName = models.CharField(max_length=45)
     LastName = models.CharField(max_length=45)
     Location = models.CharField(max_length=45, default='', blank=True, null=True)
+    Role = models.CharField(max_length=100, default='', blank=True, null=True)
     City = models.CharField(max_length=45, null=True, blank=True, default='')
     PhoneNumber = models.CharField(max_length=45, null=True, default='', blank=True)
     Birthday = models.DateField(auto_now=False, null=True, blank=True)
