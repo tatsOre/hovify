@@ -2,7 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { StylesProvider } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { useGetFetch, useLoginApi } from '../';
 import { useHistory } from 'react-router-dom';
 
 import Modal from '@material-ui/core/Modal';
@@ -19,22 +18,6 @@ import './logo_2.png';
 
 export default function Home() {
   const history = useHistory();
-  /* API Request: */
-  const login = {
-    "username": "juanllano93@gmail.com",
-    "password": "123456"
-  };
-  const tokenJson = useLoginApi(JSON.stringify(login))
-  console.log(tokenJson);
-  
-  //const AuthStr = 'Token '.concat(tokenJson.token);
-  const AuthStr = 'Token ' + tokenJson.token;
-  console.log(AuthStr)
-  //const AuthStr = 'Token 9a85f092a0eee2f633fd2360694490384757ff31';
-  //const headers = { 'Authorization': `${AuthStr}`};
-  const curriculum = useGetFetch(AuthStr);
-  console.log("curriculum" + JSON.stringify(curriculum));
-
   /* ------------------------------------------------------ */
   /* Form Sign in Modal Hook */
   const [showLog, setShowLogin] = React.useState(false);
