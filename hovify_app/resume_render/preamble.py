@@ -33,7 +33,7 @@ def make_preamble(cust_color="Red"):
     Builds a customized preamble tex file, as for the fonts and styles.
     """
 
-    file_name = "preamble.tex"
+    file_name = "renders/preamble.tex"
 
     with open(file_name, "w") as file:
         # Change the page layout if you need to

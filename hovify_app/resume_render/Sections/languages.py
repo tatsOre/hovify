@@ -36,12 +36,14 @@ def make_languages(data={}):
         return ""
     s = ""
     if data.get("Languages") and len(data.get("Languages")) != 0:
-        level = ['Low', 'Regular', 'Decent', 'Mid', 'Pro', 'Expert']
+        level = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']
         s = s + "\n\\cvsection{Languages}"
 
         for idx, lang in enumerate(data.get("Languages")):
             if idx != 0:
                 s = s + "\n\\divider\n"
-            lang_lvl = level.index(lang.get('proficiency'))
+            lang_lvl = 0
+            if lang.get('proficiency') in level:
+                lang_lvl = level.index(lang.get('proficiency'))
             s = s + "\n\\cvskill{{{}}}{{{}}}".format(
                 lang.get('language'), lang_lvl)

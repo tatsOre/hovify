@@ -59,12 +59,24 @@ def make_header(data={}):
     header = ""
     for field, val in first_Htags.items():
         if field in data.get("User") and data.get("User").get(field):
+            s = data.get("User").get(field)
+            s = r'{}'.format(s)
+            s = s.replace('\n\n', '\n')
+            s = escape_latex(s)
+            data.get("User")[field] = s
+            val = val.format_map(data.get("User"))
             header = header + val
 
     header = header + "\n\\personalinfo{{"
 
     for field, val in personalInfo_Htags.items():
         if field in data.get("User") and data.get("User").get(field):
+            s = data.get("User").get(field)
+            s = r'{}'.format(s)
+            s = s.replace('\n\n', '\n')
+            s = escape_latex(s)
+            data.get("User")[field] = s
+            val = val.format_map(data.get("User"))
             header = header + val
 
     header = header + "\n}}\n\\makecvheader"

@@ -14,38 +14,42 @@ This code was build with:
 import json
 from pylatex import Document, Section, Subsection, Command
 from pylatex.utils import italic, NoEscape, escape_latex
-from preamble import make_preamble
-from Sections.header import make_header
-from Sections.experience import make_experience
-from Sections.projects import make_projects
-from Sections.summary import make_summary
-from Sections.skills import make_skills
-from Sections.languages import make_languages
-from Sections.education import make_education
+from .preamble import make_preamble
+from .Sections.header import make_header
+from .Sections.experience import make_experience
+from .Sections.projects import make_projects
+from .Sections.summary import make_summary
+from .Sections.skills import make_skills
+from .Sections.languages import make_languages
+from .Sections.education import make_education
+import os
+
 
 def create_resume(color="Red", data={}, file_name="default"):
     """
     create_resume
-    
+
     This function builds up the resume as in Tex as in PDF format.
     As arguments it receives:
     - color: the customized color to be used in the resume fonts
     - data: a dictionary with a specific structure to be used as the content of the resume
     - file_name: The name of the output .tex and .pdf files.
-    
+
     """
 
     make_preamble(color)
 
-    latex_preamble_document = 'preamble.tex'
+    latex_preamble_document = 'renders/preamble.tex'
     with open(latex_preamble_document) as file:
         preamble_tex = file.read()
 
     ### This data should be obtained from outside this program ###
-    incoming_data = 'C:\\Users\\andre\\Desktop\\Holberton\\Final__Project\\Django_Practice\\jsons\\mafe.json'
+    if data == {}:
+        # return "No data"
+        incoming_data = 'test.json'
 
-    with open(incoming_data) as file:
-        data = json.load(file)
+        with open(incoming_data) as file:
+            data = json.load(file)
     #############################################################
 
     doc = Document(documentclass='altacv', document_options=[
@@ -57,7 +61,7 @@ def create_resume(color="Red", data={}, file_name="default"):
     # Building Header
     code = make_header(data)
     if code:
-        doc.append(NoEscape(code.format_map(data.get("User"))))
+        doc.append(NoEscape(code))
 
     # Building the Content
 
@@ -103,6 +107,11 @@ def create_resume(color="Red", data={}, file_name="default"):
 
     # Ending the double column
     doc.append(NoEscape("\n\\end{paracol}"))
+    f_name = file_name.replace(' ', '_')
+    file_path = "./renders/" + f_name
+    doc.generate_pdf(file_path, clean_tex=False,
+                     compiler='pdflatex', compiler_args=['-shell-escape', ])
 
-    doc.generate_pdf(file_name, clean_tex=False, compiler='XeLaTeX',
-                 compiler_args=['-shell-escape', ])
+    if os.path.isfile(file_path + ".pdf"):
+        cmd = 'convert -flatten ' + file_path + ".pdf" + '[0] thumbnails/' + f_name + '.png'
+        os.system(cmd)

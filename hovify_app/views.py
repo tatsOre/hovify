@@ -31,6 +31,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework_extensions.mixins import NestedViewSetMixin
 from django.contrib.auth import authenticate
+from .resume_render.render import create_resume
 
 
 class UserCreate(generics.CreateAPIView):
@@ -197,6 +198,7 @@ class LoggedCurriculum(APIView):
             for array in data_list:
                 for data in array:
                     data.save()
+            create_resume(color="Red", data=request.data, file_name=profile.FirstName)
             return Response(userserializer.data,
                             status=status.HTTP_201_CREATED)
         else:
