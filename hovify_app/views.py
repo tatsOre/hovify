@@ -116,7 +116,6 @@ class LoggedCurriculum(APIView):
         interest = Interest.objects.filter(userID=pk)
         desired_job_field = DesiredJobField.objects.filter(userID=pk)
         desired_job_location = DesiredJobLocation.objects.filter(userID=pk)
-        vacancy = Vacancy.objects.filter(users=pk)
         curriculum_dict = {
             "User": ProfileSerializer(profile).data,
             "Education": EducationSerializer(education, many=True).data,
@@ -129,7 +128,6 @@ class LoggedCurriculum(APIView):
             "Interest": InterestSerializer(interest, many=True).data,
             "Desired_Job_Fields": DesireJobFieldSerializer(desired_job_field, many=True).data,
             "Desired_Job_Location": DesireJobLocationSerializer(desired_job_location, many=True).data,
-            "Vacancy": VacancySerializer(vacancy, many=True).data,
         }
         return Response(curriculum_dict)
 
@@ -286,7 +284,6 @@ class CurriculumDetail(APIView):
         interest = Interest.objects.filter(userID=pk)
         desired_job_field = DesiredJobField.objects.filter(userID=pk)
         desired_job_location = DesiredJobLocation.objects.filter(userID=pk)
-        vacancy = Vacancy.objects.filter(users=pk)
         curriculum_dict = {
             "User": ProfileSerializer(profile).data,
             "Education": EducationSerializer(education, many=True).data,
@@ -299,7 +296,6 @@ class CurriculumDetail(APIView):
             "Interest": InterestSerializer(interest, many=True).data,
             "Desired_Job_Fields": DesireJobFieldSerializer(desired_job_field, many=True).data,
             "Desired_Job_Location": DesireJobLocationSerializer(desired_job_location, many=True).data,
-            "Vacancy": VacancySerializer(vacancy, many=True).data,
         }
         return Response(curriculum_dict)
 
@@ -415,3 +411,18 @@ class FrontendAppView(View):
                 """,
                 status=501,
             )
+
+class LoggedDashboard(APIView):
+    def get(self, request):
+        user = self.request.user
+        profile = Profile.objects.get(user=user)
+        profiledata = ProfileSerializer(profile)
+        pk = profiledata.data['id']
+        vacancy = Vacancy.objects.filter(users=pk)
+        curriculum = Curriculum.objects.get(userID=pk)
+        curriculum_dict = {
+            "User": ProfileSerializer(profile).data,
+            "Vacancy": VacancySerializer(vacancy, many=True).data,
+            "Curriculum": CurriculumSerializer(curriculum).data,
+        }
+        return Response(curriculum_dict)

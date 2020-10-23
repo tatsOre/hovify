@@ -3,16 +3,16 @@ from hovify import settings
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+from hovify.storage_backends import PrivateMediaStorage
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     FirstName = models.CharField(max_length=45)
     LastName = models.CharField(max_length=45)
-    Location = models.CharField(max_length=45, default='')
+    Location = models.CharField(max_length=45, default='', blank=True, null=True)
     City = models.CharField(max_length=45, null=True, blank=True, default='')
-    PhoneNumber = models.CharField(max_length=45, null=True, default='')
+    PhoneNumber = models.CharField(max_length=45, null=True, default='', blank=True)
     Birthday = models.DateField(auto_now=False, null=True, blank=True)
-    Summary = models.CharField(max_length=1000, default='')
+    Summary = models.CharField(max_length=1000, default='', blank=True, null=True)
     LinkedIn = models.CharField(max_length=200, null=True, blank=True)
     PortfolioURL = models.CharField(max_length=200, null=True, blank=True)
     GitHubURL = models.CharField(max_length=200, null=True, blank=True)
@@ -119,7 +119,8 @@ class DesiredJobLocation(models.Model):
 
 class Curriculum(models.Model):
     """Country or global, latin America? check this?"""
-    user = models.ForeignKey('Profile', on_delete=models.CASCADE)
-    pdf_path = models.CharField(max_length=100, null=True, blank=True)
-    preview_path = models.CharField(max_length=100, null=True, blank=True)
-    cover_letter = models.CharField(max_length=100, null=True, blank=True)
+    userID = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    pdf_path = models.FileField(storage=PrivateMediaStorage(), blank=True)
+    preview_path = models.FileField(storage=PrivateMediaStorage(), blank=True)
+    cover_letter = models.FileField(storage=PrivateMediaStorage(), blank=True)
+    csv_data = models.FileField(storage=PrivateMediaStorage(), blank=True)
