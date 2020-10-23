@@ -27,4 +27,44 @@ const getUser = async (token) => {
     return result;
 }
 
-export { getLogin, getUser };
+const postUser = async (data, token) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Authorization': token,
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response.json();
+  return result;
+}
+
+const createAccount = async (data) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/signup/', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response.json();
+  //console.log("->user data \n" + JSON.stringify(result));
+  return result;
+}
+
+const getProfile = async (data) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/linkedindata/', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response.json();
+  //console.log("->profile data \n");
+  console.log(result);
+  return result;
+}
+
+export { getLogin, getUser, postUser, createAccount, getProfile };

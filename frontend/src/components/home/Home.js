@@ -17,7 +17,7 @@ import './Home.css';
 import './logo_2.png';
 
 /* API */
-import { getLogin, getUser } from '../../api/ApiRequest.js';
+import { getLogin, getUser, postUser, createAccount, getProfile } from '../../api/ApiRequest.js';
 
 export default function Home() {
   /* --------------Api Test------------------- */
@@ -29,6 +29,46 @@ export default function Home() {
     "password": "123456"
   };
 
+  const dataUser = {
+    "User": {
+        "id": 5,
+        "user": {
+            "email": "juanllano93@gmail.com"
+        },
+        "FirstName": "Juan Nathaly",
+        "LastName": "Llano",
+        "Location": "Colombia",
+        "City": "Tulua",
+        "PhoneNumber": "123456789",
+        "Birthday": null,
+        "Summary": "My Summary",
+        "LinkedIn": null,
+        "PortfolioURL": null,
+        "GitHubURL": null,
+        "TwitterURL": null
+    },
+    "Education": [],
+    "Professional": [],
+    "Skills": [],
+    "Languages": [],
+    "Projects": [],
+    "About_User": [],
+    "Motivation": [],
+    "Interest": [],
+    "Desired_Job_Fields": [],
+    "Desired_Job_Location": [],
+    "Vacancy": []
+  }
+
+  const dataAccount = {
+    "email": "juanito1@gmail.com",
+    "password": "123456"
+  }
+
+  const dataUrl = {
+    "url": "https://www.linkedin.com/in/gogomillan/"
+  }
+
   React.useEffect(() => {
     getLogin(JSON.stringify(login))
     .then(response => {
@@ -39,15 +79,21 @@ export default function Home() {
       .then(response => {
             userData = response
             console.log(userData)
-          }
-        )
+            postUser(JSON.stringify(dataUser), userToken)
+          })
       /*-----------------------*/
     })
     .catch()
   }, []);
 
+  /*React.useEffect(() => {
+    createAccount(JSON.stringify(dataAccount))
+    .then(response => console.log(response))
+  }, []);*/
 
-
+  React.useEffect(() => {
+    getProfile(JSON.stringify(dataUrl))
+  }, []);
 
 
   /* ------------------------------------------------------ */
@@ -166,7 +212,7 @@ export default function Home() {
           <div className="logo"><img src="./logo_2.png" alt="Hovify Logo"/></div>
           <div className="signin-model__container">
             <p className="signin-text">Already a Hovifier?</p>
-            <button className="btn-signin" onClick={showLogin}>Sign in</button >              
+            <button className="btn-signin" onClick={showLogin}>Sign in</button >
             <Modal
               open={showLog}
               onClose={hiddenLogin}
@@ -193,7 +239,7 @@ export default function Home() {
                 That's how Hovify comes in handy, saving you time building your resume the best way possible
                 increasing your chances to call the attention of recruiters. </p>
               <p>
-                But wait! there's more. 
+                But wait! there's more.
                 Hovify can also help you match with job offers that fit with your professional profile and preferences.</p>
 
             <h3>We believe that you are awesome. Let us know about you and we will show you some Hovify magic: </h3>
@@ -214,8 +260,8 @@ export default function Home() {
           </section>
         </main>
         <section className="hovify-team">
-          :) 
-          Andrés Bayona.
+          :)
+          AndrÃ©s Bayona.
           David Orejuela.
           Juan Llano.
           Nathaly Sotomayor.
