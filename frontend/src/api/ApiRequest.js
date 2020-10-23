@@ -10,7 +10,7 @@ const getLogin = async (data) => {
         'Content-Type': 'application/json'
     }
   });
-  const result = await response.json();
+  const result = await response;
   //console.log("-->" + JSON.stringify(result))
   return result;
 };
@@ -63,7 +63,7 @@ const getProfile = async (data) => {
   });
   const result = await response.json();
   //console.log("->profile data \n");
-  console.log(result);
+  console.log(JSON.stringify(result));
   return result;
 }
 

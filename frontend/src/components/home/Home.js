@@ -24,12 +24,10 @@ export default function Home() {
   /* Login implementation */
   let userToken = "Token "
   let userData = ""
-  const login = {
-    "username": "juanllano93@gmail.com",
-    "password": "123456"
-  };
 
-  const dataUser = {
+  
+  
+  /*const dataUser = {
     "User": {
         "id": 5,
         "user": {
@@ -65,23 +63,21 @@ export default function Home() {
     "password": "123456"
   }
 
-  const dataUrl = {
-    "url": "https://www.linkedin.com/in/gogomillan/"
-  }
+  
 
   React.useEffect(() => {
     getLogin(JSON.stringify(login))
     .then(response => {
       userToken += String(response.token)
       console.log(userToken)
-      /*------ Fetch to curriculum with header  authorization ------*/
+      /*------ Fetch to curriculum with header  authorization ------/
       getUser(userToken)
       .then(response => {
             userData = response
             console.log(userData)
             postUser(JSON.stringify(dataUser), userToken)
           })
-      /*-----------------------*/
+      /*-----------------------*
     })
     .catch()
   }, []);
@@ -91,10 +87,7 @@ export default function Home() {
     .then(response => console.log(response))
   }, []);*/
 
-  React.useEffect(() => {
-    getProfile(JSON.stringify(dataUrl))
-  }, []);
-
+  
 
   /* ------------------------------------------------------ */
   const history = useHistory();
@@ -124,7 +117,25 @@ export default function Home() {
       criteriaMode: "all",
       mode: "onBlur"
   });
-  const onLogin = data => console.log(data);
+
+  const onLogin = data => {
+    console.log(data);
+
+    getLogin(JSON.stringify(data))
+    .then(response => {
+      const promiseData = response.json()
+      promiseData.then(data => {
+        const userToken = data.token
+        console.log("token")
+        console.log(userToken)
+      })
+      console.log(response.status)
+    })
+    .catch( error => {
+      console.log(error)
+    })
+
+  }
 
   const {
     register: register2,
@@ -139,7 +150,10 @@ export default function Home() {
   const onLinked = (data, event) => {
     event.preventDefault();
     console.log(data);
-    history.push('/hello');
+    //history.push('/hello');
+    getProfile(JSON.stringify(data))
+    
+    
   };
 
   /* Sign in Modal: */
@@ -152,7 +166,7 @@ export default function Home() {
         <div>
           <TextField
           className="username"
-          label="Username:" type="email" name="email"
+          label="Username:" type="email" name="username"
           InputProps={{
             startAdornment: (
               <InputAdornment className="sign-modal__icon" position="start">
@@ -160,12 +174,12 @@ export default function Home() {
               </InputAdornment>
             ),
           }}
-          error={ errors.email && true }
+          error={ errors.username && true && <p>{errors.username.message}</p>}
           inputRef={register({required: true, maxLength: 80})}
           />
           <TextField
           className="password"
-          label="Password:" type="password" name="password"
+          label="Password:" type="password" name="password" title="Password is required"
           InputProps={{
             startAdornment: (
               <InputAdornment className="sign-modal__icon" position="start">
@@ -173,7 +187,7 @@ export default function Home() {
               </InputAdornment>
             ),
           }}
-          error={ errors.password && true }
+          error={ errors.password && true && <p>{errors.password.message}</p> }
           inputRef={register({required: true, maxLength: 80})}
           />
         </div>
@@ -195,11 +209,11 @@ export default function Home() {
           <TextField
             className="textField"
             placeholder="Ex: https://www.linkedin.com/in/your-username/"
-            type="text" name="url_profile"
+            type="text" name="url"
             inputRef={register2({required: true, maxLength: 80})} />
         </div>
         <div className="divBtnContent">
-            <button className="btn-modal__linkedin" type="submit">Go</button>
+            <button className="btn-modal__linkedin" type="submit" >Go</button>
         </div>
       </form>
     </div>
