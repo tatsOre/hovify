@@ -31,6 +31,8 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework_extensions.mixins import NestedViewSetMixin
 from django.contrib.auth import authenticate
+from .resume_render.render import create_resume
+from django.core.files import File
 
 
 class UserCreate(generics.CreateAPIView):
@@ -197,6 +199,20 @@ class LoggedCurriculum(APIView):
             for array in data_list:
                 for data in array:
                     data.save()
+            paths = create_resume(
+                color="Red", data=request.data, file_name=profile.FirstName)
+            curriculum = Curriculum.objects.get(userID=user)
+            try:
+                curriculum.pdf_path = paths[0]
+                curriculum.preview_path = paths[1]
+                curriculum.userID = user
+                # new_curriculum = CurriculumSerializer(curriculum)
+                curriculum.save()
+                os.system("find ./renders/ -type f -not -name 'altacv.cls' -exec rm {} \;")
+                os.system("rm thumbnails/*.png")
+            except Exception as e:
+                return Response(e,
+                                status=status.HTTP_400_BAD_REQUEST)
             return Response(userserializer.data,
                             status=status.HTTP_201_CREATED)
         else:
@@ -299,6 +315,7 @@ class CurriculumDetail(APIView):
         }
         return Response(curriculum_dict)
 
+
 class CurriculumViewSet(APIView):
     authentication_classes = ()
     permission_classes = ()
@@ -347,7 +364,8 @@ class CurriculumViewSet(APIView):
         else:
             return Response(new_user.errors, status=status.HTTP_400_BAD_REQUEST)
         profile = Profile.objects.get(user=newuser_id.pk)
-        userserializer = ProfileSerializer(profile, data=request.data.get("User"))
+        userserializer = ProfileSerializer(
+            profile, data=request.data.get("User"))
         if userserializer.is_valid():
             userserializer.save()
             user_id = userserializer.data["id"]
@@ -355,10 +373,12 @@ class CurriculumViewSet(APIView):
                 for instance in tasks[i]:
                     for key in instance:
                         if isinstance(instance[key], str):
-                            instance[key] = instance[key].encode('ascii', 'ignore').decode()
+                            instance[key] = instance[key].encode(
+                                'ascii', 'ignore').decode()
                     instance["userID"] = user_id
                     if key_list[i] in instance:
-                        about = object_list[i].objects.get(pk=instance[key_list[i]])
+                        about = object_list[i].objects.get(
+                            pk=instance[key_list[i]])
                         if about:
                             data = serializers[i](about, data=instance)
                     else:
@@ -390,6 +410,7 @@ class VacancyViewSet(NestedViewSetMixin, viewsets.ModelViewSet):
     queryset = Vacancy.objects.all()
     serializer_class = VacancySerializer
 
+
 class FrontendAppView(View):
     """
     Serves the compiled frontend entry point (only works if you have run `yarn
@@ -411,6 +432,7 @@ class FrontendAppView(View):
                 """,
                 status=501,
             )
+
 
 class LoggedDashboard(APIView):
     def get(self, request):

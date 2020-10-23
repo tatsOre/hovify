@@ -33,7 +33,7 @@ def make_preamble(cust_color="Red"):
     Builds a customized preamble tex file, as for the fonts and styles.
     """
 
-    file_name = "preamble.tex"
+    file_name = "renders/preamble.tex"
 
     with open(file_name, "w") as file:
         # Change the page layout if you need to
@@ -112,6 +112,6 @@ def make_preamble(cust_color="Red"):
         # for \cvskill if you want to
         file.write(colors.get(cust_color))
         file.write(
-            "\\renewcommand{\\itemmarker}{{\\small\\textbullet}}" +
-            "\\renewcommand{\\ratingmarker}{\\faCircle}"
+            "\n\\renewcommand{\\itemmarker}{{\\small\\textbullet}}" +
+            "\n\\renewcommand{\\ratingmarker}{\\faCircle}"
         )

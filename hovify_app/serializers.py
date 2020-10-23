@@ -1,5 +1,5 @@
 from rest_framework import serializers
-
+import os
 from .models import User, Project, Professional, Education, Language, TechSkill, AboutUser, Vacancy
 from .models import Motivation, DesiredJobField, DesiredJobLocation, Interest, Curriculum, Profile
 from rest_framework.authtoken.models import Token

@@ -42,10 +42,6 @@ def make_header(data={}):
     if not data or data == {}:
         return ""
 
-    first_Htags = {
-        'FirstName': '\n\\name{{{FirstName} {LastName}}}',
-        'Role': '\n\\tagline{{{Role}}}'
-    }
     personalInfo_Htags = {
         'Email': '\n \\email{{{Email}}}',
         'PhoneNumber': '\n \\phone{{{PhoneNumber}}}',
@@ -56,17 +52,42 @@ def make_header(data={}):
         'GitHubURL': '\n \\github{{{GitHubURL}}}',
     }
 
-    header = ""
-    for field, val in first_Htags.items():
-        if field in data.get("User") and data.get("User").get(field):
-            header = header + val
+    header = "'\n\\name{"
+    if 'FirstName' in data.get("User"):
+        s = data.get("User").get('FirstName')
+        s = r'{}'.format(s)
+        s = s.replace('\n\n', '\n')
+        s = escape_latex(s)
+        header = header + "{} ".format(s)
+    if 'LastName' in data.get("User"):
+        s = data.get("User").get('LastName')
+        s = r'{}'.format(s)
+        s = s.replace('\n\n', '\n')
+        s = escape_latex(s)
+        header = header + "{} ".format(s)
+    header = header + "}"
 
-    header = header + "\n\\personalinfo{{"
+    header = header + "\n\\tagline{"
+    if 'Role' in data.get("User"):
+        s = data.get("User").get('Role')
+        s = r'{}'.format(s)
+        s = s.replace('\n\n', '\n')
+        s = escape_latex(s)
+        header = header + "{}".format(s)
+    header = header + "}"
+
+    header = header + "\n\n\\personalinfo{"
 
     for field, val in personalInfo_Htags.items():
         if field in data.get("User") and data.get("User").get(field):
+            s = data.get("User").get(field)
+            s = r'{}'.format(s)
+            s = s.replace('\n\n', '\n')
+            s = escape_latex(s)
+            data.get("User")[field] = s
+            val = val.format_map(data.get("User"))
             header = header + val
 
-    header = header + "\n}}\n\\makecvheader"
+    header = header + "\n}\n\n\\makecvheader"
 
     return header
