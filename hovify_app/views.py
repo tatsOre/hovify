@@ -208,6 +208,8 @@ class LoggedCurriculum(APIView):
                 curriculum.userID = user
                 # new_curriculum = CurriculumSerializer(curriculum)
                 curriculum.save()
+                os.system("find ./renders/ -type f -not -name 'altacv.cls' -exec rm {} \;")
+                os.system("rm thumbnails/*.png")
             except Exception as e:
                 return Response(e,
                                 status=status.HTTP_400_BAD_REQUEST)

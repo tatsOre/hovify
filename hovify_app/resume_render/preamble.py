@@ -112,6 +112,6 @@ def make_preamble(cust_color="Red"):
         # for \cvskill if you want to
         file.write(colors.get(cust_color))
         file.write(
-            "\\renewcommand{\\itemmarker}{{\\small\\textbullet}}" +
-            "\\renewcommand{\\ratingmarker}{\\faCircle}"
+            "\n\\renewcommand{\\itemmarker}{{\\small\\textbullet}}" +
+            "\n\\renewcommand{\\ratingmarker}{\\faCircle}"
         )

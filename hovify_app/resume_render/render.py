@@ -68,7 +68,7 @@ def create_resume(color="Red", data={}, file_name="default"):
     # Right Column
 
     # Setting the left/right column width ratio to 6:4.
-    doc.append(NoEscape("""\\columnratio{0.6}"""))
+    doc.append(NoEscape("""\n\\columnratio{0.6}"""))
     doc.append(NoEscape("""\\begin{paracol}{2}"""))
 
     # Building Experience section
@@ -116,5 +116,5 @@ def create_resume(color="Red", data={}, file_name="default"):
         cmd = 'convert -flatten ' + file_path + ".pdf" + '[0] -resize 200x260 thumbnails/' + f_name + '.png'
         os.system(cmd)
         return [file_path + ".pdf", 'thumbnails/' + f_name + '.png']
-        
+
     return None
