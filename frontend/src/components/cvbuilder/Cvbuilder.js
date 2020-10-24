@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
@@ -11,8 +11,8 @@ import Project from '../project/Project';
 import TextFieldSocial from '../textfieldsocialmedia/TextFieldSocial';
 import MultipleSelect from '../multiplechipselector/MultipleSelect';
 import CountrySelect from '../countryselector/CountrySelector';
-import PhoneNumberV1 from '../phonenumber/PhoneNumberV1';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
+import MuiPhoneNumber from 'material-ui-phone-number';
 
 //import apiuserdata from '../../api/mariav2.json';
 import { context } from '../../App.js';
@@ -22,7 +22,7 @@ import './cvbuilder.css';
 
 export default function Cvbuilder () {
   const apiuserdata = context.user;
-  const {register, handleSubmit, errors} = useForm({
+  const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'
   });
@@ -250,7 +250,18 @@ export default function Cvbuilder () {
             inputRef={register({ required: true, maxLength: 200 })}
            />
           <CountrySelect name='User.Location' register={register}/>
-          <PhoneNumberV1 register={register} />
+           <Controller
+              control={control}
+              name='User.PhoneNumber'
+              rules={{required: true}}
+              render={({
+                onChange, onBlur, value}) => (
+              <MuiPhoneNumber
+                className='phone' label='Enter your Phone Number:' value={value}
+                onChange={onChange} defaultCountry='us' onBlur={onBlur}>
+              </MuiPhoneNumber>
+            )}>
+          </Controller>
           <DayMonthYearPicker name='User.Birthday' register={register} />
         </fieldset>
         <button className="btn-submit" type="submit">Save</button >
