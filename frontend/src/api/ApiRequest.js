@@ -67,4 +67,26 @@ const getProfile = async (data) => {
   return result;
 }
 
-export { getLogin, getUser, postUser, createAccount, getProfile };
+const getVacancies = async (data) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/vacancies/', {
+    method: 'GET'
+  });
+  const result = await response;
+  //console.log("->profile data \n");
+  console.log(JSON.stringify(result));
+  return result;
+}
+
+/* 
+  React.useEffect(() => {
+    getVacancies()
+    .then(response => {
+      const dataVacancies = response.json()
+      dataVacancies.then(data => {
+        console.log(data)
+      })
+    })
+  }, []);
+*/
+
+export { getLogin, getUser, postUser, createAccount, getProfile, getVacancies };
