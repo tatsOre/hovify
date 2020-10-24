@@ -33,7 +33,7 @@
   margin: 15% auto;
   display: flex;
   flex-direction: column;
-  padding: .5em 2em;
+  padding: 1em 2em .5em;
   min-width: 20em;
   max-width: 25em;
   background-color: #fff;
@@ -52,7 +52,7 @@
 }
 .username, .password {
   width: 100%;
-  margin: 8px 0;
+  margin: 5px 0;
 }
 .sign-modal__icon {
   opacity: .15;
@@ -62,6 +62,7 @@
   width: 30px;
   margin-right: -20px;
   float: right;
+  cursor: pointer;
 }
 .divBtnContent p{
   font-family: 'Roboto', sans-serif;

@@ -22,6 +22,8 @@ export default function Education(props) {
         className='icon-button' fontSize="small"/>
       </IconButton>
       <fieldset className="fieldset-block">
+      <input type="hidden" id={degree.education_id} name={`Education[${degree_id}].education_id`}
+             defaultValue={degree.education_id} ref={register()} />
         <div className="fieldset-block__header">
           <div className="header-info">
             <TextField

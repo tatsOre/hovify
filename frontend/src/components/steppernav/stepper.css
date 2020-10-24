@@ -3,10 +3,13 @@
     text-decoration: none;
     cursor: pointer;
 }
+.stepper-link:hover {
+    text-decoration: underline;
+}
 .stepper-nav {
     padding-bottom: 0;
     padding-left: 0;
 }
 .MuiStepIcon-root.MuiStepIcon-completed {
-    color: #FE5F55;
+    color: #565674;
 }

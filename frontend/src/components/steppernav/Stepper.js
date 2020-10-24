@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -7,29 +8,23 @@ import './stepper.css'
 
 
 function getSteps() {
-  return [{label: 'Select your about, interests', link: '/about'}, 
-          {label: 'Motivation and Tech Fields', link: '/motivation'},
+  return [{label: 'About You', link: '/about'}, 
+          {label: 'Specifications for your Job Matching', link: '/motivation'},
           {label: 'Create or Edit your Hovify', link: '/builder'}];
 }
 
 export default function HorizontalStepper() {
-  const [activeStep, setActiveStep] = React.useState(1); /* Esto es lo de las pos */
+  const [activeStep] = React.useState(0); /* Esto es lo de las pos */
   const steps = getSteps();
+  const location = useLocation();
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const handleActive = () => {
+    if (location.pathname === '/about') { return 0; };
+    if (location.pathname === '/motivation') { return 1; };
+    if (location.pathname === '/builder') { return 2 };
   };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
   return (
-      <Stepper activeStep={activeStep} alternativeLabel className='stepper-nav'>
+      <Stepper activeStep={handleActive()} alternativeLabel className='stepper-nav'>
         {steps.map((item) => (
           <Step key={item.label}>
             <StepLabel className='stepper-circle'>

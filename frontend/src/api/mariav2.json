@@ -1,0 +1,269 @@
+{
+    "User": {
+        "id": 1,
+        "user": {
+            "email": "test@outlook.com"
+        },
+        "FirstName": "Maria Fernanda",
+        "LastName": "Crespo Martinez",
+        "Role": "Something",
+        "Location": "Colombia",
+        "City": null,
+        "PhoneNumber": null,
+        "Birthday": null,
+        "Summary": "I´m Industrial Engineering, an expert in the supply chain, customer service, e-commerce, and social media marketing. I dedicate myself to generate and manage change processes based on making results and profits. I support the content generation processes, brand positioning and planning. I focus myself in improvement company´s processes, according to the needs of the environment.\n\nI strongly believe in teamwork, being strategic, thinking outside the box, and following discipline until you get the result that adds value to the company. I am passionate about leading teams and working in a matrix environment, as part of a global organization where there are many media outlets. I have passion for results and connectivity.\n\nMy academic background is B.E. in Industrial Engineering from the Pontificia Universidad Javeriana, Logistics Management from the Universidad del Valle and Software Developer from Holberton School.",
+        "LinkedIn": null,
+        "PortfolioURL": null,
+        "GitHubURL": null,
+        "TwitterURL": null
+    },
+    "Education": [
+        {
+            "education_id": 2,
+            "school": "Holberton School",
+            "degree": "Full Stack Engineer",
+            "start_year": 2020,
+            "end_year": 2022,
+            "description": "Learning the Linux Kernel capabilities by reproducing C standard library functions and command-line tools. Fundamentals of network communication, parallel programming, and advanced data structures and algorithms.",
+            "userID": 1
+        },
+        {
+            "education_id": 3,
+            "school": "Universidad de San Buenaventura",
+            "degree": "Grado en Ingeniera",
+            "start_year": 2012,
+            "end_year": 2017,
+            "description": "Distinction of Academic Excellence - 2017",
+            "userID": 1
+        }
+    ],
+    "Professional": [
+        {
+            "professional_id": 1,
+            "company": "UNIVERSIDAD DE SAN BUENAVENTURA CALI",
+            "role": "Project optimization assistant",
+            "start_year": 2016,
+            "end_year": 2017,
+            "description": "Maintenance of solar system for home lights the energization.\nReprogramming and schematization of an intruder security system based on the ATMEGA2560.",
+            "userID": 1
+        },
+        {
+            "professional_id": 2,
+            "company": "Universidad de San Buenaventura Cali",
+            "role": "Electromagnetism physics monitor",
+            "start_year": 2014,
+            "end_year": 2014,
+            "description": "Class preparation and group management to resolve doubts regarding electromagnetic and mechanics phenomena.",
+            "userID": 1
+        },
+        {
+            "professional_id": 3,
+            "company": "Real Group Interactive",
+            "role": "Development Engineer",
+            "start_year": 2018,
+            "end_year": 2020,
+            "description": "Solving challenges to integrate LiDAR technology to georeference 3D scenaries.\nSelect and apply new technologies to increase performance analyzing LiDAR data.",
+            "userID": 1
+        },
+        {
+            "professional_id": 10,
+            "company": "Universidad del Valle (CO)",
+            "role": "Logistics - Project \"Competencias Ciudadanas\"",
+            "start_year": 2014,
+            "end_year": 2014,
+            "description": "Support in the planning, execution, coordination and logistics of the dialogue events of a formative and cultural nature developed in the project, as well as the events held in the project's visibility phase.",
+            "userID": 1
+        },
+        {
+            "professional_id": 11,
+            "company": "Holberton School",
+            "role": "Software Engineering Student",
+            "start_year": 2020,
+            "end_year": 2020,
+            "description": "Writer of topics on Software Development:\n Posted in Analytics Vidhya in Medium: C libraries, a brief summary!  Part 1 (Static libraries).\n C libraries, a brief summary!  Part 2 (Dinamyc libraries). \n Posted in The StartUp in Medium: The Magic Behind the Command ls -l.\n Am I a Robot or an object In Python? understanding objects in python.",
+            "userID": 1
+        },
+        {
+            "professional_id": 12,
+            "company": "Holberton School",
+            "role": "Software Engineering Student",
+            "start_year": 2020,
+            "end_year": 2020,
+            "description": "In this program, I have carried out projects based on low-level languages (C), high-level languages (Python), web development (Html, CSS, SQL Databases), and DevOps (Linux, Bash).\nThese are the featured projects:\n Static AirBnB website: Replica of the Airbnb website with pure HTML and CSS.\n AirBnB Console: Implementation of a storage system for Python objects stored in JSON files, performing the basic operations of a database (Create, Read, Update, Delete).\n SQL databases: Introduction to structured query language and some complex queries.\n Simple Shell: In this project, we will create a simple UNIX command interpreter in programming language C.\n C implementations have been carried out on the most common data structures: hash tables, linked list, double linked list, sorting algorithms, binary trees, among other projects.",
+            "userID": 1
+        }
+    ],
+    "Skills": [
+        {
+            "techskill_id": 1,
+            "name": "Git",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 2,
+            "name": "C",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 3,
+            "name": "JavaScript",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 4,
+            "name": "Microsoft Excel",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 5,
+            "name": "Linux",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 6,
+            "name": "Microsoft PowerPoint",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 7,
+            "name": "Bash",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 8,
+            "name": "HTML",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 9,
+            "name": "Python",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 10,
+            "name": "Microsoft Word",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 11,
+            "name": "Bases de datos",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 12,
+            "name": "Sistemas de planificacin de recursos empresariales",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 13,
+            "name": "Strategic Planning",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 14,
+            "name": "Supply Chain Management",
+            "level": "Pro",
+            "userID": 1
+        },
+        {
+            "techskill_id": 15,
+            "name": "Public Relations",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 16,
+            "name": "Social Media Marketing",
+            "level": "Mid",
+            "userID": 1
+        },
+        {
+            "techskill_id": 17,
+            "name": "Marketing Strategy",
+            "level": "Mid",
+            "userID": 1
+        }
+    ],
+    "Languages": [
+        {
+            "language_id": 1,
+            "language": "Spanish",
+            "proficiency": "Pro",
+            "userID": 1
+        },
+        {
+            "language_id": 2,
+            "language": "English",
+            "proficiency": "Pro",
+            "userID": 1
+        }
+    ],
+    "Projects": [
+        {
+            "project_id": 1,
+            "name": "Simple shell",
+            "description": "Simple replication of the command-line interpreter Shell. All files are written in C language.",
+            "link": "https://github.com/mfcrespo/simple_shell",
+            "userID": 1
+        },
+        {
+            "project_id": 2,
+            "name": "Airbnb Clone",
+            "description": "The goal of the project is to deploy on your server a simple copy of the website. This project must be composed at the end of its development by:\n\nA command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)\nA website (the front-end) that shows the final product to everybody: static and dynamic\nA database or files that store data (data = objects)\nAn API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)",
+            "link": "https://github.com/mfcrespo/AirBnB_clone",
+            "userID": 1
+        }
+    ],
+    "About_User": [
+        {
+            "aboutuser_id": 1,
+            "description": null,
+            "status": false,
+            "userID": 1
+        }
+    ],
+    "Motivation": [
+        {
+            "motivation_id": 1,
+            "name": null,
+            "status": false,
+            "userID": 1
+        }
+    ],
+    "Interest": [
+        {
+            "interest_id": 1,
+            "name": null,
+            "status": false,
+            "userID": 1
+        }
+    ],
+    "Desired_Job_Fields": [
+        {
+            "desirejobfield_id": 1,
+            "name": null,
+            "status": false,
+            "userID": 1
+        }
+    ],
+    "Desired_Job_Location": [
+        {
+            "desiredjobloc_id": 1,
+            "location": null,
+            "userID": 1
+        }
+    ]
+}

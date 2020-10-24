@@ -1,15 +1,20 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './Hello.css';
-import apiuserdata from '../../api/david.json';
-
-const userData = apiuserdata;
+import { context } from '../../App.js';
+//import apiuserdata from '../../api/david.json';
+ 
 
 export default function Hello() {
+  //const localContext = useContext(context);
+  const userData = context.user;
+  // console.log("hello context")
+  // console.log(context);
+  //const userData = localContext.user;
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
       criteriaMode: "all",
@@ -18,7 +23,7 @@ export default function Hello() {
   // Submit stored data from the user and move to the next view:
   const onLogin = (data, event) => {
     event.preventDefault();
-    console.log(data);
+    //console.log(data);
     history.push('/about');
   };
 

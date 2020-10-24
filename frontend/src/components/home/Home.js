@@ -6,17 +6,91 @@ import { useHistory } from 'react-router-dom';
 
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
+
 /* Login Modal: */
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import LockIcon from '@material-ui/icons/Lock';
 import CloseIcon from '@material-ui/icons/Close';
+import { context } from '../../App.js';
 
 import './Home.css';
 import './logo_2.png';
 
+/* API */
+import { getLogin, getUser, postUser, createAccount, getProfile } from '../../api/ApiRequest.js';
 
 export default function Home() {
+  /* --------------Api Test------------------- */
+  /* Login implementation */
+  let userToken = "Token "
+  let userData = ""
+
+  
+  
+  /*const dataUser = {
+    "User": {
+        "id": 5,
+        "user": {
+            "email": "juanllano93@gmail.com"
+        },
+        "FirstName": "Juan Nathaly",
+        "LastName": "Llano",
+        "Location": "Colombia",
+        "City": "Tulua",
+        "PhoneNumber": "123456789",
+        "Birthday": null,
+        "Summary": "My Summary",
+        "LinkedIn": null,
+        "PortfolioURL": null,
+        "GitHubURL": null,
+        "TwitterURL": null
+    },
+    "Education": [],
+    "Professional": [],
+    "Skills": [],
+    "Languages": [],
+    "Projects": [],
+    "About_User": [],
+    "Motivation": [],
+    "Interest": [],
+    "Desired_Job_Fields": [],
+    "Desired_Job_Location": [],
+    "Vacancy": []
+  }
+
+  const dataAccount = {
+    "email": "juanito1@gmail.com",
+    "password": "123456"
+  }
+
+  
+
+  React.useEffect(() => {
+    getLogin(JSON.stringify(login))
+    .then(response => {
+      userToken += String(response.token)
+      console.log(userToken)
+      /*------ Fetch to curriculum with header  authorization ------/
+      getUser(userToken)
+      .then(response => {
+            userData = response
+            console.log(userData)
+            postUser(JSON.stringify(dataUser), userToken)
+          })
+      /*-----------------------*
+    })
+    .catch()
+  }, []);
+
+  /*React.useEffect(() => {
+    createAccount(JSON.stringify(dataAccount))
+    .then(response => console.log(response))
+  }, []);*/
+
+  
+
+  /* ------------------------------------------------------ */
   const history = useHistory();
   /* ------------------------------------------------------ */
   /* Form Sign in Modal Hook */
@@ -44,7 +118,28 @@ export default function Home() {
       criteriaMode: "all",
       mode: "onBlur"
   });
-  const onLogin = data => console.log(data);
+
+  const onLogin = data => {
+    //console.log(data);
+
+    getLogin(JSON.stringify(data))
+    .then(response => {
+      const promiseData = response.json()
+      promiseData.then(data => {
+        const userToken = data.token
+        //console.log("token")
+        //console.log(userToken);
+        context.token = userToken;
+        //console.log("Context" + context.token);
+      })
+      console.log(response.status)
+    })
+    .catch( error => {
+      console.log(error)
+    })
+
+  }
+
 
   const {
     register: register2,
@@ -58,9 +153,29 @@ export default function Home() {
   // Submit something and move to the next view:
   const onLinked = (data, event) => {
     event.preventDefault();
-    console.log(data);
-    history.push('/hello');
+    //console.log(data);
+    getProfile(JSON.stringify(data))
+    .then(response => {
+      const promiseProfile = response.json();
+      promiseProfile.then(data => {
+        const userProfile = data;
+        //console.log("token")
+        //console.log(userProfile);
+        
+        context.user = userProfile;
+        hiddenLinkedin();
+        history.push('/hello');
+
+      //  console.log("Context" );
+    //    console.log( context.user);
+      })
+      console.log(response.status)
+    })
+    
+    
   };
+  // console.log("home");
+  // console.log(context.user);
 
   /* Sign in Modal: */
   const loginForm = (
@@ -72,7 +187,7 @@ export default function Home() {
         <div>
           <TextField
           className="username"
-          label="Username:" type="email" name="email"
+          label="Username:" type="email" name="username"
           InputProps={{
             startAdornment: (
               <InputAdornment className="sign-modal__icon" position="start">
@@ -80,12 +195,12 @@ export default function Home() {
               </InputAdornment>
             ),
           }}
-          error={ errors.email && true }
+          error={ errors.username && true && <p>{errors.username.message}</p>}
           inputRef={register({required: true, maxLength: 80})}
           />
           <TextField
           className="password"
-          label="Password:" type="password" name="password"
+          label="Password:" type="password" name="password" title="Password is required"
           InputProps={{
             startAdornment: (
               <InputAdornment className="sign-modal__icon" position="start">
@@ -93,7 +208,7 @@ export default function Home() {
               </InputAdornment>
             ),
           }}
-          error={ errors.password && true }
+          error={ errors.password && true && <p>{errors.password.message}</p> }
           inputRef={register({required: true, maxLength: 80})}
           />
         </div>
@@ -115,11 +230,11 @@ export default function Home() {
           <TextField
             className="textField"
             placeholder="Ex: https://www.linkedin.com/in/your-username/"
-            type="text" name="url_profile"
+            type="text" name="url"
             inputRef={register2({required: true, maxLength: 80})} />
         </div>
         <div className="divBtnContent">
-            <button className="btn-modal__linkedin" type="submit">Go</button>
+            <button className="btn-modal__linkedin" type="submit" >Go</button>
         </div>
       </form>
     </div>
@@ -132,7 +247,7 @@ export default function Home() {
           <div className="logo"><img src="./logo_2.png" alt="Hovify Logo"/></div>
           <div className="signin-model__container">
             <p className="signin-text">Already a Hovifier?</p>
-            <button className="btn-signin" onClick={showLogin}>Sign in</button >              
+            <button className="btn-signin" onClick={showLogin}>Sign in</button >
             <Modal
               open={showLog}
               onClose={hiddenLogin}
@@ -159,7 +274,7 @@ export default function Home() {
                 That's how Hovify comes in handy, saving you time building your resume the best way possible
                 increasing your chances to call the attention of recruiters. </p>
               <p>
-                But wait! there's more. 
+                But wait! there's more.
                 Hovify can also help you match with job offers that fit with your professional profile and preferences.</p>
 
             <h3>We believe that you are awesome. Let us know about you and we will show you some Hovify magic: </h3>
@@ -180,8 +295,8 @@ export default function Home() {
           </section>
         </main>
         <section className="hovify-team">
-          :) 
-          Andrés Bayona.
+          :)
+          AndrÃ©s Bayona.
           David Orejuela.
           Juan Llano.
           Nathaly Sotomayor.

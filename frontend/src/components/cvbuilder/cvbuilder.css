@@ -5,6 +5,7 @@
     margin: 0 auto;
 }
 .main-container {
+    margin-bottom: 20px;
     max-width: 75%;
     grid-template-areas:
     "stepper branding"
@@ -149,4 +150,8 @@ h1, h2, h3, legend, p {
     padding: 3px;
     right: 50px;
     top: 10px;
+}
+/* Phone Input Styles */
+.phone {
+    width: 100%;
 }
