@@ -14,7 +14,7 @@ import CountrySelect from '../countryselector/CountrySelector';
 import PhoneNumberV1 from '../phonenumber/PhoneNumberV1';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 
-import apiuserdata from '../../api/david.json';
+import apiuserdata from '../../api/mariav2.json';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
 import './cvbuilder.css';
@@ -142,12 +142,12 @@ export default function Cvbuilder () {
       
       <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
       <section className='primary_info'>
-      <TextField
+        <input type="hidden" id={userData.User.id} name='User.id'
+             defaultValue={userData.User.id} ref={register()} />
+          <TextField
             className='input middle_width'
             error={ errors && errors.User && errors.User.FirstName && Boolean(errors.User.FirstName) }
-            //error={errors.FirstName && true}
-            defaultValue={userData.User.FirstName}
-            type='text'
+            defaultValue={userData.User.FirstName} type='text'
             label='Name(s):' name='User.FirstName'
             inputRef={register({ required: true, maxLength: 80 })}
           />

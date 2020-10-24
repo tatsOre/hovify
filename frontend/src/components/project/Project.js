@@ -17,6 +17,8 @@ export default function Project(props) {
         className='icon-button' fontSize="small"/>
       </IconButton>
       <fieldset className="fieldset-block">
+        <input type="hidden" id={project.project_id} name={`Projects[${project_id}].project_id`}
+               defaultValue={project.project_id} ref={register()} />
         <div>
           <div>
             <TextField

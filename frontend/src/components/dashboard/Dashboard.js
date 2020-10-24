@@ -39,7 +39,7 @@ export default function Dashboard() {
             <footer className="foonavbar">
                 <Link className="foonavbar-link" to="/">Home</Link>
                 <Link className="foonavbar-link" to="/">About Us</Link>
-                <span>Hovify - All rights reserved 2020.</span>
+                <span>HoviFy - All rights reserved 2020.</span>
             </footer>
         </main>
     );

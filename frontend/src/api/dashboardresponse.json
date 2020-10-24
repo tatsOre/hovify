@@ -1,0 +1,61 @@
+{
+    "User": {
+        "id": 1,
+        "user": {
+            "email": "test@outlook.com"
+        },
+        "FirstName": "Maria Fernanda",
+        "LastName": "Crespo Martinez",
+        "Location": "Colombia",
+        "City": null,
+        "PhoneNumber": null,
+        "Birthday": null,
+        "Summary": "I´m Industrial Engineering, an expert in the supply chain, customer service, e-commerce, and social media marketing. I dedicate myself to generate and manage change processes based on making results and profits. I support the content generation processes, brand positioning and planning. I focus myself in improvement company´s processes, according to the needs of the environment.\n\nI strongly believe in teamwork, being strategic, thinking outside the box, and following discipline until you get the result that adds value to the company. I am passionate about leading teams and working in a matrix environment, as part of a global organization where there are many media outlets. I have passion for results and connectivity.\n\nMy academic background is B.E. in Industrial Engineering from the Pontificia Universidad Javeriana, Logistics Management from the Universidad del Valle and Software Developer from Holberton School.",
+        "LinkedIn": null,
+        "PortfolioURL": null,
+        "GitHubURL": null,
+        "TwitterURL": null
+    },
+    "Vacancy": [
+        {
+            "vacancy_id": 1,
+            "job_title": "Senior Fullstack Developer / .NET",
+            "schedule_type": "full_time",
+            "company": "Intetics",
+            "category": "Software Development",
+            "location_required": "Anywhere",
+            "requirements": "Experience working with AutoCAD, Revit API | At least 5+ years of experience with C# and NET  | Being skilled at web development in general and having a great experience with one of the modern front-end frameworks, eg Blazor (preferably), React, Angular or Vuejs | Being a full-stack developer  | Real working experience with",
+            "salary": "",
+            "description": "Intetics Inc, a leading global technology company providing custom software application development, distributed professional teams, software product quality assessment, and “all-things-digital” solutions, is looking for a Senior Fullstack Developer / NET to enrich its team to spread company’s ideas, vision, content, and messagesThe customer has a number of existing products for commercial kitchen and restaurant designers and manufacturers and would like to rebuild some of them from scratch to enter new markets Rebuild is going to happen with the latest technology stack: NET Core, ASPNET, Blazor, architecture, and database re-design is also part of the technical scopeExisting products are in production and consider active developmentProject Platform - NET Core, ASPNET, Blazor, Azure, SQL Server, SQLiteCustomer location - Venice, Italy",
+            "published_at": "2020-10-03",
+            "vacancy_url": "https://remotive.io/remote-jobs/software-dev/senior-fullstack-developer-net-245583",
+            "users": [
+                1
+            ]
+        },
+        {
+            "vacancy_id": 2,
+            "job_title": "Senior Frontend Developer (+WebRTC)",
+            "schedule_type": "full_time",
+            "company": "Intetics",
+            "category": "Software Development",
+            "location_required": "Anywhere",
+            "requirements": "Experience working with  WebRTC like Jitsi | At least 5+ years of experience with JavaScript and its frameworks  | Having experience in backend | Strong SQL Server knowledge | Understanding of SDLC and Agile methodologies",
+            "salary": "",
+            "description": "Intetics Inc, a leading global technology company providing custom software application development, distributed professional teams, software product quality assessment, and “all-things-digital” solutions, is looking for a Senior Frontend Developer to enrich its team to spread company’s ideas, vision, content, and messagesThe customer has a number of existing products for commercial kitchen and restaurant designers and manufacturers and would like to rebuild some of them from scratch to enter new markets Rebuild is going to happen with the latest technology stack: NET Core, ASPNET, Blazor, architecture, and database re-design is also part of the technical scopeExisting products are in production and consider active developmentProject Platform - NET Core, ASPNET, Blazor, Azure, SQL Server, SQLiteCustomer location - Venice, Italy",
+            "published_at": "2020-10-03",
+            "vacancy_url": "https://remotive.io/remote-jobs/software-dev/senior-frontend-developer-webrtc-261022",
+            "users": [
+                1
+            ]
+        }
+    ],
+    "Curriculum": {
+        "id": 3,
+        "pdf_path": "https://hovify.s3.amazonaws.com/resumes/private/Sitio_Web_de_Alquiler_de_DVD_y_Blu_2_WPS6yi3.pdf?AWSAccessKeyId=AKIAQZHAS5Y337DG3MOG&Signature=Q9R7ASV%2B%2FDbtd%2BmmLpcOAZ8L1Co%3D&Expires=1603438469",
+        "preview_path": null,
+        "cover_letter": null,
+        "csv_data": null,
+        "userID": 1
+    }
+}

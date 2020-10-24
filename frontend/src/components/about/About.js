@@ -32,23 +32,23 @@ export default function About() {
             <div className="question-wrapper">
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`About_User[1].description`} value="1" id="about-option-1" ref={register}/>
-                <label className="checkbox-label" for="about-option-1">When someone tells you they are sad, do you feel sad too?</label>
+                <label className="checkbox-label" htmlFor="about-option-1">When someone tells you they are sad, do you feel sad too?</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`About_User[2].description`} value="2" id="about-option-2" ref={register} />
-                <label className="checkbox-label" for="about-option-2">Even when you're giving negative feedback, you try to be nice about it.</label>
+                <label className="checkbox-label" htmlFor="about-option-2">Even when you're giving negative feedback, you try to be nice about it.</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`About_User[3].description`} value="3" id="about-option-3" ref={register} />
-                <label className="checkbox-label" for="about-option-3">When you're in a crowded place, you usually get overwhelmed.</label>
+                <label className="checkbox-label" htmlFor="about-option-3">When you're in a crowded place, you usually get overwhelmed.</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`About_User[4].description`} value="4" id="about-option-4" ref={register} />
-                <label className="checkbox-label" for="about-option-4">When you're in the same room with other people, you can easily focus and not be distracted by the group.</label>
+                <label className="checkbox-label" htmlFor="about-option-4">When you're in the same room with other people, you can easily focus and not be distracted by the group.</label>
               </div>
               <div className="checkbox-wrapper">   
                 <input type="checkbox" className="checkbox" name={`About_User[5].description`} value="5" id="about-option-5" ref={register} />
-                <label className="checkbox-label" for="about-option-5">When you're talking with friends, you don't mind having a point of view that nobody else shares. In fact, you like it.</label>
+                <label className="checkbox-label" htmlFor="about-option-5">When you're talking with friends, you don't mind having a point of view that nobody else shares. In fact, you like it.</label>
               </div>
             </div>
           </section>
@@ -59,35 +59,35 @@ export default function About() {
             <div className="question-wrapper">
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[1].name`} value="1" id="interest-option-1" ref={register}/>
-                <label className="checkbox-label" for="interest-option-1">Travel</label>
+                <label className="checkbox-label" htmlFor="interest-option-1">Travel</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[2].name`} value="2"  id="iinterest-option-2" ref={register} />
-                <label className="checkbox-label" for="interest-option-2">Music</label>
+                <label className="checkbox-label" htmlFor="interest-option-2">Music</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[3].name`} value="3" id="interest-option-3" ref={register} />
-                <label className="checkbox-label" for="interest-option-3">Reading</label>
+                <label className="checkbox-label" htmlFor="interest-option-3">Reading</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[4].name`} value="4"  id="interest-option-4" ref={register} />
-                <label className="checkbox-label" for="interest-option-4">Writing</label>
+                <label className="checkbox-label" htmlFor="interest-option-4">Writing</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[5].name`} value="5" id="interest-option-5" ref={register}/>
-                <label className="checkbox-label" for="interest-option-5">Sports</label>
+                <label className="checkbox-label" htmlFor="interest-option-5">Sports</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[6].name`} value="6" id="interest-option-6" ref={register}/>
-                <label className="checkbox-label" for="interest-option-6">Videogames</label>
+                <label className="checkbox-label" htmlFor="interest-option-6">Videogames</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[7].name`} value="7" id="interest-option-7" ref={register} />
-                <label className="checkbox-label" for="interest-option-7">Languages</label>
+                <label className="checkbox-label" htmlFor="interest-option-7">Languages</label>
               </div>
               <div className="checkbox-wrapper">
                 <input type="checkbox" className="checkbox" name={`Interest[8].name`} value="8" id="interest-option-8" ref={register} />
-                <label className="checkbox-label" for="interest-option-8">Movies & TV Shows</label>
+                <label className="checkbox-label" htmlFor="interest-option-8">Movies & TV Shows</label>
               </div>
             </div>
           </aside>

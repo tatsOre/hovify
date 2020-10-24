@@ -33,19 +33,19 @@ export default function Motivation() {
             <p className="question-label">These should be the specifications for your job matching:</p>
             <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[1].name`} value="1" id="motivations-option-1" ref={register} />
-              <label className="checkbox-label" for="motivations-option-1">I’m currently looking for local job </label>
+              <label className="checkbox-label" htmlFor="motivations-option-1">I’m currently looking for local job </label>
             </div>
             <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[2].name`} value="2" id="motivations-option-2" ref={register} />
-              <label className="checkbox-label" for="qmotivations-option-2">I’m looking for remote jobs </label>
+              <label className="checkbox-label" htmlFor="qmotivations-option-2">I’m looking for remote jobs </label>
             </div>
             <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[3].name`} value="3" id="motivations-option-3" ref={register} />
-              <label className="checkbox-label" for="motivations-option-3">I’m looking for half-time jobs </label>
+              <label className="checkbox-label" htmlFor="motivations-option-3">I’m looking for half-time jobs </label>
             </div>
             <div className="wrapper-motivation">
               <input type="checkbox" className="checkbox" name={`Motivation[4].name`} value="4" id="motivations-option-4" ref={register} />
-              <label className="checkbox-label" for="motivations-option-4">I just want to check my profile with the market </label>
+              <label className="checkbox-label" htmlFor="motivations-option-4">I just want to check my profile with the market </label>
             </div>
           </div>
         </section>
@@ -57,23 +57,23 @@ export default function Motivation() {
             <p className="question-label">Select the fields that apply:</p>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[1].name`} value="devops" id="jobField-option-1" ref={register} />
-              <label className="checkbox-label" for="jobField-option-1">DevOps</label>
+              <label className="checkbox-label" htmlFor="jobField-option-1">DevOps</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[2].name`} value="frontend" id="jobField-option-2" ref={register} />
-              <label className="checkbox-label" for="jobField-option-2">FrontEnd</label>
+              <label className="checkbox-label" htmlFor="jobField-option-2">FrontEnd</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[3].name`} value="backend" id="jobField-option-3" ref={register} />
-              <label className="checkbox-label" for="jobField-option-3">Backend</label>
+              <label className="checkbox-label" htmlFor="jobField-option-3">Backend</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[4].name`} value="security" id="jobField-option-4" ref={register} />
-              <label className="checkbox-label" for="jobField-option-4">system Security</label>
+              <label className="checkbox-label" htmlFor="jobField-option-4">system Security</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[5].name`} value="webdesigner" id="jobField-option-5" ref={register} />
-              <label className="checkbox-label" for="jobField-option-5">Web Designer</label>
+              <label className="checkbox-label" htmlFor="jobField-option-5">Web Designer</label>
             </div>
           </div>
           <div>
