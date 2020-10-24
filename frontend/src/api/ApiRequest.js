@@ -22,7 +22,7 @@ const getUser = async (token) => {
                 'Content-Type' : 'application/json',
             }
     });
-    const result = await response.json();
+    const result = await response;
     //console.log("->user data \n" + JSON.stringify(result));
     return result;
 }
@@ -48,7 +48,7 @@ const createAccount = async (data) => {
       'Content-Type' : 'application/json',
     }
   });
-  const result = await response.json();
+  const result = await response;
   //console.log("->user data \n" + JSON.stringify(result));
   return result;
 }
