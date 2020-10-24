@@ -120,7 +120,7 @@ export default function Home() {
   });
 
   const onLogin = data => {
-    console.log(data);
+    //console.log(data);
 
     getLogin(JSON.stringify(data))
     .then(response => {
@@ -153,7 +153,7 @@ export default function Home() {
   // Submit something and move to the next view:
   const onLinked = (data, event) => {
     event.preventDefault();
-    console.log(data);
+    //console.log(data);
     getProfile(JSON.stringify(data))
     .then(response => {
       const promiseProfile = response.json();
@@ -174,8 +174,8 @@ export default function Home() {
     
     
   };
-  console.log("home");
-  console.log(context.user);
+  // console.log("home");
+  // console.log(context.user);
 
   /* Sign in Modal: */
   const loginForm = (

@@ -12,8 +12,8 @@ import { context } from '../../App.js';
 export default function Hello() {
   //const localContext = useContext(context);
   const userData = context.user;
-  console.log("hello context")
-  console.log(context);
+  // console.log("hello context")
+  // console.log(context);
   //const userData = localContext.user;
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
@@ -23,7 +23,7 @@ export default function Hello() {
   // Submit stored data from the user and move to the next view:
   const onLogin = (data, event) => {
     event.preventDefault();
-    console.log(data);
+    //console.log(data);
     history.push('/about');
   };
 
