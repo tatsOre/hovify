@@ -61,7 +61,7 @@ const getProfile = async (data) => {
       'Content-Type' : 'application/json',
     }
   });
-  const result = await response.json();
+  const result = await response;
   //console.log("->profile data \n");
   console.log(JSON.stringify(result));
   return result;

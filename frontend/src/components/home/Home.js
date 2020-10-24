@@ -12,6 +12,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import LockIcon from '@material-ui/icons/Lock';
 import CloseIcon from '@material-ui/icons/Close';
+import { context } from '../../App.js';
 
 import './Home.css';
 import './logo_2.png';
@@ -126,8 +127,10 @@ export default function Home() {
       const promiseData = response.json()
       promiseData.then(data => {
         const userToken = data.token
-        console.log("token")
-        console.log(userToken)
+        //console.log("token")
+        //console.log(userToken);
+        context.token = userToken;
+        //console.log("Context" + context.token);
       })
       console.log(response.status)
     })
@@ -136,6 +139,7 @@ export default function Home() {
     })
 
   }
+
 
   const {
     register: register2,
@@ -150,11 +154,28 @@ export default function Home() {
   const onLinked = (data, event) => {
     event.preventDefault();
     console.log(data);
-    //history.push('/hello');
     getProfile(JSON.stringify(data))
+    .then(response => {
+      const promiseProfile = response.json();
+      promiseProfile.then(data => {
+        const userProfile = data;
+        //console.log("token")
+        //console.log(userProfile);
+        
+        context.user = userProfile;
+        hiddenLinkedin();
+        history.push('/hello');
+
+      //  console.log("Context" );
+    //    console.log( context.user);
+      })
+      console.log(response.status)
+    })
     
     
   };
+  console.log("home");
+  console.log(context.user);
 
   /* Sign in Modal: */
   const loginForm = (
