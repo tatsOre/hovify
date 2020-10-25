@@ -91,8 +91,8 @@ export default function About() {
               </div>
             </div>
           </aside>
-          <nav className="nav-about">
-            <Button component={Link} to="/hello" className="btn-link">Prev</Button>
+          <nav className="nav-about navigation-spa">
+            <Button component={Link} to="/hello" className="btn-link">Back</Button>
             <Button type="submit" className="btn-link">Next</Button>
           </nav>
         </form>

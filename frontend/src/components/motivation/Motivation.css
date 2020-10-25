@@ -8,6 +8,7 @@
 }
 .motivations {
     max-width: 75%;
+    min-height: 100vh;
     grid-template-areas:
     "stepper branding"
     "text ."
@@ -49,10 +50,4 @@
 }
 .wrapper-jobfield {
     margin: 10px 0;
-}
-.nav-motivation {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 100px;
 }

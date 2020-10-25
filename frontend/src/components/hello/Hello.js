@@ -6,7 +6,6 @@ import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './Hello.css';
 import { context } from '../../App.js';
-//import apiuserdata from '../../api/david.json';
  
 
 export default function Hello() {
@@ -28,7 +27,7 @@ export default function Hello() {
   };
 
   return (
-    <div  className="hello">
+    <div className="hello">
       <aside className='branding'>HoviFy</aside>
       <form className="form-hello" onSubmit={handleSubmit(onLogin)}>
         <h1 className="hello-title"><span>Hello,</span> Hovifier</h1>
@@ -51,8 +50,8 @@ export default function Hello() {
             error={ errors && errors.User && errors.User.LastName && Boolean(errors.User.LastName) }
             inputRef={register({required: true, maxLength: 80})} />
         </div>
-        <div className="nav-hello">
-          <Button component={Link} to="/" className="btn-link">Prev</Button>
+        <div className="nav-hello navigation-spa">
+          <Button component={Link} to="/" className="btn-link">Back</Button>
           <Button type="submit" className="btn-link">Next</Button>
         </div>
       </form>

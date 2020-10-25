@@ -39,9 +39,8 @@ code {
 /* Button SPA Styles *provisional* */
 .btn-link {
   display: block;
-  color: coral;
-  background-color: white;
-  border: 1px solid rgba(63, 81, 181, 0.5);
+  color:#262AD1;
+  border: 1px solid #262AD1;
   border-radius: 3px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 500;
@@ -49,10 +48,17 @@ code {
   line-height: 1.75;
   letter-spacing: 0.02857em;
   text-transform: uppercase;
-  margin: 0 10px;
+  margin: 0 25px;
   padding: 5px;
-  width: 20%;
+  width: 180px;
+  height: 40px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+}
+.navigation-spa {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

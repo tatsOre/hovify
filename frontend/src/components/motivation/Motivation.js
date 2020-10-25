@@ -61,15 +61,15 @@ export default function Motivation() {
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[2].name`} value="frontend" id="jobField-option-2" ref={register} />
-              <label className="checkbox-label" htmlFor="jobField-option-2">FrontEnd</label>
+              <label className="checkbox-label" htmlFor="jobField-option-2">FrontEnd Development</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[3].name`} value="backend" id="jobField-option-3" ref={register} />
-              <label className="checkbox-label" htmlFor="jobField-option-3">Backend</label>
+              <label className="checkbox-label" htmlFor="jobField-option-3">BackEnd Development</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[4].name`} value="security" id="jobField-option-4" ref={register} />
-              <label className="checkbox-label" htmlFor="jobField-option-4">system Security</label>
+              <label className="checkbox-label" htmlFor="jobField-option-4">System Security</label>
             </div>
             <div className="wrapper-jobfield">
               <input type="checkbox" className="checkbox" name={`Desired_Job_Fields[5].name`} value="webdesigner" id="jobField-option-5" ref={register} />
@@ -82,8 +82,8 @@ export default function Motivation() {
             <LocationSelector name='Desired_Job_Location.location' register={register}/>
           </div>
         </aside>
-        <div className="nav-motivation">
-          <Button component={Link} to="/about" className="btn-link">Prev</Button>
+        <div className="nav-motivation navigation-spa">
+          <Button component={Link} to="/about" className="btn-link">Back</Button>
           <Button type="submit" className="btn-link">Next</Button>
         </div>
       </form>

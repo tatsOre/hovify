@@ -2,9 +2,12 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import { Link, useHistory } from 'react-router-dom';
-import './SetAccount.css';
+import { Button } from '@material-ui/core';
 import { context } from '../../App.js';
 import { createAccount, getLogin, getUser } from '../../api/ApiRequest.js';
+import './SetAccount.css';
+
+//import apiuserdata from '../../api/david.json';
 
 export default function SetAccount() {
   /* ------------------------------------------------------ */
@@ -88,10 +91,9 @@ export default function SetAccount() {
           name="checkpass"
           inputRef={register({required: true, maxLength: 80})} />
       </div>
-      <nav className="nav-account">
-        <Link to="/motivation" className="btn-link" >Prev</Link>
-        <button className="btn-link" type="submit">Next</button >
-        {/*<Link to="/builder" className="btn-link" type="submit">Next</Link>*/}
+      <nav className="nav-account navigation-spa">
+        <Button component={Link} to="/motivation" className="btn-link">Back</Button>
+        <Button type="submit" className="btn-link">Next</Button>
       </nav>
     </form>
   </section>
