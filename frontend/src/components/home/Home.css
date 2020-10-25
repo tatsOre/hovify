@@ -126,3 +126,27 @@
 .foonavbar-link {
   text-decoration: none;
 }
+
+.contentHome p {
+  max-width: 50%;
+  font-size: 25px;
+}
+
+/* Hovify team */
+.hovify-team {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color:lightgrey;
+}
+.hovify-member__photo {
+  background-color: whitesmoke;
+  height: 150px;
+  width: 150px;
+  margin: 25px;
+  border-radius: 50%;
+}
+.hovify-member__name,
+.hovify-member__label {
+  text-align: center;
+}

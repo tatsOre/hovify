@@ -14,14 +14,14 @@ import CountrySelect from '../countryselector/CountrySelector';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 import MuiPhoneNumber from 'material-ui-phone-number';
 
-import apiuserdata from '../../api/mariav2.json';
+//import apiuserdata from '../../api/mariav2.json';
 import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
 import './cvbuilder.css';
 
 export default function Cvbuilder () {
-  //const apiuserdata = context.user;
+  const apiuserdata = context.user;
   const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'

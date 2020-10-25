@@ -29,7 +29,7 @@ export default function SetAccount() {
       "password": data.password,
     }
     console.log(newAccount);
-    //history.push('/builder');
+    history.push('/builder');
     createAccount(JSON.stringify(newAccount))
       .then(response => {
         const promiseData = response.json()
