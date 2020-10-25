@@ -16,15 +16,15 @@ const getLogin = async (data) => {
 };
 
 const getUser = async (token) => {
-    const response = await fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
-            headers: {
-                'Authorization': token,
-                'Content-Type' : 'application/json',
-            }
-    });
-    const result = await response;
-    //console.log("->user data \n" + JSON.stringify(result));
-    return result;
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
+    headers: {
+      'Authorization': token,
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  //console.log("->user data \n" + JSON.stringify(result));
+  return result;
 }
 
 const postUser = async (data, token) => {
@@ -77,7 +77,7 @@ const getVacancies = async (data) => {
   return result;
 }
 
-/* 
+/* Pending to move this into Home.js
   React.useEffect(() => {
     getVacancies()
     .then(response => {
@@ -89,4 +89,38 @@ const getVacancies = async (data) => {
   }, []);
 */
 
-export { getLogin, getUser, postUser, createAccount, getProfile, getVacancies };
+const getDashboard = async (token) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/dashboard/', {
+    method: 'GET',
+    headers: {
+      'Authorization': token,
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  //console.log("->dashboard data \n");
+  console.log(JSON.stringify(result));
+  return result;
+}
+
+/*------ Implementing dashboar API ------*/
+  /*React.useEffect(() => {
+    getLogin(JSON.stringify(login))
+    .then(response => {
+      const objToken = response.json()
+      objToken.then(data => {
+		const uToken = "Token " + data.token
+		console.log("Token" + uToken)
+        getDashboard(uToken)
+        .then(response => {
+          const userDashboard = response.json()
+          userDashboard.then(data => {
+            console.log(data);
+          })
+        })
+	  })
+    })
+    .catch()
+  }, []);*/
+
+export { getLogin, getUser, postUser, createAccount, getProfile, getVacancies, getDashboard };
