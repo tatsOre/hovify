@@ -15,6 +15,7 @@ export default function About() {
   // Submit stored data from the user and move to the next view:
   const onLogin = (data, event) => {
     event.preventDefault();
+    //data.About_User
     console.log(data);
     history.push('/motivation');
   };

@@ -21,13 +21,18 @@ import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechip
 import './cvbuilder.css';
 
 export default function Cvbuilder () {
+  // const x = useContext(context); ?
+  // apiuserdata = x.user; ?
   const apiuserdata = context.user;
   //console.log(context.user);
   const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => {
+    const parsedData = {...data, 'Skills': JSON.parse(data.Skills), 'Languages': JSON.parse(data.Languages)};
+    console.log(parsedData);
+  }
 
 /* CV Builder without LinkedIn Data: */
   const newExperience = {
@@ -124,15 +129,6 @@ export default function Cvbuilder () {
     });
   };
 
-  const onMultipleSelectChange = () => {
-    setUserData({
-      ...userData,
-      Skills: [
-        ...userData.Skills
-      ]
-    })
-  };
-
   return (
     <main className='main-container'>
       <HorizontalStepper className='stepper'/>
@@ -221,17 +217,19 @@ export default function Cvbuilder () {
         <fieldset className='secondary-info__form technical-skills'>
           <legend>Technical Skills:</legend>
           <MultipleSelect
+            selectedType="Skills"
             dataList={TECHSKILLS}
             range={SKILL_LEVEL}
-            defaultSelection={userData.Skills ? userData.Skills : []}
-            onHandleChange={onMultipleSelectChange} />
+            register={register} />
         </fieldset>
 
         <fieldset className='secondary-info__form languages'>
           <legend>Languages:</legend>
           <MultipleSelect
+            selectedType="Languages"
             dataList={LANGUAGES}
-            range={PROFICIENCY} />
+            range={PROFICIENCY}
+            register={register} />
         </fieldset>
 
         <fieldset className='secondary-info__form'>
@@ -243,8 +241,8 @@ export default function Cvbuilder () {
           <legend>Personal Information: </legend>
           <TextField
             fullWidth className='email'
-            // defaultValue={userData.User.user.email}
-            //label='Email Address:' name='User.user.email'
+            defaultValue={(userData && userData.User && userData.User.user && userData.User.user.email) || ''}
+            label='Email Address:' name='User.user.email'
             style={{ marginBottom: 5 }} margin="dense"
             InputLabelProps={{ shrink: true, }} type='email'
             //error={ errors && errors.User && errors.User.user && errors.User.user.email && Boolean(errors.User.user.email) }
@@ -254,16 +252,18 @@ export default function Cvbuilder () {
            <Controller
               control={control}
               name='User.PhoneNumber'
+              defaultValue=''
               rules={{required: true}}
               render={({
                 onChange, onBlur, value}) => (
               <MuiPhoneNumber
+                error={ errors && errors.User && errors.User.PhoneNumber && Boolean(errors.User.PhoneNumber) }
                 className='phone' label='Enter your Phone Number:' value={value}
                 onChange={onChange} defaultCountry='us' onBlur={onBlur}>
               </MuiPhoneNumber>
             )}>
           </Controller>
-          <DayMonthYearPicker name='User.Birthday' register={register} />
+          <DayMonthYearPicker name='User.Birthday' register={register} errors={errors}/>
         </fieldset>
         <button className="btn-submit" type="submit">Save</button >
       </aside>

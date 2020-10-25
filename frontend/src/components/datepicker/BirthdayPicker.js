@@ -9,7 +9,7 @@ import {
 
 // ---> Muestra de formato string para enviar Date('2014-08-18T21:11:54')
 export default function DayMonthYearPicker(props) {
-  const {name, register} = props;
+  const {name, register, errors} = props;
   const [selectedDate, setSelectedDate] = React.useState(null);
 
   const handleDateChange = (date) => {
@@ -31,6 +31,7 @@ export default function DayMonthYearPicker(props) {
             'aria-label': 'change date',
           }}
           inputRef={register({ required: true })}
+          error={ errors && errors.User && errors.User.Birthday && Boolean(errors.User.Birthday) }
         />
       </Grid>
     </MuiPickersUtilsProvider>
