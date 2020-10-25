@@ -22,6 +22,7 @@ import './cvbuilder.css';
 
 export default function Cvbuilder () {
   const apiuserdata = context.user;
+  //console.log(context.user);
   const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'
@@ -242,11 +243,11 @@ export default function Cvbuilder () {
           <legend>Personal Information: </legend>
           <TextField
             fullWidth className='email'
-            defaultValue='ddfa@g.com'
-            label='Email Address:' name='User.Email'
+            // defaultValue={userData.User.user.email}
+            //label='Email Address:' name='User.user.email'
             style={{ marginBottom: 5 }} margin="dense"
-            InputLabelProps={{ shrink: true, }}
-            error={errors.Email && true} type='email'
+            InputLabelProps={{ shrink: true, }} type='email'
+            //error={ errors && errors.User && errors.User.user && errors.User.user.email && Boolean(errors.User.user.email) }
             inputRef={register({ required: true, maxLength: 200 })}
            />
           <CountrySelect name='User.Location' register={register}/>
