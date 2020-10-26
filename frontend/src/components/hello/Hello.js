@@ -22,7 +22,7 @@ export default function Hello() {
   // Submit stored data from the user and move to the next view:
   const onLogin = (data, event) => {
     event.preventDefault();
-    //console.log(data);
+    console.log(data);
     history.push('/about');
   };
 
@@ -37,7 +37,7 @@ export default function Hello() {
           <TextField
             id="hello-FirstName" className="textField"
             type="text" name={`User.FirstName`}
-            defaultValue={userData.User.FirstName}
+            defaultValue={(userData && userData.User && userData.User.FirstName) || ''}
             error={ errors && errors.User && errors.User.FirstName && Boolean(errors.User.FirstName) }
             inputRef={register({required: true, maxLength: 80})} />
         </div>
@@ -46,7 +46,7 @@ export default function Hello() {
           <TextField
             id="hello-LastName" className="textField"
             type="text" name={`User.LastName`}
-            defaultValue={userData.User.LastName}
+            defaultValue={(userData && userData.User && userData.User.LastName) || ''}
             error={ errors && errors.User && errors.User.LastName && Boolean(errors.User.LastName) }
             inputRef={register({required: true, maxLength: 80})} />
         </div>
