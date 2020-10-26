@@ -199,20 +199,20 @@ class LoggedCurriculum(APIView):
             for array in data_list:
                 for data in array:
                     data.save()
-            paths = create_resume(
-                color="Red", data=request.data, file_name=profile.FirstName)
-            curriculum = Curriculum.objects.get(userID=user)
-            try:
-                curriculum.pdf_path = paths[0]
-                curriculum.preview_path = paths[1]
-                curriculum.userID = user
-                # new_curriculum = CurriculumSerializer(curriculum)
-                curriculum.save()
-                os.system("find ./renders/ -type f -not -name 'altacv.cls' -exec rm {} \;")
-                os.system("rm thumbnails/*.png")
-            except Exception as e:
-                return Response(e,
-                                status=status.HTTP_400_BAD_REQUEST)
+            # paths = create_resume(
+            #     color="Red", data=request.data, file_name=profile.FirstName)
+            # curriculum = Curriculum.objects.get(userID=user)
+            # try:
+            #     curriculum.pdf_path = paths[0]
+            #     curriculum.preview_path = paths[1]
+            #     curriculum.userID = user
+            #     # new_curriculum = CurriculumSerializer(curriculum)
+            #     curriculum.save()
+            #     os.system("find ./renders/ -type f -not -name 'altacv.cls' -exec rm {} \;")
+            #     os.system("rm thumbnails/*.png")
+            # except Exception as e:
+            #     return Response(e,
+            #                     status=status.HTTP_400_BAD_REQUEST)
             return Response(userserializer.data,
                             status=status.HTTP_201_CREATED)
         else:
