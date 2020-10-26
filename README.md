@@ -97,7 +97,7 @@ Please make sure that you define the following enviroment variables:
 | AWS_BUCKET_NAME| S3 Bucket name to use |
 
 1. Clone the repository: `git clone https://github.com/tatsOre/hovify.git`
-2. Install python libraries: `python3 install -r requirements.txt`
+2. Install python libraries: `pip3 install -r requirements.txt`
 2. Create the tables in the database: `python3 manage.py migrate`
 3. Start the Django API: `python3 manage.py runserver`
 
