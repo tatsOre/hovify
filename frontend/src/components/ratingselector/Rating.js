@@ -5,13 +5,11 @@ import './rating.css';
 
 
 export default function RatingSkill(props) {
-  const {selection, range} = props;
-  const [value, setValue] = React.useState(1);
+  const {selection, range, onRatingSelection, ratingIndex} = props;
+  const [value, setValue] = React.useState();
   const [hover, setHover] = React.useState(-1);
   
   const onHandleRating = (selection) => {
-
-    console.log(selection);
     setValue(selection);
   }
 
@@ -21,11 +19,11 @@ export default function RatingSkill(props) {
       <Rating
       classes={{label: 'ratingLabel'}}
         name={selection + 'hover-feedback'}
-        value={value.level} 
+        value={value} 
         precision={1} max={6}
         icon={<FiberManualRecord fontSize="small" />}
         onChange={(event, newValue) => {
-          onHandleRating({level: newValue, name: selection});
+          onRatingSelection(selection, newValue, ratingIndex);
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);

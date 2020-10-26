@@ -50,7 +50,7 @@ export default function TextFieldSocial(props) {
           <TextField key={acc.name + index}
             fullWidth className={acc.className}
             label={acc.label} name={acc.name}
-            style={{ marginBottom: 5 }} margin="dense"
+            style={{ marginBottom: 15 }} margin="dense"
             InputLabelProps={{ shrink: true, }}
             error={errors[acc.name] && true} type={acc.type}
             inputRef={register({ maxLength: 200 })}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
@@ -11,20 +11,29 @@ import Project from '../project/Project';
 import TextFieldSocial from '../textfieldsocialmedia/TextFieldSocial';
 import MultipleSelect from '../multiplechipselector/MultipleSelect';
 import CountrySelect from '../countryselector/CountrySelector';
-import PhoneNumberV1 from '../phonenumber/PhoneNumberV1';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
+import MuiPhoneNumber from 'material-ui-phone-number';
 
-import apiuserdata from '../../api/david.json';
+//import apiuserdata from '../../api/mariaempty.json';
+import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
+import logo from '../images/logo1.svg';
 import './cvbuilder.css';
 
 export default function Cvbuilder () {
-  const {register, handleSubmit, errors} = useForm({
+  // const x = useContext(context); ?
+  // apiuserdata = x.user; ?
+  const apiuserdata = context.user;
+  //console.log(context.user);
+  const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => {
+    const parsedData = {...data, 'Skills': JSON.parse(data.Skills), 'Languages': JSON.parse(data.Languages)};
+    console.log(parsedData);
+  }
 
 /* CV Builder without LinkedIn Data: */
   const newExperience = {
@@ -121,33 +130,24 @@ export default function Cvbuilder () {
     });
   };
 
-  const onMultipleSelectChange = () => {
-    setUserData({
-      ...userData,
-      Skills: [
-        ...userData.Skills
-      ]
-    })
-  };
-
   return (
     <main className='main-container'>
       <HorizontalStepper className='stepper'/>
-      <aside className='branding'>HoviFy</aside>
+      <img className='branding' src={logo} alt="Logo" />
       <section className='welcome-user'>
         <h1>{userData.User.FirstName},</h1>
         <h2>This is your HoviFy!</h2>
-        <h3>We have auto-filled some content as we best see fit. Yet, the Hovify is yours to keep or edit. Saying that, don't be afraid to interact with all the editable options we have for you:</h3>
+        <h3>We have auto-filled some content as we best see fit. Yet, the HoviFy is yours to keep or edit. Saying that, don't be afraid to interact with all the editable options we have for you:</h3>
       </section>
       
       <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
       <section className='primary_info'>
-      <TextField
+        <input type="hidden" id={userData.User.id} name='User.id'
+             defaultValue={userData.User.id} ref={register()} />
+          <TextField
             className='input middle_width'
             error={ errors && errors.User && errors.User.FirstName && Boolean(errors.User.FirstName) }
-            //error={errors.FirstName && true}
-            defaultValue={userData.User.FirstName}
-            type='text'
+            defaultValue={userData.User.FirstName} type='text'
             label='Name(s):' name='User.FirstName'
             inputRef={register({ required: true, maxLength: 80 })}
           />
@@ -218,38 +218,53 @@ export default function Cvbuilder () {
         <fieldset className='secondary-info__form technical-skills'>
           <legend>Technical Skills:</legend>
           <MultipleSelect
+            selectedType="Skills"
             dataList={TECHSKILLS}
             range={SKILL_LEVEL}
-            defaultSelection={userData.Skills ? userData.Skills : []}
-            onHandleChange={onMultipleSelectChange} />
+            register={register} />
         </fieldset>
 
         <fieldset className='secondary-info__form languages'>
           <legend>Languages:</legend>
           <MultipleSelect
+            selectedType="Languages"
             dataList={LANGUAGES}
-            range={PROFICIENCY} />
+            range={PROFICIENCY}
+            register={register} />
         </fieldset>
 
-        <fieldset className='secondary-info__form'>
+        <fieldset className='secondary-info__form social-media'>
           <legend>Social Media:</legend>
           <TextFieldSocial errors={errors} register={register} />
         </fieldset>
 
-        <fieldset className='secondary-info__form'>
+        <fieldset className='secondary-info__form personal-information'>
           <legend>Personal Information: </legend>
           <TextField
             fullWidth className='email'
-            defaultValue='ddfa@g.com'
-            label='Email Address:' name='User.Email'
+            defaultValue={(userData && userData.User && userData.User.user && userData.User.user.email) || ''}
+            label='Email Address:' name='User.user.email'
             style={{ marginBottom: 5 }} margin="dense"
-            InputLabelProps={{ shrink: true, }}
-            error={errors.Email && true} type='email'
+            InputLabelProps={{ shrink: true, }} type='email'
+            //error={ errors && errors.User && errors.User.user && errors.User.user.email && Boolean(errors.User.user.email) }
             inputRef={register({ required: true, maxLength: 200 })}
            />
           <CountrySelect name='User.Location' register={register}/>
-          <PhoneNumberV1 register={register} />
-          <DayMonthYearPicker name='User.Birthday' register={register} />
+           <Controller
+              control={control}
+              name='User.PhoneNumber'
+              defaultValue=''
+              rules={{required: true}}
+              render={({
+                onChange, onBlur, value}) => (
+              <MuiPhoneNumber
+                error={ errors && errors.User && errors.User.PhoneNumber && Boolean(errors.User.PhoneNumber) }
+                className='phone' label='Enter your Phone Number:' value={value}
+                onChange={onChange} defaultCountry='us' onBlur={onBlur}>
+              </MuiPhoneNumber>
+            )}>
+          </Controller>
+          <DayMonthYearPicker name='User.Birthday' register={register} errors={errors}/>
         </fieldset>
         <button className="btn-submit" type="submit">Save</button >
       </aside>

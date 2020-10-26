@@ -9,7 +9,6 @@
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     max-width: 75%;
-    height: 100vh;
 }
 
 .branding { grid-area: branding; }

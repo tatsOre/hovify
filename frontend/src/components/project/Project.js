@@ -17,19 +17,21 @@ export default function Project(props) {
         className='icon-button' fontSize="small"/>
       </IconButton>
       <fieldset className="fieldset-block">
+        <input type="hidden" id={project.project_id} name={`Projects[${project_id}].project_id`}
+               defaultValue={project.project_id} ref={register()} />
         <div>
           <div>
             <TextField
-              className='input middle_width'
+              className='input' fullWidth
               error={errors && errors.Projects && errors.Projects[project_id] && Boolean(errors.Projects[project_id].name)}
               defaultValue={(project && project.name) || ''} type='text'
               label='Project Name:' name={`Projects[${project_id}].name`}
               inputRef={register({ required: true, maxLength: 80 })}
             />
             <TextField
-              className='input middle_width'
+              className='input' fullWidth
               error={errors && errors.Projects && errors.Projects[project_id] && Boolean(errors.Projects[project_id].link)}
-              defaultValue={(project && project.link) || ''} type='url'
+              defaultValue={(project && project.link) || ''} type='text'
               label='Project URL Link:' name={`Projects[${project_id}].link`}
               inputRef={register({required: true, maxLength: 200 })}
             />

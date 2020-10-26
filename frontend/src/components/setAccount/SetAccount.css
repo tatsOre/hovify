@@ -8,6 +8,7 @@
   font-weight: 300;
 }
 .account {
+  min-height: 100vh;
   grid-template-areas: 
   ". branding"
   "title title"
@@ -21,7 +22,7 @@
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: auto;
-  padding-top: 45px;
+  padding-top: 25px;
 }
 .form-account {
   grid-template-areas:
@@ -41,7 +42,7 @@ h1.account-title {
   font-weight: 300;
   color: #262AD1;
   line-height: 1.1;
-  margin: 60px 100px 10px;
+  margin: 15px 100px 10px;
 }
 .account-content {
   width: 100%;
@@ -70,10 +71,4 @@ h1.account-title {
   position: relative;
   right: 0px;
   margin-bottom: 20px;
-}
-.nav-account {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 100px;
 }

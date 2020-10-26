@@ -1,5 +1,6 @@
 .hello {
   width: 60%;
+  min-height: 100vh;
   display: "flex";
   flex-direction: column;
   margin: 0 auto;
@@ -42,8 +43,5 @@
   margin-top: 20px;
 }
 .nav-hello {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 80px;
 }

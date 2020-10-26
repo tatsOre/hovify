@@ -8,9 +8,10 @@
 }
 .motivations {
     max-width: 75%;
+    min-height: 100vh;
     grid-template-areas:
     "stepper branding"
-    "text ."
+    "motivations-title ."
     "form form";
 }
 .form-motivations {
@@ -21,7 +22,7 @@
 }
 .stepper { grid-area: stepper; }
 .branding { grid-area: branding; }
-.motivations > p { grid-area: text; }
+.motivations-questions__title { grid-area: motivations-title; }
 .form-motivations { grid-area: form; }
   
 /* Form container items */
@@ -29,20 +30,31 @@
 .desired-job { grid-area: aside; }
 .nav-motivation { grid-area: nav; }
 
-.motivations > p { margin-top: 65px; }
 
 /* Font Styles */
 .motivations-questions__title {
     font-size: 2.25em;
     font-weight: 300;
     color: #262AD1;
+    margin-top: 25px;
 }
+.desired-location__title,
 .desired-job__title {
-    font-size: 19px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 400;
+    opacity: .65;
+    color: #321880;
+    padding-right: 20px;
 }
-.desired-location__title {
-    margin-top: 50px;
+.motivation-questions__info {
+    max-width: 90%;
+    color: #321880;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.desired-location__title{
+    margin-top: 25px;
 }
 .wrapper-motivation {
     margin: 20px 0;
@@ -50,9 +62,4 @@
 .wrapper-jobfield {
     margin: 10px 0;
 }
-.nav-motivation {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 100px;
-}
+

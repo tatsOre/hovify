@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './Hello.css';
-import apiuserdata from '../../api/david.json';
-
-const userData = apiuserdata;
+import { context } from '../../App.js';
+ 
 
 export default function Hello() {
+  //const localContext = useContext(context);
+  const userData = context.user;
+  // console.log("hello context")
+  // console.log(context);
+  //const userData = localContext.user;
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
       criteriaMode: "all",
@@ -19,11 +23,12 @@ export default function Hello() {
   const onLogin = (data, event) => {
     event.preventDefault();
     console.log(data);
+    context.user = {...context.user , ...data}
     history.push('/about');
   };
 
   return (
-    <div  className="hello">
+    <div className="hello">
       <aside className='branding'>HoviFy</aside>
       <form className="form-hello" onSubmit={handleSubmit(onLogin)}>
         <h1 className="hello-title"><span>Hello,</span> Hovifier</h1>
@@ -33,7 +38,7 @@ export default function Hello() {
           <TextField
             id="hello-FirstName" className="textField"
             type="text" name={`User.FirstName`}
-            defaultValue={userData.User.FirstName}
+            defaultValue={(userData && userData.User && userData.User.FirstName) || ''}
             error={ errors && errors.User && errors.User.FirstName && Boolean(errors.User.FirstName) }
             inputRef={register({required: true, maxLength: 80})} />
         </div>
@@ -42,12 +47,12 @@ export default function Hello() {
           <TextField
             id="hello-LastName" className="textField"
             type="text" name={`User.LastName`}
-            defaultValue={userData.User.LastName}
+            defaultValue={(userData && userData.User && userData.User.LastName) || ''}
             error={ errors && errors.User && errors.User.LastName && Boolean(errors.User.LastName) }
             inputRef={register({required: true, maxLength: 80})} />
         </div>
-        <div className="nav-hello">
-          <Button component={Link} to="/" className="btn-link">Prev</Button>
+        <div className="nav-hello navigation-spa">
+          <Button component={Link} to="/" className="btn-link">Back</Button>
           <Button type="submit" className="btn-link">Next</Button>
         </div>
       </form>

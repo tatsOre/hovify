@@ -39,7 +39,6 @@ export default function LocationSelector(props) {
           className='desired-job__location'
           name={name}
           {...params}
-          defaultValue='To infinity and beyond!'
           inputProps={{
             ...params.inputProps,
             autoComplete: 'new-password', // disable autocomplete and autofill

@@ -5,6 +5,7 @@
     margin: 0 auto;
 }
 .main-container {
+    margin-bottom: 20px;
     max-width: 75%;
     grid-template-areas:
     "stepper branding"
@@ -25,7 +26,6 @@
     grid-area: primary_info;
     padding: 0 10px;
 }
-
 /* Welcome User Section */
 .welcome-user {
     padding: 20px 8px;
@@ -45,9 +45,11 @@
     line-height: 1.25em;
 }
 .welcome-user h3 {
+    font-family: roboto;
+    font-size: 1.25em;
     color: #565674;
     margin: 15px 0 10px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.25em;
 }
 /* Sections Pro/Edu/Proj titles */
@@ -86,6 +88,12 @@
 .secondary-info__form {
     padding-top: 5px;
     max-width: 80%;
+}
+.social-media {
+    margin: 0 auto 30px;
+}
+.languages, .technical-skills,
+.personal-information {
     margin: 0 auto 55px;
 }
 .secondary-info__form legend {
@@ -93,6 +101,15 @@
     font-size: 1.5em;
     line-height: 1em;
     font-weight: 200;
+}
+/* Phone Input Styles */
+.phone {
+    width: 100%;
+    margin-top: 20px;
+}
+/* Date Birthday Picker */
+.date-picker {
+    margin-top: 20px;
 }
 
 /* General */
@@ -110,20 +127,22 @@ h1, h2, h3, legend, p {
 /* Buttons */
 .btn-submit {
     display: block;
-    color: #262AD1;
-    background-color: white;
-    border: 1px solid rgba(63, 81, 181, 0.5);
-    border-radius: 3px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 500;
+    color: whitesmoke;
+    background-color: rgba(63, 81, 181, 1);
+    border: none;
+    border-radius: 30px;
+    font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.75;
-    letter-spacing: 0.02857em;
-    text-transform: uppercase;
-    margin: 20px auto;
-    padding: 5px;
+    margin: 15px auto;
+    padding: 7px;
     width: 70%;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.btn-submit:hover {
+    background-color: #321880;
 }
 .icon-button__add {
     color: #9999C1;

@@ -9,36 +9,118 @@ const getLogin = async (data) => {
     headers: {
         'Content-Type': 'application/json'
     }
-  })
-  const result = await response.json();
+  });
+  const result = await response;
   //console.log("-->" + JSON.stringify(result))
-  return result
+  return result;
 };
 
-
-
-  /* Login implementation
- const login = {
-    "username": "juanllano93@gmail.com",
-    "password": "123456"
-  };
-
-  useEffect(() => {
-    getLogin(JSON.stringify(login))
-    .then(response => console.log(response.token))
-    .catch()
-  }, []);
-  */
-
-
-const getUser = token => {
-    const user = fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
-            headers: {
-                'Authorization': token,
-                'Content-Type' : 'application/json',
-            }
-    })
-    return user;
+const getUser = async (token) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
+    headers: {
+      'Authorization': token,
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  //console.log("->user data \n" + JSON.stringify(result));
+  return result;
 }
 
-export { getLogin, getUser };
+const postUser = async (data, token) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/curriculum/', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Authorization': token,
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  return result;
+}
+
+const createAccount = async (data) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/signup/', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  //console.log("->user data \n" + JSON.stringify(result));
+  return result;
+}
+
+const getProfile = async (data) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/linkedindata/', {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  //console.log("->profile data \n");
+  console.log(JSON.stringify(result));
+  return result;
+}
+
+const getVacancies = async (data) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/vacancies/', {
+    method: 'GET'
+  });
+  const result = await response;
+  //console.log("->profile data \n");
+  console.log(JSON.stringify(result));
+  return result;
+}
+
+/* Pending to move this into Home.js
+  React.useEffect(() => {
+    getVacancies()
+    .then(response => {
+      const dataVacancies = response.json()
+      dataVacancies.then(data => {
+        console.log(data)
+      })
+    })
+  }, []);
+*/
+
+const getDashboard = async (token) => {
+  const response = await fetch('https://hovify.herokuapp.com/api/v1/dashboard/', {
+    method: 'GET',
+    headers: {
+      'Authorization': token,
+      'Content-Type' : 'application/json',
+    }
+  });
+  const result = await response;
+  //console.log("->dashboard data \n");
+  console.log(JSON.stringify(result));
+  return result;
+}
+
+/*------ Implementing dashboar API ------*/
+  /*React.useEffect(() => {
+    getLogin(JSON.stringify(login))
+    .then(response => {
+      const objToken = response.json()
+      objToken.then(data => {
+		const uToken = "Token " + data.token
+		console.log("Token" + uToken)
+        getDashboard(uToken)
+        .then(response => {
+          const userDashboard = response.json()
+          userDashboard.then(data => {
+            console.log(data);
+          })
+        })
+	  })
+    })
+    .catch()
+  }, []);*/
+
+export { getLogin, getUser, postUser, createAccount, getProfile, getVacancies, getDashboard };

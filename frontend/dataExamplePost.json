@@ -1,0 +1,119 @@
+{
+  "User": {
+    "user": {
+      "email": "test@outlook.com"
+    },
+    "FirstName": "Juan ",
+    "LastName": "Llano Gallego",
+    "Role": "Full-stack Software Developer",
+    "Summary": "Software Engineer with more than two years of experience in customer service and software technical support. I am interested in understanding how people consume digital products that we find in our environment and keen to create products through technology",
+    "LinkedIn": "https://www.linkedin.com/in/juansebastianllanogallego/",
+    "Location": null,
+    "City": null,
+    "PhoneNumber": null,
+    "Birthday": null,
+    "PortfolioURL": null,
+    "GitHubURL": null,
+    "TwitterURL": null
+  },
+  "Education": [
+    {
+      "degree": "Programa de Pedagogía para Profesionales no Licenciados",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2015,
+      "end_year": 2015,
+      "description": "Brindar a los profesionales no licenciados que participen del estudio, las herramientas necesarias para un adecuado conocimiento de la labor docente en procura de optimizar su profesión al servicio de las instituciones educativas de las cuales harán parte."
+    },
+    {
+      "degree": "Especialización Tecnologica Metodologias de Calidad para el Desarollo de Software",
+      "school": "Servicio Nacional de Aprendizaje (SENA)",
+      "start_year": 2019,
+      "end_year": 2019,
+      "description": "En este programa se llevo a cabo la revisión y contextualización de difenrentes metodologías para el desarrollo de software enfocandose en SCRUM, PSP y TSP."
+    },
+    {
+      "degree": "Tecnólogo en Electronica",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2011,
+      "end_year": 2014,
+      "description": "Tecnólogo en electrónica con formación en investigación, diseño y ejecución de proyectos en diferentes áreas con equipos multidisciplinarios con el fin de buscar soluciones integrales. Fundamentación en electrónica digital, Microcontroladores, PLC, electrónica de potencia, entre otros."
+    },
+    {
+      "degree": "Software Engineer ",
+      "school": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "Holberton School es una escuela de software con sede principal en San Francisco y  sedes en Colombia, Francia, México, Uruguay y Túnez. Su objetivo es capacitar a los desarrolladores de software del futuro con un plan de estudios creado para brindarles a los estudiantes experiencia práctica en programación y ayudarlos a desarrollar habilidades sociales para marcar la diferencia en el mundo de la tecnología y el desarrollo de software. La metodología de la Escuela Holberton utiliza el aprendizaje basado en proyectos y el aprendizaje entre pares para proporcionar las herramientas necesarias para adaptarse al futuro y las tecnologías en constante cambio."
+    },
+    {
+      "degree": "Tecnologo en Sistemas de Información",
+      "school": "Universidad del Valle (CO)",
+      "start_year": 2017,
+      "end_year": 2021,
+      "description": null
+    },
+    {
+      "degree": "Curso de Inglés I",
+      "school": "Unidad Central de Valle",
+      "start_year": 2014,
+      "end_year": 2014,
+      "description": null
+    }
+  ],
+  "Professional": [
+    {
+      "role": "Logística - “Proyecto Competencias Ciudadanas\"",
+      "company": "Universidad del Valle (CO)",
+      "start_year": 2014,
+      "end_year": 2014,
+      "description": "Apoyo en la planeación, ejecución, coordinación y logística de los eventos dialogados de carácter formativo y cultural desarrollados en el proyecto, así como lo eventos realizados en la fase de visibilización del mismo."
+    },
+    {
+      "role": "Creación de Blogs en el ámbito TECH",
+      "company": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "Escritor de temas sobre Desarrollo de Software:\n• Publicado en  Analytics Vidhya:  C libraries, a brief summary!  — Part 1 (Static libraries)\n• C libraries, a brief summary! — Part 2 (Dinamyc libraries)\n• Posteado en The StartUp Medium: The Magic Behind the Command ls -l\n• Am I a Robot or an object In Python? understanding objects in python"
+    },
+    {
+      "role": "Estudiante de Ingeniería de Software",
+      "company": "Holberton School",
+      "start_year": 2020,
+      "end_year": 2020,
+      "description": "En este programa he realizado proyectos basados en lenguajes de bajo nivel (C), lenguajes de alto nivel(Python), desarrollo web(Html, CSS, Bases de datos SQL) y DevOps(Linux, Bash).\n➡ Estos son los proyectos destacados: \n• Sitio web estático AirBnB: Réplica del sitio web AirBnB con Html y CSS.\n• Consola AirBnB: Implementación de un sistema de almacenamiento de objetos Python guardados en archivos JSON, realizando las operaciones básicas de una base de datos (Create, Read, Update, Delete).\n• Bases de datos SQL: Introducción al lenguaje estructurado de consultas y algunas consultas complejas.\n• Simple Shell: En este proyecto crearemos un sencillo intérprete de comandos UNIX en lenguaje de programación C.\n• Se han realizado implementaciones en C sobre las estructuras de datos más comunes: hash tables, linked list, double linked list, algoritmos de ordenamiento, árboles binarios, entre otros proyectos."
+    },
+    {
+      "role": "Líder de Implementación/Soporte Facturación Electrónica.",
+      "company": "QUALITYCOLOMBIA BUSINESS SOLUTION S.A.",
+      "start_year": 2019,
+      "end_year": 2019,
+      "description": "➡En esta compañía tuve la oportunidad de aprender y fortalecer mis habilidades blandas de gestión, servicio al cliente, liderazgo.\n• Gestionar el desarrollo de nuevas funcionalidades y corrección de bugs a nivel del software de Fact. Electrónica. Documentación de bugs y generación de escenarios de prueba para desarrollos.\n• Direccionamiento de proyectos a consultores de implementación. Apoyo en creación de protocolos internos y de cara al cliente final, con el propósito de optimizar los procesos de Fact. Electrónica."
+    },
+    {
+      "role": "Ventas de seguros",
+      "company": "Seguros SURA",
+      "start_year": 2017,
+      "end_year": 2017,
+      "description": "➡En este trabajo tuve la oportunidad de conocer mejor a mis clientes y la manera de acercarme a ellos pensando en sus necesidades y acorde a su perfil.\nFunciones:\n• Acercamiento, generación de prospectos y relacionamientos  con posibles clientes.\n• Venta de Seguros de vida, empresariales, para autos y demás soluciones ofrecidas por la compañía."
+    },
+    {
+      "role": "Consultor de soporte de software",
+      "company": "QUALITYCOLOMBIA BUSINESS SOLUTION S.A.",
+      "start_year": 2018,
+      "end_year": 2019,
+      "description": "➡ Capacitación y orientación sobre el uso de los servicios ofrecidos por la empresa a clientes finales.\n➡ Soporte de tercer nivel  en proyectos de Fact. Electrónica.\n• Instalación de servidor de aplicaciones para proyecto JAVA Web en servidores Linux y Windows.\n• Actualización de Software a nivel de Aplicación y base de datos SQL.\n• Implementación del software de Fact. Electrónica."
+    }
+  ],
+  "Skills": [],
+  "Languages": [],
+  "Projects": [],
+  "About_User": [{ "description": "2" }],
+  "Interest": [{ "name": "4" }],
+  "Motivation": [{ "name": "2" }],
+  "Desired_Job_Fields": [{ "name": "security" }, { "name": "webdesigner" }],
+  "Desired_Job_Location": [
+    {
+      "location": "Afghanistan"
+    }
+  ]
+}

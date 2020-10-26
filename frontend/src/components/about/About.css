@@ -8,6 +8,7 @@
 }
 .about {
   max-width: 75%;
+  min-height: 100vh;
   grid-template-areas:
   "stepper branding"
   "about-title ."
@@ -40,7 +41,7 @@ h1.about-title {
   font-weight: 300;
   color: #262AD1;
   line-height: .3em;
-  margin: 80px 0 10px;
+  margin: 40px 0 10px;
 }
 h2.about-questions__text {
   font-size: 1.35em;
@@ -85,11 +86,4 @@ h3.about-interests__title {
 }
 .info {
   margin: 20px auto;
-}
-/* Navigation Bar */
-.nav-about {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 100px;
 }
