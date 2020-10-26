@@ -2,6 +2,7 @@ from rest_framework import serializers
 import os
 from .models import User, Project, Professional, Education, Language, TechSkill, AboutUser, Vacancy
 from .models import Motivation, DesiredJobField, DesiredJobLocation, Interest, Curriculum, Profile
+from .models import Strengths
 from rest_framework.authtoken.models import Token
 
 
@@ -32,6 +33,11 @@ class LanguageSerializer(serializers.ModelSerializer):
 class TechSkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = TechSkill
+        fields = '__all__'
+
+class StrengthsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Strengths
         fields = '__all__'
 
 

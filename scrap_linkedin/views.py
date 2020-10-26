@@ -21,4 +21,24 @@ class LinkedinViewSet(APIView):
         if not request.data.get("url") or len(request.data.get("url")) == 0:
             return Response("Empty URL", status=status.HTTP_400_BAD_REQUEST)
         result = new_scraping.get_data(request.data.get("url"))
+        # Splitting skills from strengths
+        if result.get('Skills'):
+            result['Strengs'] = []
+            tech = []
+            for skill in result.get('Skills'):
+                if skill.get('level') == 'Mid':
+                    result['Strengs'].append(
+                        {
+                            "name": skill.get('name'),
+                            "level": skill.get('level')
+                        }
+                    )
+                else:
+                    tech.append(
+                        {
+                            "name": skill.get('name'),
+                            "level": skill.get('level')
+                        }
+                    )
+            result['Skills'] = tech
         return Response(result)

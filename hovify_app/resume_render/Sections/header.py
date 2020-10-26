@@ -43,7 +43,6 @@ def make_header(data={}):
         return ""
 
     personalInfo_Htags = {
-        'Email': '\n \\email{{{Email}}}',
         'PhoneNumber': '\n \\phone{{{PhoneNumber}}}',
         'Location': '\n \\location{{{Location}}}',
         'PortfolioURL': '\n \\homepage{{{PortfolioURL}}}',
@@ -87,6 +86,12 @@ def make_header(data={}):
             data.get("User")[field] = s
             val = val.format_map(data.get("User"))
             header = header + val
+    if 'email' in data.get("User").get('user') and data.get("User").get('user').get('email'):
+        email = data.get("User").get('user').get('email')
+        email = r'{}'.format(email)
+        email = email.replace('\n\n', '\n')
+        email = escape_latex(email)
+        header = header + '\n \\email{{{}}}'.format(email)
 
     header = header + "\n}\n\n\\makecvheader"
 

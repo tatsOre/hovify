@@ -328,6 +328,7 @@ class CurriculumViewSet(APIView):
             Education,
             Professional,
             TechSkill,
+            Strengths,
             Language,
             Project,
             AboutUser,

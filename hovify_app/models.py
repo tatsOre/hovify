@@ -80,6 +80,14 @@ class TechSkill(models.Model):
     level = models.CharField(max_length=20, null=True, blank=True)
     userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
+class Strengths(models.Model):
+    """Ex: Python, AWS, CSS, etc
+       Level: level according stepper component(Curriculum Dashboard)"""
+    strength_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    level = models.CharField(max_length=20, null=True, blank=True)
+    userID = models.ForeignKey(Profile, on_delete=models.CASCADE)
+
 class AboutUser(models.Model):
     """User description according selection form
     page ->> about that describes user//Interests"""
