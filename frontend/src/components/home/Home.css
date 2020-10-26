@@ -9,10 +9,15 @@
     "team-section"
     "footer";
   font-family: 'Roboto', sans-serif;
+  background-image: url('./img/main-graphic.svg');
+  background-repeat:  no-repeat;
+  background-size: 550px;
+  background-position: 120px 80px; /* left top*/ 
+}
+.home-header, .main-content, .foonavbar {
   max-width: 75%;
   margin: 0 auto;
 }
-
 .home-header { grid-area: header; }
 .main-content { grid-area: main; }
 .hovify-team { grid-area: team-section; }
@@ -38,6 +43,34 @@
   background-color: #fff;
   outline: transparent;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+/* Main Content*/
+.main-content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". contentHome";
+}
+.contentHome {
+  grid-area: contentHome;
+  padding-top: 90px;
+}
+.main-title {
+  font-size: 85px;
+  font-weight: 300;
+  color: #321880;
+  line-height: .7;
+  padding-bottom: 30px;
+}
+.main-title span {
+  color: #FE5F55;
+}
+.main-title span ~ span {
+  color: #262AD1;
+}
+.contentHome p {
+  font-size: 25px;
 }
 /* Sign in Modal */
 .modal-signin {
@@ -104,7 +137,7 @@
 .btn-primary_linkedin,
 .btn-primary_zero {
   display: inline;
-  max-width: 25%;
+  max-width: 50%;
   letter-spacing: 0.05em;
 }
 .btn-primary_zero {
@@ -126,12 +159,6 @@
 .foonavbar-link {
   text-decoration: none;
 }
-
-.contentHome p {
-  max-width: 50%;
-  font-size: 25px;
-}
-
 /* Hovify team */
 .hovify-team {
   display: flex;
