@@ -14,10 +14,11 @@ import CountrySelect from '../countryselector/CountrySelector';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 import MuiPhoneNumber from 'material-ui-phone-number';
 
-//import apiuserdata from '../../api/mariav2.json';
+//import apiuserdata from '../../api/mariaempty.json';
 import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
+import logo from '../images/logo1.svg';
 import './cvbuilder.css';
 
 export default function Cvbuilder () {
@@ -132,7 +133,7 @@ export default function Cvbuilder () {
   return (
     <main className='main-container'>
       <HorizontalStepper className='stepper'/>
-      <aside className='branding'>HoviFy</aside>
+      <img className='branding' src={logo} alt="Logo" />
       <section className='welcome-user'>
         <h1>{userData.User.FirstName},</h1>
         <h2>This is your HoviFy!</h2>
