@@ -1,0 +1,55 @@
+{
+    "User": {
+    "FirstName": "Maria Fernanda",
+    "LastName": "Crespo Martinez",
+    "Email": null,
+    "Role": "Industrial Engineer | Full Stack Software Developer",
+    "Location": "Colombia",
+    "City": null,
+    "PhoneNumber": null,
+    "Birthday": null,
+    "Summary": "",
+    "LinkedIn": null,
+    "PortfolioURL": null,
+    "GitHubURL": null,
+    "TwitterURL": null
+    },
+    "Education": [],
+    "Professional": [],
+    "Skills": [],
+    "Projects": [],
+    "About_User": [],
+    "Motivation": [],
+    "Interest": [
+    {
+    "name": null,
+    "status": false
+    }
+    ],
+    "Desired_Job_Fields": [
+    {
+    "name": null,
+    "status": false
+    }
+    ],
+    "Desired_Job_Location": [
+    {
+    "location": null
+    }
+    ],
+    "Vacancy": [
+    {
+    "job_title": null,
+    "journalism_type": null,
+    "company": null,
+    "company_url": null,
+    "category": null,
+    "location_required": null,
+    "requirements": null,
+    "salary": null,
+    "description": null,
+    "published_at": null,
+    "vacancy_url": null
+    }
+    ]
+    }

@@ -20,13 +20,8 @@ code {
     monospace;
 }
 .branding {
-  font-family: 'Roboto', sans-serif;
-  padding-top: 20px;
-  color: gray;
-  opacity: .5;
-  font-weight: 400;
-  font-size: 3em;
-  margin: 0 auto;
+  max-width: 40%;
+  margin: 5% auto;
 }
 .date-picker__field {
   margin-bottom: 15px;
