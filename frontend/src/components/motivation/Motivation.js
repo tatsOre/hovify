@@ -23,12 +23,11 @@ export default function Motivation() {
     <section className="motivations">
       <HorizontalStepper className='stepper'/>
       <aside className='branding'>HoviFy</aside>
-      <p>In this section, we are looking for you to tell us what are your job preferences. Hovify is building a customized job search especially for you, so don't mind to be picky.</p>
+      <h2 className="motivations-questions__title">What are your motivations?</h2>
       <form onSubmit={handleSubmit(onLogin)} className="form-motivations">
         <section className="motivation-questions">
-          <div className="info">
-              <h2 className="motivations-questions__title">What are your motivations?</h2>
-          </div>
+          <p className="motivation-questions__info">In this section, we are looking for you to tell us what are your job preferences. 
+            HoviFy is building a customized job search especially for you, so don't mind to be picky.</p>
           <div className="question-wrapper">
             <p className="question-label">These should be the specifications for your job matching:</p>
             <div className="wrapper-motivation">
@@ -51,7 +50,7 @@ export default function Motivation() {
         </section>
         <aside className="desired-job">
           <div className="info">
-              <h3 className="desired-job__title">I want my dream job in</h3>
+              <h3 className="desired-job__title">I want my dream job in...</h3>
           </div>
           <div className="question-wrapper__motivation">
             <p className="question-label">Select the fields that apply:</p>
@@ -78,7 +77,6 @@ export default function Motivation() {
           </div>
           <div>
             <h3 className="desired-location__title">Desired job location:</h3>
-            <p className="desired-location__label">Select the fields that apply:</p>
             <LocationSelector name='Desired_Job_Location.location' register={register}/>
           </div>
         </aside>
