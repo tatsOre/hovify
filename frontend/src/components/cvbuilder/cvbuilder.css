@@ -26,7 +26,6 @@
     grid-area: primary_info;
     padding: 0 10px;
 }
-
 /* Welcome User Section */
 .welcome-user {
     padding: 20px 8px;
@@ -46,9 +45,11 @@
     line-height: 1.25em;
 }
 .welcome-user h3 {
+    font-family: roboto;
+    font-size: 1.25em;
     color: #565674;
     margin: 15px 0 10px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.25em;
 }
 /* Sections Pro/Edu/Proj titles */
@@ -87,6 +88,12 @@
 .secondary-info__form {
     padding-top: 5px;
     max-width: 80%;
+}
+.social-media {
+    margin: 0 auto 30px;
+}
+.languages, .technical-skills,
+.personal-information {
     margin: 0 auto 55px;
 }
 .secondary-info__form legend {
@@ -94,6 +101,15 @@
     font-size: 1.5em;
     line-height: 1em;
     font-weight: 200;
+}
+/* Phone Input Styles */
+.phone {
+    width: 100%;
+    margin-top: 20px;
+}
+/* Date Birthday Picker */
+.date-picker {
+    margin-top: 20px;
 }
 
 /* General */
@@ -152,8 +168,4 @@ h1, h2, h3, legend, p {
     padding: 3px;
     right: 50px;
     top: 10px;
-}
-/* Phone Input Styles */
-.phone {
-    width: 100%;
 }

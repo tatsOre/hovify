@@ -136,7 +136,7 @@ export default function Cvbuilder () {
       <section className='welcome-user'>
         <h1>{userData.User.FirstName},</h1>
         <h2>This is your HoviFy!</h2>
-        <h3>We have auto-filled some content as we best see fit. Yet, the Hovify is yours to keep or edit. Saying that, don't be afraid to interact with all the editable options we have for you:</h3>
+        <h3>We have auto-filled some content as we best see fit. Yet, the HoviFy is yours to keep or edit. Saying that, don't be afraid to interact with all the editable options we have for you:</h3>
       </section>
       
       <form onSubmit={handleSubmit(onSubmit)} className='form-container'>
@@ -232,12 +232,12 @@ export default function Cvbuilder () {
             register={register} />
         </fieldset>
 
-        <fieldset className='secondary-info__form'>
+        <fieldset className='secondary-info__form social-media'>
           <legend>Social Media:</legend>
           <TextFieldSocial errors={errors} register={register} />
         </fieldset>
 
-        <fieldset className='secondary-info__form'>
+        <fieldset className='secondary-info__form personal-information'>
           <legend>Personal Information: </legend>
           <TextField
             fullWidth className='email'
