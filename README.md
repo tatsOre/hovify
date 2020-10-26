@@ -24,48 +24,48 @@ Python3  ☞ [![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)
 
 ## Welcome page
 <p style="font-size:25px; font-weight:bold"> 
-<img style="display: inline-block;" src="/media/screen_name">
+<img style="display: inline-block;" src="/media/screen_name.PNG">
 </p>
 
 --------------
 
 ## Interests form
 <p style="font-size:25px; font-weight:bold">
-<img style="display: inline-block;" src="/media/screen_interests">
+<img style="display: inline-block;" src="/media/screen_interests.PNG">
 </p>
 
 ---
 
 ## Motivations form
 <p style="font-size:25px; font-weight:bold">
-<img style="display: inline-block;" src="/media/screen_motivations">
+<img style="display: inline-block;" src="/media/screen_motivations.PNG">
 </p>
 
 ---
 
 ## Sign up
 <p style="font-size:25px; font-weight:bold">
-<img style="display: inline-block;" src="/media/screen_signup">
+<img style="display: inline-block;" src="/media/screen_signup.PNG">
 </p>
 
 ---
 
 ## Resume builder
 <p style="font-size:25px; font-weight:bold"> 
-<img style="display: inline-block;" src="/media/screen_builder">
+<img style="display: inline-block;" src="/media/screen_builder.PNG">
 </p>
 
 ---
 
 ## API doc example
 <p style="font-size:25px; font-weight:bold"> 
-<img style="display: inline-block;" src="/media/screen_swagger">
+<img style="display: inline-block;" src="/media/screen_swagger.PNG">
 </p>
 </center>
 
 ## Tech/framework used 🛠
 
-![Software architecture](https://drive.google.com/uc?export=view&id=1C75mJyQAXtClnMcUGra3eYxveVSFLQdF)
+![Software architecture](media/Architecture.png)
 
 - Django is used to control the database, communicate with the S3 AWS bucket and expose the API endpoints.
 
@@ -129,5 +129,5 @@ Special thanks to [remotive.io](https://remotive.io/) for their awesome API, and
 
 | [Nathaly Sotomayor](https://github.com/nathsotomayor) <br> DevOps & Software architect      | [Tatiana Orejuela](https://github.com/tatsOre/)  <br>  Front End - React Developer  |	[Juan Llano Gallego](https://github.com/llanojs/) <br> Front End - React Developer | [Andres Bayona](https://github.com/AndrewB4y) <br>  Back End - Django Developer| [David Orejuela](https://github.com/daorejuela1) <br>  Back End - Django Developer|
 | -------------- | -------------- | ------------ |------------------- | --------- |
-| ![Nathaly Sotomayor](/media/Nathaly.png)   |![Tatiana Orejuela](/media/Tatiana)    |  ![Juan Llano Gallego](/media/Juan) | ![Andres Bayona](/media/Andres) | ![David Orejuela](/media/David)
+| ![Nathaly Sotomayor](/media/Nathaly.jpg)   |![Tatiana Orejuela](/media/Tatiana.jpg)    |  ![Juan Llano Gallego](/media/Juan.jpg) | ![Andres Bayona](/media/Andres.jpg) | ![David Orejuela](/media/David.jpg)
 |&nbsp;&nbsp; <a href="https://twitter.com/nathsotomayor" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1ug4ezQT3nLGNyXETpxrX7O1xPZDY2jfo" width="42px"></a> &nbsp;<a href="https://www.linkedin.com/in/nathsotomayor/" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1NUsq5uYK3rwLSrSKgbzjePhtwtImWiJq" width="49px"></a> <a href="https://medium.com/@nathsotomayor" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1uWYDXANNgp6hGjEMjyW44lEQPrMRDFNK" width="42px"></a> |&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/TatsInTech" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1ug4ezQT3nLGNyXETpxrX7O1xPZDY2jfo" width="42px"></a> &nbsp;<a href="https://www.linkedin.com/in/tatiana-orejuela-08b98225/" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1NUsq5uYK3rwLSrSKgbzjePhtwtImWiJq" width="49px"></a> |&nbsp;&nbsp; <a href="https://twitter.com/llanoJS" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1ug4ezQT3nLGNyXETpxrX7O1xPZDY2jfo" width="42px"></a> &nbsp;<a href="https://www.linkedin.com/in/juansebastianllanogallego/" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1NUsq5uYK3rwLSrSKgbzjePhtwtImWiJq" width="49px"></a> <a href="https://medium.com/@juanllano93" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1uWYDXANNgp6hGjEMjyW44lEQPrMRDFNK" width="42px"></a>|&nbsp;&nbsp; <a href="https://twitter.com/AndresBayMon" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1ug4ezQT3nLGNyXETpxrX7O1xPZDY2jfo" width="42px"></a> &nbsp;<a href="https://www.linkedin.com/in/andresfbayona/" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1NUsq5uYK3rwLSrSKgbzjePhtwtImWiJq" width="49px"></a> <a href="https://medium.com/@andresbaymon" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1uWYDXANNgp6hGjEMjyW44lEQPrMRDFNK" width="45px"></a> | &nbsp;&nbsp; <a href="https://twitter.com/DavidOrejuela14" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1ug4ezQT3nLGNyXETpxrX7O1xPZDY2jfo" width="42px"></a> &nbsp;<a href="https://www.linkedin.com/in/davidorejuela14/" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1NUsq5uYK3rwLSrSKgbzjePhtwtImWiJq" width="49px"></a> <a href="https://medium.com/@daorejuela1" ><img style="display: inline-block;" src="https://drive.google.com/uc?export=view&id=1uWYDXANNgp6hGjEMjyW44lEQPrMRDFNK" width="42px"></a>|
