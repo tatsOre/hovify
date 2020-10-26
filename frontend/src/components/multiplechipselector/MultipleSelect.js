@@ -6,8 +6,6 @@ import Chip from '@material-ui/core/Chip';
 import RatingSkill from '../ratingselector/Rating';
 import Checkbox from '@material-ui/core/Checkbox';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import Rating from '@material-ui/lab/Rating';
-import FiberManualRecord from '@material-ui/icons/FiberManualRecord';
 
 import './MultipleSelect.css';
 
