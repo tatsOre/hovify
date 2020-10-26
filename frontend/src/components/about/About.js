@@ -5,6 +5,7 @@ import HorizontalStepper from '../steppernav/Stepper';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import './About.css';
+import { context } from '../../App.js';
 
 export default function About() {
   const history = useHistory();
@@ -15,8 +16,16 @@ export default function About() {
   // Submit stored data from the user and move to the next view:
   const onLogin = (data, event) => {
     event.preventDefault();
-    //data.About_User
-    console.log(data);
+    let newAboutUser = data.About_User.filter(function(about) { return about.description != false; })
+    let newInterest = data.Interest.filter(function(field) { return field.name != false; })
+  
+    const newData = {
+      "About_User": newAboutUser,
+      "Interest" : newInterest,
+    }
+
+    context.user = {...context.user, ...newData};
+    console.log(context.user);
     history.push('/motivation');
   };
 

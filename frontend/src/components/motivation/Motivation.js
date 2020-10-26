@@ -6,6 +6,7 @@ import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './Motivation.css';
+import { context } from '../../App.js';
 
 export default function Motivation() {
   const history = useHistory();
@@ -15,7 +16,19 @@ export default function Motivation() {
   });
   const onLogin = (data, event) => {
     event.preventDefault();
-    console.log(data);
+    let newMotivation = data.Motivation.filter(function(mov) { return mov.name != false; })
+    let newJobFields = data.Desired_Job_Fields.filter(function(field) { return field.name != false; })
+    let arrayLocation = []
+    arrayLocation.push(data.Desired_Job_Location)
+
+    const newData = {
+      "Motivation": newMotivation,
+      "Desired_Job_Fields" : newJobFields,
+      "Desired_Job_Location": arrayLocation
+    }
+
+    context.user = {...context.user, ...newData};
+    console.log(context.user);
     history.push('/account');
   };
 

@@ -23,6 +23,7 @@ export default function Hello() {
   const onLogin = (data, event) => {
     event.preventDefault();
     console.log(data);
+    context.user = {...context.user , ...data}
     history.push('/about');
   };
 

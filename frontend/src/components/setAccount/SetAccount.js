@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { Link, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { context } from '../../App.js';
-import { createAccount, getLogin, getUser } from '../../api/ApiRequest.js';
+import { createAccount, getLogin, getUser, postUser } from '../../api/ApiRequest.js';
 import './SetAccount.css';
 
 //import apiuserdata from '../../api/david.json';
@@ -28,13 +28,16 @@ export default function SetAccount() {
       "username": data.email,
       "password": data.password,
     }
-    console.log(newAccount);
-    history.push('/builder');
+    //console.log(newAccount);
+    
+    //console.log(context.user)
+    // history.push('/builder');
+    // Create account
     createAccount(JSON.stringify(newAccount))
       .then(response => {
         const promiseData = response.json()
         promiseData.then(data => {
-		  console.log(data);
+		    console.log(data);
           getLogin(JSON.stringify(userAccount))
           .then(response => {
             const promiseLogin = response.json()
@@ -42,23 +45,26 @@ export default function SetAccount() {
               const userToken = "Token " + dataLogin.token
               context.token = userToken;
               console.log("Context: " + context.token);
-              getUser(context.token)
+              postUser(JSON.stringify(context.user) ,context.token)
               .then(response => {
-			    const promiseUser = response.json()
-				promiseUser.then(dataUser => {
+                console.log(response.status)
+			          const promiseUser = response.json()
+				        promiseUser.then(dataUser => {
                   const userInfo = dataUser
-				  console.log(userInfo);
-				})
-			  })
+				          console.log(userInfo);
+				        })
+              })
+              .catch(e => console.log(e))
+              
             })
             console.log(response.status)
           })
           .catch(error => {
-            console.log(error)
-          })
-		})
+          console.log(error)
+        })
+		  })
         //console.log(response.json())
-      })
+    })
   };
 
   return (

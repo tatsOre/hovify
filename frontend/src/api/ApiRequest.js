@@ -36,7 +36,7 @@ const postUser = async (data, token) => {
       'Content-Type' : 'application/json',
     }
   });
-  const result = await response.json();
+  const result = await response;
   return result;
 }
 
