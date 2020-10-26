@@ -16,8 +16,6 @@ import { context } from '../../App.js';
 import Fade from 'react-reveal/Fade';
 
 import './Home.css';
-import graphic from './img/main-graphic.svg';
-import people from './img/people.jpg';
 /* API */
 import { getLogin, getUser, postUser, createAccount, getProfile } from '../../api/ApiRequest.js';
 
