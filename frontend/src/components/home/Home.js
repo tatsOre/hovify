@@ -22,7 +22,7 @@ import twitterlogo from './img/twitter.svg';
 import linkedinlogo from './img/linkedin.svg';
 
 /* API */
-import { getLogin, getProfile } from '../../api/ApiRequest.js';
+import { getLogin, getProfile, getUser } from '../../api/ApiRequest.js';
 
 
 export default function Home() {
@@ -61,8 +61,18 @@ export default function Home() {
     .then(response => {
       const promiseData = response.json()
       promiseData.then(data => {
-        const userToken = data.token
-        context.token = userToken;
+        context.token = "Token " + data.token;
+        console.log(context.token);
+        getUser(context.token)
+        .then(response => {
+          const promiseUser = response.json()
+          promiseUser.then(dataUser => {
+            context.user = dataUser;
+            console.log("get data");
+            console.log(context.user);
+            history.push('/builder');
+          })
+        })
       })
       console.log(response.status)
     })

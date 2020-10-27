@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
@@ -20,19 +21,49 @@ import { context } from '../../App.js';
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
 import logo from '../images/logo1.svg';
 import './cvbuilder.css';
+import { postUser } from '../../api/ApiRequest.js';
 
 export default function Cvbuilder () {
+  /* ------------------------------------------------------ */
+  const history = useHistory();
+  /* ------------------------------------------------------ */
   // const x = useContext(context); ?
   // apiuserdata = x.user; ?
   const apiuserdata = context.user;
+
   //console.log(context.user);
   const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'
   });
   const onSubmit = data => {
-    const parsedData = {...data, 'Skills': JSON.parse(data.Skills), 'Languages': JSON.parse(data.Languages)};
+    const parsedData = {
+      ...data,
+      'Skills': JSON.parse(data.Skills),
+      'Languages': JSON.parse(data.Languages),
+      "About_User": [],
+      "Motivation": [],
+      "Interest": [],
+      "Desired_Job_Fields": [],
+      "Desired_Job_Location": []
+    };
+    parsedData.User.id = context.user.User.id;
+    console.log("parsed data");
     console.log(parsedData);
+    console.log("token");
+    console.log(context.token);
+    postUser(JSON.stringify(context.user), context.token)
+    .then( response => {
+      console.log(response.status)
+      const promiseData = response.json()
+      promiseData.then(data => {
+        console.log("post")
+        console.log(data)
+        history.push('/preview');
+      })
+      promiseData.catch(error => console.error(error))
+    })
+    .catch(error => console.error(error))
   }
 
 /* CV Builder without LinkedIn Data: */
