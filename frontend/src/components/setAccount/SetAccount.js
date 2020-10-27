@@ -51,8 +51,23 @@ export default function SetAccount() {
                 console.log(response.status)
 			          const promiseUser = response.json()
 				        promiseUser.then(dataUser => {
+                  console.log("retorno api")
                   const userInfo = dataUser
-				          console.log(userInfo);
+                  console.log(userInfo);
+
+                   getUser(context.token)
+                  .then(response => {
+                      if (response.status == 200) {
+                        const promiseUser = response.json()
+                        promiseUser.then(dataUser => {
+                          context.user = dataUser
+                          console.log("get data")
+                          console.log(context.user)
+                        })
+                      }
+                    })
+
+                  history.push('/builder');
 				        })
               })
               .catch(e => console.log(e))
