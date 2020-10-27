@@ -12,10 +12,12 @@
   background-image: url('./img/main-graphic.svg');
   background-repeat:  no-repeat;
   background-size: 550px;
-  background-position: 120px 80px; /* left top*/ 
+  background-position: 120px 60px; /* left top*/ 
 }
 .home-header, .main-content, .foonavbar {
   max-width: 75%;
+}
+.main-content, .foonavbar {
   margin: 0 auto;
 }
 .home-header { grid-area: header; }
@@ -26,12 +28,12 @@
 /* Header: Logo and Sign in Modal styles: */
 .home-header {
   display: flex;
-  padding: 25px 0;
+  padding: 10px 100px;
   justify-content: space-between;
+  max-width: 100%;
  }
-.signin-text {
-  margin-right: 25px;
-  display: inline;
+ .branding-home {
+  max-width: 185px;
 }
 .modal-signin, .modal {
   position: relative;
@@ -69,10 +71,35 @@
 .main-title span ~ span {
   color: #262AD1;
 }
+.main-highlight {
+  font-size: 50px;
+  font-weight: 300;
+  color: #321880;
+  line-height: .8;
+  padding: 25px 0 0;
+}
+.main-highlight span {
+  font-size: 60px;
+  color: #FE5F55;
+}
+.main-highlight span ~ span {
+  font-size: 50px;
+  color: #262AD1;
+}
 .contentHome p {
-  font-size: 25px;
+  font-size: 20px;
+  line-height: 1.3em;
+  color: #55555E;
 }
 /* Sign in Modal */
+.signin-modal__container {
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
+.signin-text {
+  width: 100%;
+}
 .modal-signin {
   padding: 2em 2em .5em;
 }
@@ -129,6 +156,9 @@
   text-align: center;
   text-decoration: none;
 }
+.btn-signin {
+  letter-spacing: .1em;
+}
 .btn-modal__linkedin,
 .btn-modal__signin {
   letter-spacing: 0.1em;
@@ -137,7 +167,10 @@
 .btn-primary_linkedin,
 .btn-primary_zero {
   display: inline;
-  max-width: 50%;
+  max-width: 45%;
+  padding: 10px 0;
+  margin-right: 10px;
+  margin-left: 10px;
   letter-spacing: 0.05em;
 }
 .btn-primary_zero {
@@ -161,10 +194,13 @@
 }
 /* Hovify team */
 .hovify-team {
+  margin: 40px 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  background-color:lightgrey;
+}
+.hovify-member {
+  margin: 0 10px;
 }
 .hovify-member__photo {
   background-color: whitesmoke;
@@ -176,4 +212,15 @@
 .hovify-member__name,
 .hovify-member__label {
   text-align: center;
+}
+.hovify-member__label {
+  font-family: 'Roboto', sans-serif;
+}
+.hovify-member__socialmedia {
+  display: flex;
+  justify-content: center;
+}
+.twitter, .linkedin, .medium {
+  margin: 0 5px;
+  width: 25px;
 }

@@ -4,9 +4,10 @@ import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import './Hello.css';
 import { context } from '../../App.js';
- 
+import logoFull from '../images/logo-full.svg';
+import './Hello.css';
+
 
 export default function Hello() {
   //const localContext = useContext(context);
@@ -29,7 +30,7 @@ export default function Hello() {
 
   return (
     <div className="hello">
-      <aside className='branding'>HoviFy</aside>
+      <img className='branding-hello' src={logoFull} alt="Logo" />
       <form className="form-hello" onSubmit={handleSubmit(onLogin)}>
         <h1 className="hello-title"><span>Hello,</span> Hovifier</h1>
         <h2 className="hello-text">Fill and/or verify your Name and Last Name:</h2>
