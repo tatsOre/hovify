@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { context } from '../../App.js';
 import { createAccount, getLogin, getUser, postUser } from '../../api/ApiRequest.js';
+import logo from '../images/logo1.svg';
 import './SetAccount.css';
 
 //import apiuserdata from '../../api/david.json';
@@ -69,8 +70,11 @@ export default function SetAccount() {
 
   return (
   <section className="account">
-    <aside className='branding'>HoviFy</aside>
-    <h1 className="account-title"><span>{userData.User.FirstName},<br/></span>we need the last details to create an account:</h1>
+    <img className='branding' src={logo} alt="Logo" />
+    <h1 className="account-title">
+      <span>{(userData && userData.User && userData.User.FirstName) || 'Hovifier'},<br/></span>
+      we need the last details to create an account:
+    </h1>
     <form onSubmit={handleSubmit(onCreate)} className="form-account">
       <div className="label-content">
         <label className="acount-label" for="UserName">Your e-mail:</label>

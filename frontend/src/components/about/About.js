@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import HorizontalStepper from '../steppernav/Stepper';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import './About.css';
 import { context } from '../../App.js';
+import logo from '../images/logo1.svg';
+import './About.css';
+
 
 export default function About() {
   const history = useHistory();
@@ -32,7 +34,7 @@ export default function About() {
   return (
     <section className="about">
       <HorizontalStepper className='stepper'/>
-      <aside className='branding'>HoviFy</aside>
+      <img className='branding' src={logo} alt="Logo" />
       <h1 className="about-title">Please, complete this fields:</h1>
         <form onSubmit={handleSubmit(onLogin)} className="form-about">
           <section className="about-user__questions">
