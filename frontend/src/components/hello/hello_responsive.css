@@ -1,0 +1,41 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+    .hello {
+        width: 85%;
+      }
+      .form-hello {
+        margin-top: 40px;
+      }
+      .textField {
+        width: 100%;
+        margin-top: 5px;
+      }
+      /* Text Styles for Hello */
+      .hello-title{
+        font-size: 3.25em;
+        padding-bottom: 15px;
+      }
+      .hello-title, .hello-text {
+        line-height: 1em;
+      }
+      .hello-text {
+        font-weight: 300;
+        font-size: 1.25em;
+        margin: 15px 0 25px;
+      }
+      .hello-FirstName, .hello-LastName {
+        font-size: 1.25em;
+        font-family: 'Montserrat', sans-serif;
+        color: #262ad1;
+      }
+      .LastName-field {
+        margin-top: 20px;
+      }
+      .nav-hello {
+        padding-top: 80px;
+      }
+      .branding-hello {
+        margin-top: 25px;
+        max-width: 120px;
+      }
+}

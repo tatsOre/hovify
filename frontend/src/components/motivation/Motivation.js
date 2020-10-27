@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { context } from '../../App.js';
 import logo from '../images/logo1.svg';
 import './Motivation.css';
-
+import './motivation_responsive.css';
 
 export default function Motivation() {
   const history = useHistory();

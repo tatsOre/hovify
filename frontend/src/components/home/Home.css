@@ -7,12 +7,13 @@
     "header"
     "main"
     "team-section"
+    "team-section_res"
     "footer";
   font-family: 'Roboto', sans-serif;
   background-image: url('./img/main-graphic.svg');
   background-repeat:  no-repeat;
-  background-size: 550px;
-  background-position: 120px 60px; /* left top*/ 
+  background-size: 480px;
+  background-position: 180px 50px; /* left top*/ 
 }
 .home-header, .main-content, .foonavbar {
   max-width: 75%;
@@ -23,6 +24,7 @@
 .home-header { grid-area: header; }
 .main-content { grid-area: main; }
 .hovify-team { grid-area: team-section; }
+.hovify-team-responsive { grid-area: team-section_res; }
 .foonavbar { grid-area: footer; }
 
 /* Header: Logo and Sign in Modal styles: */
@@ -87,6 +89,7 @@
   color: #262AD1;
 }
 .contentHome p {
+  max-width: 90%;
   font-size: 20px;
   line-height: 1.3em;
   color: #55555E;
@@ -129,6 +132,9 @@
 .divBtnContent p{
   font-family: 'Roboto', sans-serif;
   font-size: .85em;
+}
+.background-image {
+  display: none;
 }
 /* LinkedIn Modal */
 .modal-linkedIn {
@@ -193,6 +199,9 @@
   text-decoration: none;
 }
 /* Hovify team */
+.hovify-team-responsive {
+  display: none;
+}
 .hovify-team {
   margin: 40px 0;
   display: flex;
@@ -223,4 +232,7 @@
 .twitter, .linkedin, .medium {
   margin: 0 5px;
   width: 25px;
+}
+.devlogo {
+  width: 35px;
 }
