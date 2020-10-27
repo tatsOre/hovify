@@ -14,12 +14,16 @@ import LockIcon from '@material-ui/icons/Lock';
 import CloseIcon from '@material-ui/icons/Close';
 import { context } from '../../App.js';
 import Fade from 'react-reveal/Fade';
-
-import './Home.css';
-import logoFull from '../images/logo-full.svg';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import logoFull from '../images/logo-full-test.svg';
 import mediumlogo from './img/medium.svg';
 import twitterlogo from './img/twitter.svg';
 import linkedinlogo from './img/linkedin.svg';
+import devlogo from './img/devlogo.jpg';
+import background from './img/main-graphic.svg';
+import './Home.css';
+import './home_responsive.css';
 
 /* API */
 import { getLogin, getProfile, getUser } from '../../api/ApiRequest.js';
@@ -190,15 +194,16 @@ export default function Home() {
           <Fade top>
             <h1 className="main-title"><span>We</span><span> are</span> awesome.</h1>
             </Fade>
-              <p className="p1">
+              <p>
                 In HoviFy we believe that anybody with the right attitude should have a real chance
-                of applying for a job. </p>
+                of applying for a job.</p>
                 <p>And all starts with a good looking resume.</p>
               <p>
                 That's how HoviFy comes in handy, saving you time building your resume the best way possible
                 increasing your chances to call the attention of recruiters. </p>
               <p>But wait! there's more:</p>
               <p>HoviFy can also help you match with job offers that fit with your professional profile and preferences.</p>
+              <img className='background-image' src={background} alt="Image" />
             <Fade top>
             <h3 className="main-highlight"><span>We believe</span><br/>that you are<span> awesome.</span></h3>
             </Fade>
@@ -219,78 +224,154 @@ export default function Home() {
           </section>
         </main>
         <section className="hovify-team">
-          <div className="hovify-member">
-            <div className="hovify-member__photo"></div>
-            <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
-              <p className="hovify-member__name">Andres Bayona</p></a>
-            <p className="hovify-member__label">Back End -<br/>Django Developer</p>
-            <div className='hovify-member__socialmedia'>
-              <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
-                <img className='twitter' src={twitterlogo} alt="Logo" /></a>
-              <a href='https://www.linkedin.com/in/andresfbayona/' target='_blank' rel='noopener noreferrer'>
-                <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
-              <a href='https://medium.com/@andresbaymon' target='_blank' rel='noopener noreferrer'>
-                <img className='medium' src={mediumlogo} alt="Logo" /></a>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Andres Bayona</p></a>
+              <p className="hovify-member__label">Back End -<br/>Django Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/andresfbayona/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://medium.com/@andresbaymon' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+              </div>
             </div>
-          </div>
-          <div className="hovify-member">
-            <div className="hovify-member__photo"></div>
-            <a href='https://github.com/daorejuela1' target="_blank" rel='noopener noreferrer'>
-              <p className="hovify-member__name">David Orejuela</p></a>
-            <p className="hovify-member__label">Back End -<br/>Django Developer</p>
-            <div className='hovify-member__socialmedia'>
-              <a href='https://twitter.com/DavidOrejuela14' target='_blank' rel='noopener noreferrer'>
-                <img className='twitter' src={twitterlogo} alt="Logo" /></a>
-              <a href='https://www.linkedin.com/in/davidorejuela14/' target='_blank' rel='noopener noreferrer'>
-                <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
-              <a href='https://medium.com/@daorejuela1' target='_blank' rel='noopener noreferrer'>
-                <img className='medium' src={mediumlogo} alt="Logo" /></a>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/daorejuela1' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">David Orejuela</p></a>
+              <p className="hovify-member__label">Back End -<br/>Django Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/DavidOrejuela14' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/davidorejuela14/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://medium.com/@daorejuela1' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+              </div>
             </div>
-          </div>
-          <div className="hovify-member">
-            <div className="hovify-member__photo"></div>
-            <a href='https://github.com/llanojs/' target="_blank" rel='noopener noreferrer'>
-              <p className="hovify-member__name">Juan Sebastián Llano</p>
-            </a>
-            <p className="hovify-member__label">Front End -<br/>React Developer</p>
-            <div className='hovify-member__socialmedia'>
-              <a href='https://twitter.com/llanoJS' target='_blank' rel='noopener noreferrer'>
-                <img className='twitter' src={twitterlogo} alt="Logo" /></a>
-              <a href='https://www.linkedin.com/in/juansebastianllanogallego/' target='_blank' rel='noopener noreferrer'>
-                <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
-              <a href='https://medium.com/@juanllano93' target='_blank' rel='noopener noreferrer'>
-                <img className='medium' src={mediumlogo} alt="Logo" /></a>
-          </div>
-          </div>
-          <div className="hovify-member">
-            <div className="hovify-member__photo"></div>
-            <a href='https://github.com/nathsotomayor' target="_blank" rel='noopener noreferrer'>
-              <p className="hovify-member__name">Nathaly Sotomayor</p>
-            </a>
-            <p className="hovify-member__label">DevOps &amp;<br/>Software architect</p>
-            <div className='hovify-member__socialmedia'>
-              <a href='https://twitter.com/nathsotomayor' target='_blank' rel='noopener noreferrer'>
-                <img className='twitter' src={twitterlogo} alt="Logo" /></a>
-              <a href='https://www.linkedin.com/in/nathsotomayor/' target='_blank' rel='noopener noreferrer'>
-                <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
-              <a href='https://medium.com/@nathsotomayor' target='_blank' rel='noopener noreferrer'>
-                <img className='medium' src={mediumlogo} alt="Logo" /></a>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/llanojs/' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Juan Sebastián Llano</p>
+              </a>
+              <p className="hovify-member__label">Front End -<br/>React Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/llanoJS' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/juansebastianllanogallego/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://medium.com/@juanllano93' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
             </div>
-          </div>
-          <div className="hovify-member">
-            <div className="hovify-member__photo"></div>
-            <a href='https://github.com/tatsOre/' target="_blank" rel='noopener noreferrer'>
-              <p className="hovify-member__name">Tatiana Orejuela Zapata</p></a>
-            <p className="hovify-member__label">Front End -<br/>React Developer</p>
-            <div className='hovify-member__socialmedia'>
-              <a href='https://twitter.com/TatsInTech' target='_blank' rel='noopener noreferrer'>
-                <img className='twitter' src={twitterlogo} alt="Logo" /></a>
-              <a href='https://www.linkedin.com/in/tatiana-orejuela-08b98225/' target='_blank' rel='noopener noreferrer'>
-                <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
-              <a href='' target='_blank' rel='noopener noreferrer'>
-                <img className='medium' src={mediumlogo} alt="Logo" /></a>
             </div>
-          </div>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/nathsotomayor' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Nathaly Sotomayor</p>
+              </a>
+              <p className="hovify-member__label">DevOps &amp;<br/>Software architect</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/nathsotomayor' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/nathsotomayor/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://dev.to/nathsotomayor' target='_blank' rel='noopener noreferrer'>
+                  <img className='devlogo' src={devlogo} alt="Logo" /></a>
+              </div>
+            </div>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/tatsOre/' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Tatiana Orejuela Zapata</p></a>
+              <p className="hovify-member__label">Front End -<br/>React Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/TatsInTech' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/tatiana-orejuela-08b98225/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+              </div>
+            </div>
+        </section>
+        <section className="hovify-team-responsive">
+          <AwesomeSlider className='team-slider'>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Andres Bayona</p></a>
+              <p className="hovify-member__label">Back End -<br/>Django Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/andresfbayona/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://medium.com/@andresbaymon' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+              </div>
+            </div>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/daorejuela1' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">David Orejuela</p></a>
+              <p className="hovify-member__label">Back End -<br/>Django Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/DavidOrejuela14' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/davidorejuela14/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://medium.com/@daorejuela1' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+              </div>
+            </div>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/llanojs/' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Juan Sebastián Llano</p>
+              </a>
+              <p className="hovify-member__label">Front End -<br/>React Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/llanoJS' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/juansebastianllanogallego/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://medium.com/@juanllano93' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+            </div>
+            </div>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/nathsotomayor' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Nathaly Sotomayor</p>
+              </a>
+              <p className="hovify-member__label">DevOps &amp;<br/>Software architect</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/nathsotomayor' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/nathsotomayor/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='https://dev.to/nathsotomayor' target='_blank' rel='noopener noreferrer'>
+                  <img className='devlogo' src={devlogo} alt="Logo" /></a>
+              </div>
+            </div>
+            <div className="hovify-member">
+              <div className="hovify-member__photo"></div>
+              <a href='https://github.com/tatsOre/' target="_blank" rel='noopener noreferrer'>
+                <p className="hovify-member__name">Tatiana Orejuela Zapata</p></a>
+              <p className="hovify-member__label">Front End -<br/>React Developer</p>
+              <div className='hovify-member__socialmedia'>
+                <a href='https://twitter.com/TatsInTech' target='_blank' rel='noopener noreferrer'>
+                  <img className='twitter' src={twitterlogo} alt="Logo" /></a>
+                <a href='https://www.linkedin.com/in/tatiana-orejuela-08b98225/' target='_blank' rel='noopener noreferrer'>
+                  <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
+                <a href='' target='_blank' rel='noopener noreferrer'>
+                  <img className='medium' src={mediumlogo} alt="Logo" /></a>
+              </div>
+            </div>
+          </AwesomeSlider>
         </section>
         <footer className="foonavbar">
           <Link className="foonavbar-link" to="/">Home</Link>
