@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { context } from '../../App.js';
-import logoFull from '../images/logo-full.svg';
+import logoFull from '../images/logo1.svg';
 import './Hello.css';
 
 
@@ -29,8 +29,8 @@ export default function Hello() {
   };
 
   return (
+    <div><img className='branding-hello' src={logoFull} alt="Logo" />
     <div className="hello">
-      <img className='branding-hello' src={logoFull} alt="Logo" />
       <form className="form-hello" onSubmit={handleSubmit(onLogin)}>
         <h1 className="hello-title"><span>Hello,</span> Hovifier</h1>
         <h2 className="hello-text">Fill and/or verify your Name and Last Name:</h2>
@@ -57,6 +57,7 @@ export default function Hello() {
           <Button type="submit" className="btn-link">Next</Button>
         </div>
       </form>
+    </div>
     </div>
   );
 }
