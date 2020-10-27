@@ -12,7 +12,7 @@
   background-image: url('./img/main-graphic.svg');
   background-repeat:  no-repeat;
   background-size: 550px;
-  background-position: 120px 80px; /* left top*/ 
+  background-position: 120px 60px; /* left top*/ 
 }
 .home-header, .main-content, .foonavbar {
   max-width: 75%;
@@ -28,7 +28,7 @@
 /* Header: Logo and Sign in Modal styles: */
 .home-header {
   display: flex;
-  padding: 0 100px;
+  padding: 10px 100px;
   justify-content: space-between;
   max-width: 100%;
  }
@@ -155,6 +155,9 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+}
+.btn-signin {
+  letter-spacing: .1em;
 }
 .btn-modal__linkedin,
 .btn-modal__signin {

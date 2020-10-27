@@ -18,8 +18,8 @@ export default function Motivation() {
   });
   const onLogin = (data, event) => {
     event.preventDefault();
-    let newMotivation = data.Motivation.filter(function(mov) { return mov.name != false; })
-    let newJobFields = data.Desired_Job_Fields.filter(function(field) { return field.name != false; })
+    let newMotivation = data.Motivation.filter(function(mov) { return mov.name !== false; })
+    let newJobFields = data.Desired_Job_Fields.filter(function(field) { return field.name !== false; })
     let arrayLocation = []
     arrayLocation.push(data.Desired_Job_Location)
 

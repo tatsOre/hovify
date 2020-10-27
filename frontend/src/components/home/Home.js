@@ -22,14 +22,10 @@ import twitterlogo from './img/twitter.svg';
 import linkedinlogo from './img/linkedin.svg';
 
 /* API */
-import { getLogin, getUser, postUser, createAccount, getProfile } from '../../api/ApiRequest.js';
+import { getLogin, getProfile } from '../../api/ApiRequest.js';
+
 
 export default function Home() {
-  /* --------------Api Test------------------- */
-  /* Login implementation */
-  let userToken = "Token "
-  let userData = ""
-  /* ------------------------------------------------------ */
   const history = useHistory();
   /* ------------------------------------------------------ */
   /* Form Sign in Modal Hook */
@@ -66,10 +62,7 @@ export default function Home() {
       const promiseData = response.json()
       promiseData.then(data => {
         const userToken = data.token
-        //console.log("token")
-        //console.log(userToken);
         context.token = userToken;
-        //console.log("Context" + context.token);
       })
       console.log(response.status)
     })
@@ -144,7 +137,6 @@ export default function Home() {
       </form>
     </div>
   );
-
   /* LinkedIn Url profile form to modal */
   const linkForm = (
     <div className="modal modal-linkedIn" >
@@ -159,7 +151,7 @@ export default function Home() {
             inputRef={register2({required: true, maxLength: 80})} />
         </div>
         <div className="divBtnContent">
-            <button className="btn-modal__linkedin" type="submit" >Go</button>
+            <button className="btn-modal__linkedin" type="submit">Send</button>
         </div>
       </form>
     </div>
@@ -200,7 +192,7 @@ export default function Home() {
             <Fade top>
             <h3 className="main-highlight"><span>We believe</span><br/>that you are<span> awesome.</span></h3>
             </Fade>
-            <p>Let us know about you and we will show you some Hovify magic: </p>
+            <p>Let us know about you and we will show you some HoviFy magic: </p>
             <div id="start-nav">
               <button className="btn-primary_linkedin" type="button" onClick={showLinkedin}>Fill-up with your LinkedIn profile</button >
               <Modal
@@ -211,7 +203,7 @@ export default function Home() {
                 {linkForm}
               </Modal>
               <button className="btn-primary_zero">
-                <Link className="btn-primary_zero__link" to="/hello"  >Start from scratch</Link>
+                <Link className="btn-primary_zero__link" to="/hello">Start from scratch</Link>
               </button>
             </div>
           </section>
