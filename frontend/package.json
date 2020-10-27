@@ -16,6 +16,7 @@
     "material-ui-phone-number": "^2.2.6",
     "moment": "^2.29.1",
     "react": "^16.13.1",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.9.2",
     "react-phone-input-2": "^2.13.8",

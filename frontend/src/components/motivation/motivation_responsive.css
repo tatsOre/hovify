@@ -1,0 +1,46 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+    .motivations, .form-motivations {
+        grid-template-columns: 100%;
+        margin: 0 auto;
+    }
+    .motivations {
+        grid-template-areas:
+        "branding"
+        "stepper"
+        "motivations-title"
+        "form";
+    }
+    .form-motivations {
+        grid-template-areas:
+        "section"
+        "aside"
+        "nav";
+    }
+    /* Font Styles */
+    .motivations-questions__title {
+        font-size: 2em;
+        margin-top: 25px;
+        line-height: 1em;
+    }
+    .desired-location__title,
+    .desired-job__title {
+        font-size: 20px;
+        opacity: 1;
+    }
+    .motivation-questions__info {
+        padding-top: 20px;
+        width: 100%;
+        font-size: 1.15em;
+        line-height: 1.25em;
+    }
+    .desired-location__title{
+        margin-top: 25px;
+    }
+    .wrapper-motivation {
+        margin: 20px 0;
+    }
+    .wrapper-jobfield {
+        margin: 10px 0;
+    } 
+}
