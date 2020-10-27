@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { context } from '../../App.js';
 import logo from '../images/logo1.svg';
 import './About.css';
+import './about_responsive.css';
 
 
 export default function About() {

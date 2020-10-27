@@ -37,7 +37,7 @@ export default function Motivation() {
   return (
     <section className="motivations">
       <HorizontalStepper className='stepper'/>
-      <img className='branding' src={logo} alt="Logo" />
+      <img className='branding branding-rsp' src={logo} alt="Logo" />
       <h2 className="motivations-questions__title">What are your motivations?</h2>
       <form onSubmit={handleSubmit(onLogin)} className="form-motivations">
         <section className="motivation-questions">

@@ -7,6 +7,7 @@ import { context } from '../../App.js';
 import { createAccount, getLogin, getUser, postUser } from '../../api/ApiRequest.js';
 import logo from '../images/logo1.svg';
 import './SetAccount.css';
+import './setacc_responsive.css';
 
 //import apiuserdata from '../../api/david.json';
 
