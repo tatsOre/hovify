@@ -6,7 +6,7 @@
         grid-template-rows: auto;
     }
     .main-container {
-        max-width: 90%;
+        max-width: 85%;
         grid-template-areas:
         "branding"
         "stepper"
@@ -17,6 +17,12 @@
         grid-template-areas: 
         "primary_info"
         "secondary_info";
+    }
+    .branding {
+        display: none;
+    }
+    .MuiStepper-root {
+        padding: 20px 0px 0px;
     }
     /* Welcome User Section */
     .welcome-user {

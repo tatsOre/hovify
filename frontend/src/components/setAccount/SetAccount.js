@@ -93,7 +93,7 @@ export default function SetAccount() {
   <section className="account">
     {loading && <LinearProgress />}
     
-    <img className='branding' src={logo} alt="Logo" />
+    <img className='branding branding_acc' src={logo} alt="Logo" />
     <h1 className="account-title">
       <span>{(userData && userData.User && userData.User.FirstName) || 'Hovifier'},<br/></span>
       we need the last details to create an account:
@@ -106,18 +106,21 @@ export default function SetAccount() {
         <label className="acount-label" for="confirm-password">Confirm Password:</label>
       </div>
       <div className="textF-content">
+      <label className="acount-label_res" for="UserName">Your e-mail:</label>
         <TextField
           id="UserName"
           className="textField-account"
           type="email"
           name="email"
           inputRef={register({required: true, maxLength: 80})} />
+        <label className="acount-label_res" for="password">Password:</label>
         <TextField
           id="password"
           className="textField-account"
           type="password"
           name="password"
           inputRef={register({required: true, maxLength: 80})} />
+        <label className="acount-label_res" for="confirm-password">Confirm Password:</label>
         <TextField
           id="confirm-password"
           className="textField-account"

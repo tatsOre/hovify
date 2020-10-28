@@ -55,6 +55,7 @@ h1.account-title {
   position: relative;
   width: 100%;
 }
+.acount-label_res { display: none; }
 .textF-content {
   display: flex;
   justify-content: left;
