@@ -10,6 +10,9 @@
     .branding-home {
         display: none;
     }
+    .animation_product {
+        max-width: 100%;
+    }
     /* Sign in Modal */
     .signin-modal__container {
         width: 100%;

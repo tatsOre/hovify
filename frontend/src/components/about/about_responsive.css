@@ -1,0 +1,40 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+    .about, .form-about {
+        grid-template-columns: 100%;
+        margin: 0 auto;
+      }
+    .about {
+        max-width: 85%;
+        grid-template-areas:
+        "branding"
+        "stepper"
+        "about-title"
+        "form-about";
+    }
+    .form-about {
+        max-width: 100%;
+        grid-template-areas:
+        "section"
+        "aside"
+        "nav";
+    }
+      /* Font Styles */
+      h1.about-title {
+        font-size: 2em;
+        margin-top: 25px;
+        line-height: 1em;
+        padding-right: 10px;
+      }
+      h2.about-questions__text {
+        font-size: 1.15em;
+        line-height: 1.25em;
+      }
+      h3.about-interests__title {
+        font-size: 20px;
+        opacity: 1;
+      }
+      .about-user__questions { 
+        padding-right: 0px;
+      }
+}

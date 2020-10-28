@@ -5,6 +5,7 @@
         margin: 0 auto;
     }
     .motivations {
+        max-width: 85%;
         grid-template-areas:
         "branding"
         "stepper"
@@ -30,7 +31,7 @@
     }
     .motivation-questions__info {
         padding-top: 20px;
-        width: 100%;
+        max-width: 100%;
         font-size: 1.15em;
         line-height: 1.25em;
     }
@@ -38,7 +39,7 @@
         margin-top: 25px;
     }
     .wrapper-motivation {
-        margin: 20px 0;
+        margin: 10px 0;
     }
     .wrapper-jobfield {
         margin: 10px 0;

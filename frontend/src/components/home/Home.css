@@ -104,7 +104,7 @@
   width: 100%;
 }
 .modal-signin {
-  padding: 2em 2em .5em;
+  padding: 2em 2em 1.25em;
 }
 .modal-signin > form > p {
   font-size: .85em;
@@ -112,7 +112,7 @@
 }
 .modal-signin > form > p ~ p {
   font-size: 1.5em;
-  line-height: 0;
+  line-height: 1;
   color: #321880;
 }
 .username, .password {
@@ -129,12 +129,15 @@
   float: right;
   cursor: pointer;
 }
-.divBtnContent p{
+.divBtnContent span{
   font-family: 'Roboto', sans-serif;
   font-size: .85em;
 }
 .background-image {
   display: none;
+}
+.animation_product {
+  max-width: 80%;
 }
 /* LinkedIn Modal */
 .modal-linkedIn {
@@ -202,6 +205,14 @@
 .hovify-team-responsive {
   display: none;
 }
+.team-title {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #321880;
+  line-height: 0;
+}
 .hovify-team {
   margin: 40px 0;
   display: flex;
@@ -212,18 +223,55 @@
   margin: 0 10px;
 }
 .hovify-member__photo {
-  background-color: whitesmoke;
   height: 150px;
   width: 150px;
   margin: 25px;
   border-radius: 50%;
+}
+.bayona {
+  background-image: url('./img/bayona_pic.jpg');
+  background-repeat:  no-repeat;
+  background-size: 190px;
+  background-position: -15px -10px;
+}
+.daorejuela {
+  background-image: url('./img/daorejuela_pic.jpg');
+  background-repeat:  no-repeat;
+  background-size: 280px;
+  background-position: -60px -60px;
+}
+.juanllano {
+  background-image: url('./img/llano_pic.jpg');
+  background-repeat:  no-repeat;
+  background-size: 250px;
+  background-position: -45px -5px;
+}
+.nathsotomayor {
+  background-image: url('./img/soto_pic.jpg');
+  background-repeat:  no-repeat;
+  background-size: 155px;
+  background-position: 0px 0px;
+}
+.taorejuela {
+  background-image: url('./img/taorejuela_pic.jpg');
+  background-repeat:  no-repeat;
+  background-size: 155px;
+  background-position: 0px 10px;
 }
 .hovify-member__name,
 .hovify-member__label {
   text-align: center;
 }
 .hovify-member__label {
+  color: gray;
   font-family: 'Roboto', sans-serif;
+}
+.hovify-member > a {
+  color: #321880;
+  font-size: 1em;
+  line-height: 0;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 .hovify-member__socialmedia {
   display: flex;

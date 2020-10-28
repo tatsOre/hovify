@@ -15,12 +15,13 @@ import CountrySelect from '../countryselector/CountrySelector';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 import MuiPhoneNumber from 'material-ui-phone-number';
 
-//import apiuserdata from '../../api/mariaempty.json';
+import apiuserdata from '../../api/david.json';
 import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
 import logo from '../images/logo1.svg';
 import './cvbuilder.css';
+import './cv_builder_responsive.css';
 import { postUser } from '../../api/ApiRequest.js';
 
 export default function Cvbuilder () {
@@ -29,7 +30,7 @@ export default function Cvbuilder () {
   /* ------------------------------------------------------ */
   // const x = useContext(context); ?
   // apiuserdata = x.user; ?
-  const apiuserdata = context.user;
+  //const apiuserdata = context.user;
 
   //console.log(context.user);
   const {register, handleSubmit, errors, control } = useForm({
@@ -199,7 +200,7 @@ export default function Cvbuilder () {
           />
           <TextField
             multiline fullWidth
-            className='input'
+            className='input summary'
             error={ errors && errors.User && errors.User.Summary && Boolean(errors.User.Summary) }
             defaultValue={userData.User.Summary}
             label='Summary:' name='User.Summary'
