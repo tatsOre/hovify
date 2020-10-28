@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { context } from '../../App.js';
-import logoFull from '../images/logo1.svg';
+import logoFull from '../images/logo-full-test.svg';
 import './Hello.css';
 import './hello_responsive.css';
 

@@ -5,7 +5,7 @@ import HorizontalStepper from '../steppernav/Stepper';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { context } from '../../App.js';
-import logo from '../images/logo1.svg';
+import logo from '../images/logo-full-test.svg';
 import './About.css';
 import './about_responsive.css';
 

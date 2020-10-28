@@ -19,7 +19,7 @@ import MuiPhoneNumber from 'material-ui-phone-number';
 import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
-import logo from '../images/logo1.svg';
+import logo from '../images/logo-full-test.svg';
 import './cvbuilder.css';
 import './cv_builder_responsive.css';
 import { postUser } from '../../api/ApiRequest.js';

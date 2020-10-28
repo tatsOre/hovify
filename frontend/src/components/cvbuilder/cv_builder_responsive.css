@@ -20,11 +20,11 @@
     }
     /* Welcome User Section */
     .welcome-user {
-        padding: 20px 0px;
+        padding: 10px 0px;
     }
     .welcome-user h1 {
         font-size: 3.5em;
-        line-height: .55em;
+        line-height: .9em;
         margin: 25px 0 10px;
     } 
     .welcome-user h2 {

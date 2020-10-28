@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { context } from '../../App.js';
 import { createAccount, getLogin, getUser, postUser } from '../../api/ApiRequest.js';
-import logo from '../images/logo1.svg';
+import logo from '../images/logo-full-test.svg';
 import './SetAccount.css';
 import './setacc_responsive.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
