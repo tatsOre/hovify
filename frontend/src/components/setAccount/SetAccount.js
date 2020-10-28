@@ -8,10 +8,14 @@ import { createAccount, getLogin, getUser, postUser } from '../../api/ApiRequest
 import logo from '../images/logo1.svg';
 import './SetAccount.css';
 import './setacc_responsive.css';
+import LinearProgress from '@material-ui/core/LinearProgress';
+
 
 //import apiuserdata from '../../api/david.json';
 
 export default function SetAccount() {
+  const [loading, setLoading] = React.useState(false);
+  
   /* ------------------------------------------------------ */
   const history = useHistory();
   /* ------------------------------------------------------ */
@@ -20,6 +24,7 @@ export default function SetAccount() {
       criteriaMode: "all",
       mode: "onBlur"
   });
+
   // Submit stored data from the user and move to the CV Builder:
   const onCreate = data => {
     const newAccount = {
@@ -30,11 +35,11 @@ export default function SetAccount() {
       "username": data.email,
       "password": data.password,
     }
-    //console.log(newAccount);
+       
     
-    //console.log(context.user)
     // history.push('/builder');
     // Create account
+    setLoading(true)
     createAccount(JSON.stringify(newAccount))
       .then(response => {
         const promiseData = response.json()
@@ -86,12 +91,15 @@ export default function SetAccount() {
 
   return (
   <section className="account">
+    {loading && <LinearProgress />}
+    
     <img className='branding' src={logo} alt="Logo" />
     <h1 className="account-title">
       <span>{(userData && userData.User && userData.User.FirstName) || 'Hovifier'},<br/></span>
       we need the last details to create an account:
     </h1>
     <form onSubmit={handleSubmit(onCreate)} className="form-account">
+      
       <div className="label-content">
         <label className="acount-label" for="UserName">Your e-mail:</label>
         <label className="acount-label" for="password">Password:</label>

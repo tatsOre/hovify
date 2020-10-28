@@ -30,7 +30,6 @@ export default function Motivation() {
     }
 
     context.user = {...context.user, ...newData};
-    console.log(context.user);
     history.push('/account');
   };
 

@@ -28,7 +28,6 @@ export default function About() {
     }
 
     context.user = {...context.user, ...newData};
-    console.log(context.user);
     history.push('/motivation');
   };
 
