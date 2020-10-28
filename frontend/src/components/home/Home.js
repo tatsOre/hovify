@@ -199,7 +199,7 @@ export default function Home() {
             <h1 className="main-title"><span>We</span><span> are</span> awesome.</h1>
             </Fade>
               <p>
-                In HoviFy we believe that anybody with the right attitude should have a real chance
+                In HoviFy we believe that anyone with the right attitude should have a real chance
                 of applying for a job.</p>
                 <p>And all starts with a good looking resume.</p>
               <p>
@@ -235,7 +235,7 @@ export default function Home() {
             <div className="hovify-member">
               <div className="hovify-member__photo bayona"></div>
               <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
-                <p className="hovify-member__name">Andres Bayona</p></a>
+                <p className="hovify-member__name">Andrés Bayona</p></a>
               <p className="hovify-member__label">Back End -<br/>Django Developer</p>
               <div className='hovify-member__socialmedia'>
                 <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
@@ -311,7 +311,7 @@ export default function Home() {
             <div className="hovify-member">
               <div className="hovify-member__photo bayona"></div>
               <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
-                <p className="hovify-member__name">Andres Bayona</p></a>
+                <p className="hovify-member__name">Andrés Bayona</p></a>
               <p className="hovify-member__label">Back End -<br/>Django Developer</p>
               <div className='hovify-member__socialmedia'>
                 <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
