@@ -13,10 +13,10 @@
   background-image: url('./img/main-graphic.svg');
   background-repeat:  no-repeat;
   background-size: 480px;
-  background-position: 180px 50px; /* left top*/ 
+  background-position: 145px 50px; /* left top*/ 
 }
 .home-header, .main-content, .foonavbar {
-  max-width: 75%;
+  max-width: 80%;
 }
 .main-content, .foonavbar {
   margin: 0 auto;
@@ -96,7 +96,7 @@
 }
 /* Sign in Modal */
 .signin-modal__container {
-  width: 25%;
+  width: 30%;
   display: flex;
   align-items: center;
 }
@@ -176,10 +176,10 @@
 .btn-primary_linkedin,
 .btn-primary_zero {
   display: inline;
-  max-width: 45%;
+  max-width: 48%;
   padding: 10px 0;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
   letter-spacing: 0.05em;
 }
 .btn-primary_zero {
@@ -232,7 +232,7 @@
   background-image: url('./img/bayona_pic.jpg');
   background-repeat:  no-repeat;
   background-size: 190px;
-  background-position: -15px -10px;
+  background-position: -15px -5px;
 }
 .daorejuela {
   background-image: url('./img/daorejuela_pic.jpg');
@@ -256,7 +256,7 @@
   background-image: url('./img/taorejuela_pic.jpg');
   background-repeat:  no-repeat;
   background-size: 155px;
-  background-position: 0px 10px;
+  background-position: 0px 2px;
 }
 .hovify-member__name,
 .hovify-member__label {
