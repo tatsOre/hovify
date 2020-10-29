@@ -12,9 +12,10 @@
   font-family: "Roboto", sans-serif;
   background-image: url("./img/main-graphic.svg");
   background-repeat: no-repeat;
-  background-size: 480px;
-  background-position: 100px 250px; /* left top*/
+  background-size: 420px;
+  background-position: 150px 150px; /* left top*/
 }
+
 .home-header,
 .main-content,
 .foonavbar {
@@ -33,11 +34,20 @@
 .hovify-team {
   grid-area: team-section;
 }
+.team-title {
+  grid-area: team-title;
+}
 .hovify-team-responsive {
   grid-area: team-section_res;
 }
 .foonavbar {
   grid-area: footer;
+}
+.feature-title {
+  grid-area: feature-title;
+  padding-top: 50px;
+  width: 100%;
+  text-align: center;
 }
 
 /* Header: Logo and Sign in Modal styles: */
@@ -47,6 +57,17 @@
   justify-content: space-between;
   max-width: 100%;
 }
+
+.home-header a {
+  /* margin: 10px 80px; */
+  font-size: 17px;
+  font-weight: 400;
+  color: #321880;
+  margin: auto 0px;
+  /* line-height: 0.8; */
+  text-decoration: none;
+}
+
 .branding-home {
   max-width: 185px;
 }
@@ -65,15 +86,38 @@
 /* Main Content*/
 .main-content {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-template-areas:
     ". contentHome"
+    "getStart getStart"
+    "feature-title feature-title"
     "feature1 feature1"
     "feature2 feature2"
-    "feature3 feature3";
+    "feature3 feature3"
+    "aboutContent aboutContent"
+    "team-title team-title";
 }
 
+.getStart {
+  grid-area: getStart;
+  display: flex;
+  width: 100%;
+  margin: 100px auto;
+  padding: 50px auto;
+}
+.titleAwesome {
+  width: 50%;
+  flex-direction: column;
+}
+.bottonStart {
+  width: 50%;
+  flex-direction: column;
+  font-size: 25px;
+  line-height: 1.3em;
+  color: #55555e;
+  text-align: center;
+}
 .feature1 {
   grid-area: feature1;
 }
@@ -85,16 +129,22 @@
 .feature3 {
   grid-area: feature3;
 }
-
-.feature4 {
-  grid-area: feature4;
+.aboutContent {
+  grid-area: aboutContent;
+  width: 100%;
+  margin: 100px auto;
+  padding-top: 50px;
+}
+.aboutContent h1 {
+  text-align: center;
 }
 .contentHome {
   grid-area: contentHome;
   padding-top: 90px;
+  margin-bottom: 100px;
 }
 .main-title {
-  font-size: 85px;
+  font-size: 66px;
   font-weight: 300;
   color: #321880;
   line-height: 0.7;
@@ -107,7 +157,7 @@
   color: #262ad1;
 }
 .main-highlight {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 300;
   color: #321880;
   line-height: 0.8;
@@ -118,12 +168,19 @@
   color: #fe5f55;
 }
 .main-highlight span ~ span {
-  font-size: 40px;
+  font-size: 60px;
   color: #262ad1;
+}
+
+.aboutContent p {
+  max-width: 100%;
+  font-size: 18px;
+  line-height: 1.8em;
+  color: #55555e;
 }
 .contentHome p {
   max-width: 90%;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.3em;
   color: #55555e;
 }
@@ -241,17 +298,24 @@
 .team-title {
   flex-basis: 100%;
   text-align: center;
-  font-size: 2.5em;
+  /* font-size: 2.5em;
   font-weight: 300;
   color: #321880;
-  line-height: 0;
+  line-height: 0; */
+  font-size: 66px;
+  font-weight: 300;
+  color: #321880;
+  line-height: 0.7;
+  padding-bottom: 30px;
 }
 .hovify-team {
-  margin: 40px 0;
+  margin: 0 0;
+  padding-top: 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
+
 .hovify-member {
   margin: 0 10px;
 }
@@ -332,38 +396,42 @@
   width: 100%;
   flex-direction: row;
   justify-content: center;
+  border-left: 8px solid #321880;
+  border-radius: 20px;
   margin: 25px 0px;
-  border-top: 1px solid gray;
+  -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.3);
 }
 
 .text {
   width: 40%;
   position: relative;
   right: 0%;
-  margin-left: 100px;
+  margin-left: 10px;
   margin-top: 30px;
 }
 
 .animation_product {
   position: relative;
-  margin-top: 40px;
+  margin: 20px 10px;
   width: 50%;
 }
 
 .feature-highlight {
   font-size: 35px;
   font-weight: 200;
-  color: #321880;
+  color: #262ad1;
   line-height: 0.8;
   padding: 25px 0 0;
 }
 .feature-highlight span {
   font-size: 35px;
-  color: #fe5f55;
+  color: #321880;
 }
 .feature-highlight span ~ span {
   font-size: 35px;
-  color: #262ad1;
+  color: #fe5f55;
 }
 
 .feature1 p,

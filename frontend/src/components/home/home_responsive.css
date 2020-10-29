@@ -38,6 +38,9 @@
     padding: 20px 20px;
     justify-content: space-between;
   }
+  .home-header a {
+    width: 100%;
+  }
   .btn-signin {
     width: 100%;
     margin: 0;
