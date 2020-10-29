@@ -92,7 +92,6 @@ export default function SetAccount() {
   return (
   <section className="account">
     {loading && <LinearProgress />}
-    
     <img className='branding branding_acc' src={logo} alt="Logo" />
     <h1 className="account-title">
       <span>{(userData && userData.User && userData.User.FirstName) || 'Hovifier'},<br/></span>

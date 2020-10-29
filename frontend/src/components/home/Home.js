@@ -206,10 +206,7 @@ export default function Home() {
               <p>
                 That's how HoviFy comes in handy, saving you time building your resume the best way possible
                 increasing your chances to call the attention of recruiters. </p>
-              <img className='animation_product' src={landingAnim} alt="animation_application" />
-              <img className='animation_product' src={helloAbout} alt="animation_application" />
-              <img className='animation_product' src={MotivAcc} alt="animation_application" />
-              <img className='animation_product' src={Builder} alt="animation_application" />
+
               <p>But wait! there's more:</p>
               <p>HoviFy can also help you match with job offers that fit with your professional profile and preferences.</p>
               <img className='background-image' src={background} alt="Image" />
@@ -231,7 +228,40 @@ export default function Home() {
               </button>
             </div>
           </section>
+          
+          <div className="feature1">
+            <div className="text">
+              <h3 className="feature-highlight"><span>We</span><span> are</span> awesome.</h3>
+              <p>Let us know about you and we will show you some HoviFy magic:</p>
+            </div>
+
+            <img className='animation_product' src={landingAnim} alt="animation_application" />
+          </div>
+          <div className="feature2">
+            <div className="text">
+              <h3 className="feature-highlight"><span>We</span><span> are</span> awesome.</h3>
+              <p>Let us know about you and we will show you some HoviFy magic:</p>
+            </div>
+            <img className='animation_product' src={helloAbout} alt="animation_application" />
+          </div>
+          <div className="feature3">
+            <div className="text">
+              <h3 className="feature-highlight"><span>We</span><span> are</span> awesome.</h3>
+              <p>Let us know about you and we will show you some HoviFy magic:</p>
+            </div>
+
+            <img className='animation_product' src={Builder} alt="animation_application" />
+          </div>
+          
+          
+          {/* <section className="contentFeauture">
+            <div className="feature">
+              <h1 className="text">feataaaaaaaures</h1>
+              <img className='animation_product' src={landingAnim} alt="animation_application" />
+            </div>
+          </section> */}
         </main>
+        
         <section className="hovify-team">
             <p className="team-title">HoviFy team:</p>
             <div className="hovify-member">
