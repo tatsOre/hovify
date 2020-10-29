@@ -29,6 +29,7 @@ import './home_responsive.css';
 import landingAnim from './img/landing.gif';
 import helloAbout from './img/hello.gif';
 import MotivAcc from './img/motivations.gif';
+import Builder from './img/builder.gif';
 /* API */
 import { getLogin, getProfile, getUser } from '../../api/ApiRequest.js';
 
@@ -208,6 +209,7 @@ export default function Home() {
               <img className='animation_product' src={landingAnim} alt="animation_application" />
               <img className='animation_product' src={helloAbout} alt="animation_application" />
               <img className='animation_product' src={MotivAcc} alt="animation_application" />
+              <img className='animation_product' src={Builder} alt="animation_application" />
               <p>But wait! there's more:</p>
               <p>HoviFy can also help you match with job offers that fit with your professional profile and preferences.</p>
               <img className='background-image' src={background} alt="Image" />
