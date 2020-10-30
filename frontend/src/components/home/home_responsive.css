@@ -95,7 +95,13 @@
   .feature3 p {
     padding: 0 20px;
   }
+  .feature1 h3,
+  .feature2 h3,
+  .feature3 h3 {
+    line-height: 0.9;
+  }
   .aboutContent p {
+    margin: 10px auto;
     width: 100%;
     text-align: center;
   }
