@@ -43,13 +43,13 @@
         line-height: 1.3em;
     }
     /* Sections Pro/Edu/Proj titles */
-    .professional-title, .education-title, .projects-title {
+    .education-title, .projects-title {
         font-size: 20px;
         display: inline;
     }
-    /* Fieldset Styles */
-    .experience-item, .degree-item, .project-item {
-        
+    .professional-title {
+        display: inline;
+        font-size: 17px;
     }
     .fieldset-block {
         margin: 0 auto 30px;
