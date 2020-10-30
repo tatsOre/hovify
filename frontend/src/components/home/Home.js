@@ -182,10 +182,10 @@ export default function Home() {
         <header className="home-header">
           <img className='branding-home' src={logoFull} alt="Logo" />
           
-          <a href="#product">Product</a>
-          <a href="#feature">Features</a>
-          <a href="#about">About</a>
-          <a href="#team">The Team</a>
+          <a href="#product" className="linkProduct">Product</a>
+          <a href="#feature" className="linkFeature">Features</a>
+          <a href="#about" className="linkAbout">About</a>
+          <a href="#team" className="linkTeam">The Team</a>
 
           <div className="signin-modal__container">
             <p className="signin-text">Already a Hovifier?</p>
@@ -210,7 +210,7 @@ export default function Home() {
             of applying for a job.</p>
             <p>And all starts with a good looking resume.</p>
           <p>
-            That's how HoviFy comes in handy, saving you time building your resume the best way possible
+            That's how HoviFy comes in handy, saving your time building your resume the best way possible
             increasing your chances to call the attention of recruiters. </p>
 
           {/* <p>But wait! there's more:</p> */}
@@ -219,34 +219,34 @@ export default function Home() {
 
         </section>
           <div className="getStart">
-          <div className="titleAwesome">
-            <Fade top>
-            <h3 className="main-highlight">
-              <span>We believe</span>
-              <br/>that you are
-              <span>
-                <br/>awesome.
-                </span>
-            </h3>
-            </Fade>
-          </div>
-          <div className="bottonStart">
-            <p>Let us know about you and we will show you some HoviFy magic: </p>
-            <div id="start-nav">
-              <button className="btn-primary_linkedin" type="button" onClick={showLinkedin}>Fill-up with your LinkedIn profile</button >
-              <Modal
-                open={showLinked}
-                onClose={hiddenLinkedin}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description">
-                {linkForm}
-              </Modal>
-              {/* <button className="btn-primary_zero">
-                <Link className="btn-primary_zero__link" to="/hello">Start from scratch</Link>
-              </button> */}
+            <div className="titleAwesome">
+              <Fade top>
+              <h3 className="main-highlight">
+                <span>We believe</span>
+                <br/>that you are
+                <span>
+                  <br/>awesome.
+                  </span>
+              </h3>
+              </Fade>
+            </div>
+            <div className="bottonStart">
+              <p>Let us know about you and we will show you some HoviFy magic: </p>
+              <div id="start-nav">
+                <button className="btn-primary_linkedin" type="button" onClick={showLinkedin}>Fill-up with your LinkedIn profile</button >
+                <Modal
+                  open={showLinked}
+                  onClose={hiddenLinkedin}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description">
+                  {linkForm}
+                </Modal>
+                {/* <button className="btn-primary_zero">
+                  <Link className="btn-primary_zero__link" to="/hello">Start from scratch</Link>
+                </button> */}
+              </div>
             </div>
           </div>
-        </div>
           <h1 id="feature" className="feature-title main-title"><span>Features</span></h1>
         <div  className="feature1">
           <div className="text">
@@ -258,7 +258,7 @@ export default function Home() {
         </div>
         <div className="feature2">
           <div className="text">
-            <h3 className="feature-highlight"><span>About/Motivations</span></h3>
+            <h3 className="feature-highlight"><span>About-<br/>Motivations</span></h3>
             <p>In Hovify we want to know who you are and what are your preferences. Answer just a few questions and we'll do the rest to match you with available job offers.</p>
           </div>
           <img className='animation_product' src={helloAbout} alt="animation_application" />
@@ -359,7 +359,6 @@ export default function Home() {
             </div>
         </section>
         <section className="hovify-team-responsive">
-        <p className="team-title">HoviFy team:</p>
           <AwesomeSlider className='team-slider'>
             <div className="hovify-member">
               <div className="hovify-member__photo bayona"></div>

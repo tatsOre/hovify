@@ -6,6 +6,8 @@
   }
   .home-header,
   .main-content,
+  .team-title,
+  .getStart,
   .foonavbar {
     max-width: 100%;
   }
@@ -30,17 +32,28 @@
     grid-template-columns: 100%;
     grid-template-areas:
       "contentHome"
+      "getStart"
+      "feature-title"
       "feature1"
       "feature2"
-      "feature3";
+      "feature3"
+      "aboutContent"
+      "team-title";
   }
   .home-header {
     padding: 20px 20px;
     justify-content: space-between;
   }
-  .home-header a {
+  .linkAbout,
+  .linkProduct {
+    display: none;
+  }
+  .linkTeam,
+  .linkFeature {
+    text-align: center;
     width: 100%;
   }
+
   .btn-signin {
     width: 100%;
     margin: 0;
@@ -50,19 +63,41 @@
     min-width: 15em;
     max-width: 20em;
   }
-  .feature1,
-  .feature2,
-  .feature3,
+  .aboutContent,
+  .getStart {
+    flex-direction: column;
+    width: 90%;
+  }
+  .getStart .titleAwesome,
+  .getStart .bottonStart {
+    width: 100%;
+  }
+  .getStart .bottonStart p {
+    text-align: center;
+    font-size: 18px;
+  }
   .contentHome {
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 85%;
     padding-top: 25px;
   }
   .feature1,
   .feature2,
   .feature3 {
+    max-width: 90%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
+    border-left: none;
+  }
+  .feature1 p,
+  .feature2 p,
+  .feature3 p {
+    padding: 0 20px;
+  }
+  .aboutContent p {
+    width: 100%;
+    text-align: center;
   }
 
   .background-image {
