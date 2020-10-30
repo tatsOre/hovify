@@ -5,12 +5,17 @@ import { Link, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { context } from '../../App.js';
 import { createAccount, getLogin, getUser, postUser } from '../../api/ApiRequest.js';
-import logo from '../images/logo1.svg';
+import logo from '../images/logo-full-test.svg';
 import './SetAccount.css';
+import './setacc_responsive.css';
+import LinearProgress from '@material-ui/core/LinearProgress';
+
 
 //import apiuserdata from '../../api/david.json';
 
 export default function SetAccount() {
+  const [loading, setLoading] = React.useState(false);
+  
   /* ------------------------------------------------------ */
   const history = useHistory();
   /* ------------------------------------------------------ */
@@ -19,6 +24,7 @@ export default function SetAccount() {
       criteriaMode: "all",
       mode: "onBlur"
   });
+
   // Submit stored data from the user and move to the CV Builder:
   const onCreate = data => {
     const newAccount = {
@@ -29,11 +35,11 @@ export default function SetAccount() {
       "username": data.email,
       "password": data.password,
     }
-    //console.log(newAccount);
+       
     
-    //console.log(context.user)
     // history.push('/builder');
     // Create account
+    setLoading(true)
     createAccount(JSON.stringify(newAccount))
       .then(response => {
         const promiseData = response.json()
@@ -85,30 +91,35 @@ export default function SetAccount() {
 
   return (
   <section className="account">
-    <img className='branding' src={logo} alt="Logo" />
+    {loading && <LinearProgress />}
+    <img className='branding branding_acc' src={logo} alt="Logo" />
     <h1 className="account-title">
       <span>{(userData && userData.User && userData.User.FirstName) || 'Hovifier'},<br/></span>
       we need the last details to create an account:
     </h1>
     <form onSubmit={handleSubmit(onCreate)} className="form-account">
+      
       <div className="label-content">
         <label className="acount-label" for="UserName">Your e-mail:</label>
         <label className="acount-label" for="password">Password:</label>
         <label className="acount-label" for="confirm-password">Confirm Password:</label>
       </div>
       <div className="textF-content">
+      <label className="acount-label_res" for="UserName">Your e-mail:</label>
         <TextField
           id="UserName"
           className="textField-account"
           type="email"
           name="email"
           inputRef={register({required: true, maxLength: 80})} />
+        <label className="acount-label_res" for="password">Password:</label>
         <TextField
           id="password"
           className="textField-account"
           type="password"
           name="password"
           inputRef={register({required: true, maxLength: 80})} />
+        <label className="acount-label_res" for="confirm-password">Confirm Password:</label>
         <TextField
           id="confirm-password"
           className="textField-account"

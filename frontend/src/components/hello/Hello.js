@@ -5,17 +5,13 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { context } from '../../App.js';
-import logoFull from '../images/logo1.svg';
+import logoFull from '../images/logo-full-test.svg';
 import './Hello.css';
 import './hello_responsive.css';
 
 
 export default function Hello() {
-  //const localContext = useContext(context);
   const userData = context.user;
-  // console.log("hello context")
-  // console.log(context);
-  //const userData = localContext.user;
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
       criteriaMode: "all",
@@ -24,8 +20,8 @@ export default function Hello() {
   // Submit stored data from the user and move to the next view:
   const onLogin = (data, event) => {
     event.preventDefault();
-    console.log(data);
-    context.user = {...context.user , ...data}
+    context.user.User.FirstName = data.User.FirstName;
+    context.user.User.LastName = data.User.LastName;
     history.push('/about');
   };
 

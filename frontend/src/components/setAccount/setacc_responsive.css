@@ -1,0 +1,56 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .branding_acc {
+      display: block !important;
+      margin-top: 20px;
+      margin-right: 20px;
+      max-width: 120px;
+    }
+    .account {
+        max-width: 85%;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        margin: 0 auto;
+      }
+      .account {
+        grid-template-areas: 
+        "branding"
+        "title"
+        "form";
+      }
+      .acount-label { display: none;}
+      .acount-label_res { display: block; }
+      .form-account {
+        display: grid;
+        grid-template-columns: 100%;
+        padding-top: 25px;
+      }
+      .form-account {
+        max-width: 100%;
+        grid-template-areas:
+        "fields"
+        "nav";
+      }
+      .account-title span {
+        color: #321880;
+        font-size: 2.25rem;
+      }
+      h1.account-title {
+        font-size: 1.75em;
+        color: #262AD1;
+        line-height: 1.1;
+        margin: 30px 0px 0px;
+      }
+      .label-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+      }
+      .acount-label {
+        font-size: 1em;
+      }
+      .textField-account {
+        width: 100%;
+      }
+}

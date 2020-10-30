@@ -15,12 +15,13 @@ import CountrySelect from '../countryselector/CountrySelector';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 import MuiPhoneNumber from 'material-ui-phone-number';
 
-//import apiuserdata from '../../api/mariaempty.json';
+//import apiuserdata from '../../api/david.json';
 import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
-import logo from '../images/logo1.svg';
+import logo from '../images/logo-full-test.svg';
 import './cvbuilder.css';
+import './cv_builder_responsive.css';
 import { postUser } from '../../api/ApiRequest.js';
 
 export default function Cvbuilder () {
@@ -31,39 +32,73 @@ export default function Cvbuilder () {
   // apiuserdata = x.user; ?
   const apiuserdata = context.user;
 
-  //console.log(context.user);
   const {register, handleSubmit, errors, control } = useForm({
     criteriaMode: 'all',
     mode: 'onBlur'
   });
   const onSubmit = data => {
+    let newData = data;
+    newData.User.LinkedIn = newData.LinkedIn;
+    delete newData.LinkedIn;
+    newData.User.GitHubURL = newData.GitHubURL;
+    delete newData.GitHubURL;
+    newData.User.TwitterURL = newData.TwitterURL;
+    delete newData.TwitterURL;
+    newData.User.PortfolioURL = newData.PortfolioURL;
+    delete newData.PortfolioURL;
+    // console.log(JSON.stringify(newData))
+
     const parsedData = {
-      ...data,
-      'Skills': JSON.parse(data.Skills),
-      'Languages': JSON.parse(data.Languages),
+      ...newData,
+      'Skills': JSON.parse(newData.Skills),
+      'Languages': JSON.parse(newData.Languages),
       "About_User": [],
       "Motivation": [],
       "Interest": [],
       "Desired_Job_Fields": [],
       "Desired_Job_Location": []
     };
+
+    // console.log(data)
+
+    for (let educId in context.user.Education) {
+      for (let educ in parsedData.Education) {
+        if (educId.degree === educ.degree) {
+          parsedData.Education[educ].education_id = context.user.Education[educId].education_id;
+          break;
+        }
+      }
+    }
+
+    for (let profId in context.user.Professional) {
+      for (let prof in parsedData.Professional) {
+        if (profId.role === prof.role) {
+          parsedData.Professional[prof].professional_id = context.user.Professional[profId].professional_id;
+          break;
+        }
+      }
+    }
+
     parsedData.User.id = context.user.User.id;
-    console.log("parsed data");
+    context.user = parsedData;
+    
+    //console.log(parsedData)
+    /*console.log("parsed data");
     console.log(parsedData);
     console.log("token");
-    console.log(context.token);
-    postUser(JSON.stringify(context.user), context.token)
-    .then( response => {
-      console.log(response.status)
-      const promiseData = response.json()
-      promiseData.then(data => {
-        console.log("post")
-        console.log(data)
-        history.push('/preview');
-      })
-      promiseData.catch(error => console.error(error))
-    })
-    .catch(error => console.error(error))
+    console.log(context.token);*/
+    // postUser(JSON.stringify(context.user), context.token)
+    // .then( response => {
+    //   //console.log(response.status)
+    //   const promiseData = response.json()
+    //   promiseData.then(data => {
+    //     console.log("post")
+    //     console.log(data)
+    //     history.push('/preview');
+    //   })
+    //   promiseData.catch(error => console.error(error))
+    // })
+    // .catch(error => console.error(error))
   }
 
 /* CV Builder without LinkedIn Data: */
@@ -199,7 +234,7 @@ export default function Cvbuilder () {
           />
           <TextField
             multiline fullWidth
-            className='input'
+            className='input summary'
             error={ errors && errors.User && errors.User.Summary && Boolean(errors.User.Summary) }
             defaultValue={userData.User.Summary}
             label='Summary:' name='User.Summary'
@@ -303,3 +338,4 @@ export default function Cvbuilder () {
     </main>
   );
 }
+

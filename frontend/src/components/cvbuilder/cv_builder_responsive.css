@@ -1,0 +1,162 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { 
+    .main-container, .form-container {
+        max-width: 100%;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+    .main-container {
+        max-width: 85%;
+        grid-template-areas:
+        "branding"
+        "stepper"
+        "welcome"
+        "form"
+    }
+    .form-container{
+        grid-template-areas: 
+        "primary_info"
+        "secondary_info";
+    }
+    .branding {
+        display: none;
+    }
+    .MuiStepper-root {
+        padding: 20px 0px 0px;
+    }
+    /* Welcome User Section */
+    .welcome-user {
+        padding: 10px 0px;
+    }
+    .welcome-user h1 {
+        font-size: 3.5em;
+        line-height: .9em;
+        margin: 25px 0 10px;
+    } 
+    .welcome-user h2 {
+        font-size: 2em;
+        line-height: 1.2em;
+    }
+    .welcome-user h3 {
+        font-size: 1.2em;
+        margin: 15px 0 5px;
+        line-height: 1.3em;
+    }
+    /* Sections Pro/Edu/Proj titles */
+    .education-title, .projects-title {
+        font-size: 20px;
+        display: inline;
+    }
+    .professional-title {
+        display: inline;
+        font-size: 17px;
+    }
+    .fieldset-block {
+        margin: 0 auto 30px;
+    }
+    .fieldset-block__header {
+        padding-top: 20px;
+        display: block;
+    }
+    .header-info {
+        flex-basis: 75%;
+        padding-right: 0;
+    }
+    .header-date {
+        display: flex;
+        justify-content: space-between;
+    }
+    .date-picker__field {
+        max-width: 48%;
+    }
+    .social-media {
+        margin: 0 auto;
+    }
+    .languages, .technical-skills,
+    .personal-information {
+        margin: 30px auto;
+    }
+    .primary_info {
+        padding: 0px;
+    }
+    .summary {
+        padding-bottom: 25px;
+    }
+    .secondary-info__form {
+        max-width: 100%;
+    }
+    .secondary-info__form legend {
+        color: gray;
+        font-size: 1.5em;
+        line-height: 1em;
+        font-weight: 200;
+    }
+    /* Phone Input Styles */
+    .phone {
+        width: 100%;
+        margin-top: 20px;
+    }
+    /* Date Birthday Picker */
+    .date-picker {
+        margin-top: 20px;
+    }
+    
+    /* General */
+    h1, h2, h3, legend, p {
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .input {
+        margin-bottom: 15px;
+    }
+    .middle_width {
+        width: 50%;
+        padding-right: 5px;
+    }
+    /* Buttons */
+    .btn-submit {
+        display: block;
+        color: whitesmoke;
+        background-color: rgba(63, 81, 181, 1);
+        border: none;
+        border-radius: 30px;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.75;
+        margin: 15px auto;
+        padding: 7px;
+        width: 70%;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+    }
+    .btn-submit:hover {
+        background-color: #321880;
+    }
+    .icon-button__add {
+        color: #9999C1;
+        margin-top: -9px;
+    }
+    .icon-button__remove {
+        color: rgba(254, 95, 85,1);
+        position: absolute;
+        top: -7px;
+        right: -7px;
+    }
+    .icon-button__remove:hover::after {
+        content: 'Delete field';
+        background-color:rgba(254, 95, 85, 1);
+        display: inline-block;
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: .06em;
+        width: 100px;
+        border-radius: 2px;
+        color: white;
+        position: absolute;
+        padding: 3px;
+        right: 50px;
+        top: 10px;
+    }
+    
+}

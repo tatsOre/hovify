@@ -25,6 +25,11 @@ import background from './img/main-graphic.svg';
 import './Home.css';
 import './home_responsive.css';
 
+/* Animations */
+import landingAnim from './img/landing.gif';
+import helloAbout from './img/hello.gif';
+import MotivAcc from './img/motivations.gif';
+import Builder from './img/builder.gif';
 /* API */
 import { getLogin, getProfile, getUser } from '../../api/ApiRequest.js';
 
@@ -115,7 +120,7 @@ export default function Home() {
       <form onSubmit={handleSubmit(onLogin)}>
         <CloseIcon type="button" onClick={hiddenLogin} className="modal-close__icon"/>
         <p>It is nice to see you again</p>
-        <p>Sign in to your account: </p>
+        <p className="sign-in__title">Sign in to your account: </p>
         <div>
           <TextField
           className="username"
@@ -176,6 +181,12 @@ export default function Home() {
       <StylesProvider injectFirst>
         <header className="home-header">
           <img className='branding-home' src={logoFull} alt="Logo" />
+          
+          <a href="#product" className="linkProduct">Product</a>
+          <a href="#feature" className="linkFeature">Features</a>
+          <a href="#about" className="linkAbout">About</a>
+          <a href="#team" className="linkTeam">The Team</a>
+
           <div className="signin-modal__container">
             <p className="signin-text">Already a Hovifier?</p>
             <button className="btn-signin" onClick={showLogin}>SIGN IN</button >
@@ -190,44 +201,94 @@ export default function Home() {
           </div>
         </header>
         <main className="main-content">
-          <section className="contentHome">
+          <section id="product" className="contentHome">
           <Fade top>
             <h1 className="main-title"><span>We</span><span> are</span> awesome.</h1>
-            </Fade>
-              <p>
-                In HoviFy we believe that anybody with the right attitude should have a real chance
-                of applying for a job.</p>
-                <p>And all starts with a good looking resume.</p>
-              <p>
-                That's how HoviFy comes in handy, saving you time building your resume the best way possible
-                increasing your chances to call the attention of recruiters. </p>
-              <p>But wait! there's more:</p>
-              <p>HoviFy can also help you match with job offers that fit with your professional profile and preferences.</p>
-              <img className='background-image' src={background} alt="Image" />
-            <Fade top>
-            <h3 className="main-highlight"><span>We believe</span><br/>that you are<span> awesome.</span></h3>
-            </Fade>
-            <p>Let us know about you and we will show you some HoviFy magic: </p>
-            <div id="start-nav">
-              <button className="btn-primary_linkedin" type="button" onClick={showLinkedin}>Fill-up with your LinkedIn profile</button >
-              <Modal
-                open={showLinked}
-                onClose={hiddenLinkedin}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description">
-                {linkForm}
-              </Modal>
-              <button className="btn-primary_zero">
-                <Link className="btn-primary_zero__link" to="/hello">Start from scratch</Link>
-              </button>
+          </Fade>
+          <p>
+            In HoviFy we believe that anyone with the right attitude should have a real chance
+            of applying for a job.</p>
+            <p>And all starts with a good looking resume.</p>
+          <p>
+            That's how HoviFy comes in handy, saving your time building your resume the best way possible
+            increasing your chances to call the attention of recruiters. </p>
+
+          {/* <p>But wait! there's more:</p> */}
+          {/* <p>HoviFy can also help you match with job offers that fit with your professional profile and preferences.</p> */}
+          <img className='background-image' src={background} alt="Image" />
+
+        </section>
+          <div className="getStart">
+            <div className="titleAwesome">
+              <Fade top>
+              <h3 className="main-highlight">
+                <span>We believe</span>
+                <br/>that you are
+                <span>
+                  <br/>awesome.
+                  </span>
+              </h3>
+              </Fade>
             </div>
-          </section>
+            <div className="bottonStart">
+              <p>Let us know about you and we will show you some HoviFy magic: </p>
+              <div id="start-nav">
+                <button className="btn-primary_linkedin" type="button" onClick={showLinkedin}>Fill-up with your LinkedIn profile</button >
+                <Modal
+                  open={showLinked}
+                  onClose={hiddenLinkedin}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description">
+                  {linkForm}
+                </Modal>
+                {/* <button className="btn-primary_zero">
+                  <Link className="btn-primary_zero__link" to="/hello">Start from scratch</Link>
+                </button> */}
+              </div>
+            </div>
+          </div>
+          <h1 id="feature" className="feature-title main-title"><span>Features</span></h1>
+        <div  className="feature1">
+          <div className="text">
+            <h3 className="feature-highlight"><span>LinkedIn feature</span></h3>
+            <p>We can gather the most important information of your LinkedIn account, this speeds up the creation of your Hovify profile so you can make use of your time on other stuff.</p>
+          </div>
+
+          <img className='animation_product' src={landingAnim} alt="animation_application" />
+        </div>
+        <div className="feature2">
+          <div className="text">
+            <h3 className="feature-highlight"><span>About-<br/>Motivations</span></h3>
+            <p>In Hovify we want to know who you are and what are your preferences. Answer just a few questions and we'll do the rest to match you with available job offers.</p>
+          </div>
+          <img className='animation_product' src={helloAbout} alt="animation_application" />
+        </div>
+        <div className="feature3">
+          <div className="text">
+            <h3 className="feature-highlight"><span>Builder</span></h3>
+            <p>Your information is yours! get throught the resume builder to edit and update what makes you feel more proud and we will expose it the best way we can.</p>
+          </div>
+
+          <img className='animation_product' src={Builder} alt="animation_application" />
+        </div>
+        <div id="about" className="aboutContent">
+            <h1 className="main-title"><span>About</span></h1>
+          <p>
+            When we were starting to receive lessons about how enterprises desire resumes and Linkedin profiles to fill their vacancies we starting enhancing our owns respectively, but at some point, everything got so robotic, if I have a new experience or project then we should do double work updating our Linkedin profile and then polishing our resume again, if we wanted to apply for example to a data science company then we have to create a resume for that kind of work environment and so on for every field.
+          </p>
+          <p>
+            It seems at that time nonsense to have a resume if we are constantly doing new projects or changing essential stuff. So we thought that it would be pretty cool to automatize that part of the job, but that's not all, when we are searching for jobs around the world there are tons to apply for, and discovering all the jobs we fit in consumes a lot of our time, since we are always learning due to our profession we said, <strong>" Hey! we need something that can save us time in our job search meanwhile we are still boosting our skills"</strong> and that's how Hovify was born.
+          </p>
+
+        </div>
+        <h1 id="team" className="main-title team-title"><span>Our Team</span></h1>
         </main>
+        
         <section className="hovify-team">
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo bayona"></div>
               <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
-                <p className="hovify-member__name">Andres Bayona</p></a>
+                <p className="hovify-member__name">Andrés Bayona</p></a>
               <p className="hovify-member__label">Back End -<br/>Django Developer</p>
               <div className='hovify-member__socialmedia'>
                 <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
@@ -239,7 +300,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo daorejuela"></div>
               <a href='https://github.com/daorejuela1' target="_blank" rel='noopener noreferrer'>
                 <p className="hovify-member__name">David Orejuela</p></a>
               <p className="hovify-member__label">Back End -<br/>Django Developer</p>
@@ -253,7 +314,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo juanllano"></div>
               <a href='https://github.com/llanojs/' target="_blank" rel='noopener noreferrer'>
                 <p className="hovify-member__name">Juan Sebastián Llano</p>
               </a>
@@ -268,7 +329,7 @@ export default function Home() {
             </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo nathsotomayor"></div>
               <a href='https://github.com/nathsotomayor' target="_blank" rel='noopener noreferrer'>
                 <p className="hovify-member__name">Nathaly Sotomayor</p>
               </a>
@@ -283,9 +344,9 @@ export default function Home() {
               </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo taorejuela"></div>
               <a href='https://github.com/tatsOre/' target="_blank" rel='noopener noreferrer'>
-                <p className="hovify-member__name">Tatiana Orejuela Zapata</p></a>
+                <p className="hovify-member__name">Tatiana Orejuela</p></a>
               <p className="hovify-member__label">Front End -<br/>React Developer</p>
               <div className='hovify-member__socialmedia'>
                 <a href='https://twitter.com/TatsInTech' target='_blank' rel='noopener noreferrer'>
@@ -300,9 +361,9 @@ export default function Home() {
         <section className="hovify-team-responsive">
           <AwesomeSlider className='team-slider'>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo bayona"></div>
               <a href='https://github.com/AndrewB4y' target="_blank" rel='noopener noreferrer'>
-                <p className="hovify-member__name">Andres Bayona</p></a>
+                <p className="hovify-member__name">Andrés Bayona</p></a>
               <p className="hovify-member__label">Back End -<br/>Django Developer</p>
               <div className='hovify-member__socialmedia'>
                 <a href='https://twitter.com/AndresBayMon' target='_blank' rel='noopener noreferrer'>
@@ -314,7 +375,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo daorejuela"></div>
               <a href='https://github.com/daorejuela1' target="_blank" rel='noopener noreferrer'>
                 <p className="hovify-member__name">David Orejuela</p></a>
               <p className="hovify-member__label">Back End -<br/>Django Developer</p>
@@ -328,7 +389,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo juanllano"></div>
               <a href='https://github.com/llanojs/' target="_blank" rel='noopener noreferrer'>
                 <p className="hovify-member__name">Juan Sebastián Llano</p>
               </a>
@@ -343,7 +404,7 @@ export default function Home() {
             </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo  nathsotomayor"></div>
               <a href='https://github.com/nathsotomayor' target="_blank" rel='noopener noreferrer'>
                 <p className="hovify-member__name">Nathaly Sotomayor</p>
               </a>
@@ -358,24 +419,23 @@ export default function Home() {
               </div>
             </div>
             <div className="hovify-member">
-              <div className="hovify-member__photo"></div>
+              <div className="hovify-member__photo taorejuela"></div>
               <a href='https://github.com/tatsOre/' target="_blank" rel='noopener noreferrer'>
-                <p className="hovify-member__name">Tatiana Orejuela Zapata</p></a>
+                <p className="hovify-member__name">Tatiana Orejuela</p>
+              </a>
               <p className="hovify-member__label">Front End -<br/>React Developer</p>
               <div className='hovify-member__socialmedia'>
                 <a href='https://twitter.com/TatsInTech' target='_blank' rel='noopener noreferrer'>
                   <img className='twitter' src={twitterlogo} alt="Logo" /></a>
                 <a href='https://www.linkedin.com/in/tatiana-orejuela-08b98225/' target='_blank' rel='noopener noreferrer'>
                   <img className='linkedin' src={linkedinlogo} alt="Logo" /></a>
-                <a href='' target='_blank' rel='noopener noreferrer'>
+                <a href='https://medium.com/@tatianaorezap' target='_blank' rel='noopener noreferrer'>
                   <img className='medium' src={mediumlogo} alt="Logo" /></a>
-              </div>
+            </div>
             </div>
           </AwesomeSlider>
         </section>
         <footer className="foonavbar">
-          <Link className="foonavbar-link" to="/">Home</Link>
-          <Link className="foonavbar-link" to="/">About Us</Link>
           <span>Hovify - All rights reserved 2020.</span>
         </footer>
       </StylesProvider>

@@ -1,131 +1,207 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    /* container scheme */
-    .home {
-        background: none;
-      }
-    .home-header, .main-content, .foonavbar {
-        max-width: 100%;
-    }
-    .branding-home {
-        display: none;
-    }
-    /* Sign in Modal */
-    .signin-modal__container {
-        width: 100%;
-        display: flex;
-    }
-    .main-content {
-        grid-template-columns: 100%;
-        grid-template-areas: 
-          "contentHome";
-    }
-    .home-header {
-        padding: 20px 20px;
-        justify-content: space-between;
-       }
-    .btn-signin {
-        width: 100%;
-        margin: 0;
-    }
-    .modal-signin, .modal {
-        min-width: 15em;
-        max-width: 20em;
-      }
-    .contentHome {
-        margin: 0 auto;
-        max-width: 85%;
-        padding-top: 25px;
-    }
-    .background-image {
-        display: block;
-      }
-    .hovify-team-responsive {
-        display: block;
-    }
-    .hovify-team {
-        display: none;
-    }
-    /* Buttons to SPA */
-    .btn-primary_linkedin, .btn-primary_zero {
-        display: block;
-        max-width: 100%;
-        margin: 15px auto;
-    }
-    /* Footer styles */
-    .foonavbar {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    .foonavbar-link {
-        margin-bottom: 7px;
-    }
-    .foonavbar span {
-        color: gray;
-    }
-    /* Type Styles */
-    .signin-text {
-        display: none;
-    }
-    .main-title {
-        text-align: center;
-        font-size: 4em;
-        padding: 10px 0;
-    }
-    .main-highlight {
-        text-align: center;
-        font-size: 40px;
-        line-height: .9em;
-    }
-    .main-highlight span {
-        font-size: 50px;
-      }
-    .main-highlight span ~ span {
-        font-size: 50px;
-    }
-    .contentHome p {
-        text-align: center;
-        max-width: 100%;
-        font-size: 18px;
-    }
-    /* Carrusel Styles */
-    .awssld__container {
-        height: 340px;
-    }
-    .awssld__wrapper {
-        margin: 0 auto;
-        max-width: 95%;
-    }
-    .awssld__content {
-        background-color: white; 
-    }
-    .awssld__bullets {
-        bottom: -20px;
-    }
-    .awssld__bullets button {
-        width: 10px;
-        height: 10px;
-        background-color: gainsboro;
-    }
-    .awssld__bullets--active {
-        opacity: .35;
-    }
-    .aws-btn {
-        --slider-height-percentage: 44%;
-        --slider-transition-duration: 700ms;
-        --organic-arrow-thickness: 4px;
-        --organic-arrow-border-radius: 0px;
-        --organic-arrow-height: 40px;
-        --organic-arrow-color: #26456f;
-        --control-button-width: 10%;
-        --control-button-height: 25%;
-        --control-button-background: transparent;
-        --control-bullet-color: #2d5182;
-        --control-bullet-active-color: #26456f;
-        --loader-bar-color: #851515;
-        --loader-bar-height: 6px;
-        }
+  /* container scheme */
+  .home {
+    background: none;
+  }
+  .home-header,
+  .main-content,
+  .team-title,
+  .getStart,
+  .foonavbar {
+    max-width: 100%;
+  }
+  .branding-home {
+    display: none;
+  }
+  .text {
+    width: 100%;
+    margin: 10px auto auto 0px;
+  }
+  .animation_product {
+    width: 90%;
+    margin: 0px 0 0 15px;
+    padding-bottom: 20px;
+  }
+  /* Sign in Modal */
+  .signin-modal__container {
+    width: 100%;
+    display: flex;
+  }
+  .main-content {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "contentHome"
+      "getStart"
+      "feature-title"
+      "feature1"
+      "feature2"
+      "feature3"
+      "aboutContent"
+      "team-title";
+  }
+  .home-header {
+    padding: 20px 20px;
+    justify-content: space-between;
+  }
+  .linkAbout,
+  .linkProduct {
+    display: none;
+  }
+  .linkTeam,
+  .linkFeature {
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn-signin {
+    width: 100%;
+    margin: 0;
+  }
+  .modal-signin,
+  .modal {
+    min-width: 15em;
+    max-width: 20em;
+  }
+  .aboutContent,
+  .getStart {
+    flex-direction: column;
+    width: 90%;
+  }
+  .getStart .titleAwesome,
+  .getStart .bottonStart {
+    width: 100%;
+  }
+  .getStart .bottonStart p {
+    text-align: center;
+    font-size: 18px;
+  }
+  .contentHome {
+    margin: 20px auto;
+    max-width: 85%;
+    padding-top: 25px;
+  }
+  .feature1,
+  .feature2,
+  .feature3 {
+    max-width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    border-left: none;
+  }
+  .feature1 p,
+  .feature2 p,
+  .feature3 p {
+    padding: 0 20px;
+  }
+  .feature1 h3,
+  .feature2 h3,
+  .feature3 h3 {
+    line-height: 0.9;
+  }
+  .aboutContent p {
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .background-image {
+    display: block;
+  }
+  .hovify-team-responsive {
+    display: block;
+  }
+  .hovify-team {
+    display: none;
+  }
+  /* Buttons to SPA */
+  .btn-primary_linkedin,
+  .btn-primary_zero {
+    display: block;
+    max-width: 100%;
+    margin: 15px auto;
+  }
+  /* Footer styles */
+  .foonavbar {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .foonavbar-link {
+    margin-bottom: 7px;
+  }
+  .foonavbar span {
+    color: gray;
+  }
+  /* Type Styles */
+  .signin-text {
+    display: none;
+  }
+  .main-title {
+    text-align: center;
+    font-size: 4em;
+    padding: 10px 0;
+  }
+  .feature-highlight,
+  .main-highlight {
+    text-align: center;
+    font-size: 40px;
+    line-height: 0.9em;
+  }
+  .feature-highlight span,
+  .main-highlight span {
+    font-size: 50px;
+  }
+  .feature-highlight span ~ span,
+  .main-highlight span ~ span {
+    font-size: 50px;
+  }
+  .feature1 p,
+  .feature2 p,
+  .feature3 p,
+  .contentHome p {
+    text-align: center;
+    max-width: 100%;
+    font-size: 18px;
+  }
+  /* Carrusel Styles */
+  .awssld__container {
+    height: 340px;
+  }
+  .awssld__wrapper {
+    margin: 0 auto;
+    max-width: 95%;
+  }
+  .awssld__content {
+    background-color: white;
+  }
+  .awssld__bullets {
+    bottom: -20px;
+  }
+  .awssld__bullets button {
+    width: 10px;
+    height: 10px;
+    background-color: gainsboro;
+  }
+  .awssld__bullets--active {
+    opacity: 0.35;
+  }
+  .aws-btn {
+    --slider-height-percentage: 44%;
+    --slider-transition-duration: 700ms;
+    --organic-arrow-thickness: 4px;
+    --organic-arrow-border-radius: 0px;
+    --organic-arrow-height: 40px;
+    --organic-arrow-color: #26456f;
+    --control-button-width: 10%;
+    --control-button-height: 25%;
+    --control-button-background: transparent;
+    --control-bullet-color: #2d5182;
+    --control-bullet-active-color: #26456f;
+    --loader-bar-color: #851515;
+    --loader-bar-height: 6px;
+  }
 }
