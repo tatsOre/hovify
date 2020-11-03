@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+This module is in charge of obtaining the list
+of jobs according to the selected companies
+by using the mechanicalsoup library
+"""
 import re
 import requests
 import json
@@ -66,9 +72,10 @@ class JobSearcher(object):
                 vacancy["published_at"] = r.json()['jobs'][i].get(
                     "publication_date").split('T')[0]
                 description = r.json()['jobs'][i].get("description")
+                # Regex to remove weird characters from user description
+                rm_chr = r'<.*?>|\.*|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});'
                 clean_description = re.sub(
-                    re.compile(
-                        '<.*?>|\.+?|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});'),
+                    re.compile(rm_chr),
                     '',
                     description.split("</p>")[0])
                 vacancy["description"] = clean_description
@@ -76,10 +83,10 @@ class JobSearcher(object):
                 raw_requirements = description.split("</ul>")
                 raw_requirements = raw_requirements[0].split("<li>")
                 for i in range(len(raw_requirements)):
+                    # Regex to remove weird characters from requirements
                     requirements.append(
                         re.sub(
-                            re.compile(
-                                '<.*?>|\.*|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});'),
+                            re.compile(rm_chr),
                             '',
                             raw_requirements[i]).split("\n")[0])
                 vacancy["requirements"] = " | ".join(requirements[1:])

@@ -10,15 +10,18 @@ import json
 import requests
 from time import sleep
 
+
 class LinkedinScraper(object):
     """
     This class defines a browser to obtain information about linkedin users
     """
+
     def __init__(self, username=None, password=None, user_agent=None):
         """
         $USER_LINKEDIN = test@email.com
         $PASS_LINKEDIN = password
-        Creates a new browser instance selecting the username, password to authenticate
+        Creates a new browser instance selecting the username,
+        password to authenticate
         and the user-agent to use.
         """
         self.__scale_lang = {
@@ -36,17 +39,20 @@ class LinkedinScraper(object):
             self.__password = environ.get('PASS_LINKEDIN')
         self.__user_agent = user_agent
         if not user_agent:
-            self.__user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'
+            self.__user_agent = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+             'AppleWebKit/537.36 (KHTML, like Gecko) '
+             'Chrome/86.0.4240.75 Safari/537.36')
         self.__browser = mechanicalsoup.StatefulBrowser(
             user_agent=self.__user_agent)
-        self.__browser.open("https://www.linkedin.com/checkpoint/lg/login?trk=hb_signin")
-        self.__browser.select_form('form[action="/checkpoint/lg/login-submit"]')
+        self.__browser.open(
+            "https://www.linkedin.com/checkpoint/lg/login?trk=hb_signin")
+        self.__browser.select_form(
+            'form[action="/checkpoint/lg/login-submit"]')
         self.__browser["session_key"] = self.__username
         self.__browser["session_password"] = self.__password
         response = self.__browser.submit_selected()
         if response.status_code != 200:
             raise ValueError("Response status is not 200, check credentials")
-
 
     def get_data(self, url):
         """Connects to the desired user and extracts data.
@@ -130,9 +136,9 @@ class LinkedinScraper(object):
                 code_test = str(code.string)
                 try:
                     codes_dict = json.loads(code_test)
-                except:
+                except BaseException:
                     continue
-                if not 'included' in codes_dict:
+                if 'included' not in codes_dict:
                     continue
                 for field in codes_dict.get('included'):
                     if 'multiLocaleSummary' in field:
@@ -162,28 +168,39 @@ class LinkedinScraper(object):
                     self.__education['degree'] = field['degreeName']
                     self.__education['school'] = field['schoolName']
                     if field['dateRange']:
-                        self.__education['start_year'] = field['dateRange'].get('start')
+                        self.__education['start_year'] = field[
+                            'dateRange'].get('start')
                         if self.__education['start_year']:
-                            self.__education['start_year'] = self.__education['start_year']['year']
-                        self.__education['end_year'] = field['dateRange'].get('end')
+                            self.__education['start_year'] = self.__education[
+                                'start_year']['year']
+                        self.__education['end_year'] = field['dateRange'].get(
+                            'end')
                         if self.__education['end_year']:
-                            self.__education['end_year'] = self.__education['end_year'].get('year')
+                            self.__education['end_year'] = self.__education[
+                                'end_year'].get('year')
                     self.__education['description'] = field['description']
                     self.__education_list.append(self.__education.copy())
-                if 'profilePosition' in field.get('entityUrn') and field.get('title') != None:
+                if 'profilePosition' in field.get(
+                        'entityUrn') and field.get('title') is not None:
                     self.__professional['role'] = field.get('title')
                     self.__professional['company'] = field.get('companyName')
-                    self.__professional['start_year'] = field.get('dateRange').get('start')
+                    self.__professional['start_year'] = field.get(
+                        'dateRange').get('start')
                     if self.__professional['start_year']:
-                        self.__professional['start_year'] = self.__professional['start_year']['year']
-                    self.__professional['end_year'] = field.get('dateRange').get('end')
+                        self.__professional['start_year'] = self.__professional
+                        ['start_year']['year']
+                    self.__professional['end_year'] = field.get(
+                        'dateRange').get('end')
                     if self.__professional['end_year']:
-                        self.__professional['end_year'] = self.__professional['end_year']['year']
-                    self.__professional['description'] = field.get('description')
+                        self.__professional['end_year'] = self.__professional[
+                            'end_year']['year']
+                    self.__professional['description'] = field.get(
+                        'description')
                     self.__professional_list.append(self.__professional.copy())
                 if 'skill' in field.get('entityUrn'):
                     self.__skills['name'] = field['name'].strip()
-                    if self.__skills['name'].lower() in list(map(lambda x: x.lower(), self.__languages)):
+                    if self.__skills['name'].lower() in list(
+                            map(lambda x: x.lower(), self.__languages)):
                         self.__skills['level'] = "Decent"
                     else:
                         self.__skills['level'] = "Mid"
@@ -216,7 +233,7 @@ class LinkedinScraper(object):
                 "Professional": self.__professional_list
             }
             skills = {
-                "Skills":  self.__skills_list
+                "Skills": self.__skills_list
             }
             languages = {
                 "Languages": self.__spoken_list
@@ -224,7 +241,8 @@ class LinkedinScraper(object):
             projects = {
                 "Projects": self.__projects_list
             }
-            return {**user_data, **education, **professional, **skills, **languages, **projects}
+            return {**user_data, **education, **professional,
+                    **skills, **languages, **projects}
         else:
             print(code_dictionary['included'])
             return None

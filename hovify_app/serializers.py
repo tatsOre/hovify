@@ -1,7 +1,14 @@
+"""Serializers to convert database models into python components in both ways
+"""
+
+
 from rest_framework import serializers
 import os
-from .models import User, Project, Professional, Education, Language, TechSkill, AboutUser, Vacancy
-from .models import Motivation, DesiredJobField, DesiredJobLocation, Interest, Curriculum, Profile
+from .models import User
+from .models import Project, Professional, Education
+from .models import Language, TechSkill, AboutUser, Vacancy
+from .models import Motivation, DesiredJobField
+from .models import DesiredJobLocation, Interest, Curriculum, Profile
 from rest_framework.authtoken.models import Token
 
 

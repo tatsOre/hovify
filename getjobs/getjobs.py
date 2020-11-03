@@ -1,7 +1,10 @@
 from .remotive_store import JobSearcher
 from hovify_app.models import Vacancy
 
+
 def get_job_list():
+    """ Function to get the job list and store it in the database model
+    """
     valid_companies = ["intetics"]
     remotive = JobSearcher()
     job_results = remotive.listof_jobs(valid_companies)

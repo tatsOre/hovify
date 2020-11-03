@@ -9,10 +9,17 @@ from .linkedin_scraper import LinkedinScraper
 from rest_framework import serializers
 new_scraping = LinkedinScraper()
 
+
 class LinkedinSerializer(serializers.Serializer):
     url = serializers.CharField()
 
+
 class LinkedinViewSet(APIView):
+    """Endpoint to get user LinkedIn information
+
+    Returns:
+        JSON with LinkedIn profile information
+    """
     authentication_classes = ()
     permission_classes = ()
     serializer_class = LinkedinSerializer
