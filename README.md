@@ -157,7 +157,7 @@ Here are some awesome projects we have been working on:
 
 |[Mastermind Hackday Project](https://github.com/daorejuela1/mastermind)| [Airbnb Clone](https://github.com/AndrewB4y/AirBnB_clone_v4) | [Monty bytecode decoder](https://github.com/llanojs/monty) | [Printf](https://github.com/emmanavarro/printf) | [Custom Shell](https://github.com/tatsOre/simple_shell)
 |--|--|--|--|--|
-| ![Monty project](https://user-images.githubusercontent.com/55990484/93660905-3fd0db00-fa19-11ea-97db-fb3c0169cb4c.gif) | ![AirBnB Clone](/media/AirBnb.jpg) | ![Monty](/media/Monty.jpg) | ![Printf](/media/Printf.jpg) | ![Shell](/media/Shell.jpg) |
+| ![Monty project](https://user-images.githubusercontent.com/55990484/93660905-3fd0db00-fa19-11ea-97db-fb3c0169cb4c.gif) | ![AirBnB Clone](/media/Airbnb.png) | ![Monty](/media/Monty.jpg) | ![Printf](/media/Printf.jpg) | ![Shell](https://user-images.githubusercontent.com/59972435/79511929-ec8bd400-8005-11ea-9361-c97aaccc0607.jpg) |
 
 ## Licensing 🔑
 
