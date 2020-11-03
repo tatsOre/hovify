@@ -1,7 +1,12 @@
+""" Added models to the admin panel
+"""
+
 from django.contrib import admin
 
-from .models import Project, Professional, Education, Language, TechSkill, AboutUser, Vacancy
-from .models import Motivation, DesiredJobField, DesiredJobLocation, Interest, Curriculum, Profile
+from .models import Project, Professional, Education
+from .models import Language, TechSkill, AboutUser, Vacancy
+from .models import Motivation, DesiredJobField
+from .models import DesiredJobLocation, Interest, Curriculum, Profile
 
 # Register your models here.
 admin.site.register(Project)

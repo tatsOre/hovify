@@ -87,8 +87,8 @@ DATABASES = {
         'PASSWORD': environ.get('HOVIFY_PASS'),
         'HOST': environ.get('HOVIFY_HOST'),
         'PORT': environ.get('HOVIFY_PORT'),
-        },
-    }
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -152,4 +152,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 AWS_PRIVATE_MEDIA_LOCATION = 'resumes/private'
 PRIVATE_FILE_STORAGE = 'hovify.storage_backends.PrivateMediaStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # <-- here is where we reference it
+# <-- here is where we reference it
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

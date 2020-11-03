@@ -1,6 +1,8 @@
 from django.test import TestCase
 
 # Create your tests here.
+
+
 class TestJobSearcher(TestCase):
     """Class to get data from remotive"""
 
@@ -15,6 +17,6 @@ class TestJobSearcher(TestCase):
         self.assertTrue(len(job_results[0].get('Category')) > 0)
         self.assertTrue(len(job_results[0].get('RequiredLocation')) > 0)
         self.assertTrue(len(job_results[0].get('Requirements')) > 0)
-        self.assertTrue(type(job_results[0].get('Salary')) == str)
+        self.assertTrue(isinstance(job_results[0].get('Salary'), str))
         self.assertTrue(len(job_results[0].get('URL')) > 0)
         self.assertTrue(len(job_results[0].get('PublishedAt')) > 0)
