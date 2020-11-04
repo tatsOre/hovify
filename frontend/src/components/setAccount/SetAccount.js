@@ -11,8 +11,6 @@ import './setacc_responsive.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 
-//import apiuserdata from '../../api/david.json';
-
 export default function SetAccount() {
   const [loading, setLoading] = React.useState(false);
   
@@ -35,31 +33,23 @@ export default function SetAccount() {
       "username": data.email,
       "password": data.password,
     }
-       
-    
-    // history.push('/builder');
-    // Create account
+
     setLoading(true)
     createAccount(JSON.stringify(newAccount))
       .then(response => {
         const promiseData = response.json()
         promiseData.then(data => {
-		    console.log(data);
           getLogin(JSON.stringify(userAccount))
           .then(response => {
             const promiseLogin = response.json()
             promiseLogin.then(dataLogin => {
               const userToken = "Token " + dataLogin.token
               context.token = userToken;
-              console.log("Context: " + context.token);
               postUser(JSON.stringify(context.user) ,context.token)
               .then(response => {
-                console.log(response.status)
 			          const promiseUser = response.json()
 				        promiseUser.then(dataUser => {
-                  console.log("retorno api")
                   const userInfo = dataUser
-                  console.log(userInfo);
 
                    getUser(context.token)
                   .then(response => {
@@ -67,8 +57,6 @@ export default function SetAccount() {
                         const promiseUser = response.json()
                         promiseUser.then(dataUser => {
                           context.user = dataUser
-                          console.log("get data")
-                          console.log(context.user)
                         })
                       }
                     })
@@ -79,13 +67,11 @@ export default function SetAccount() {
               .catch(e => console.log(e))
               
             })
-            console.log(response.status)
           })
           .catch(error => {
-          console.log(error)
-        })
+            console.log(error)
+          })
 		  })
-        //console.log(response.json())
     })
   };
 

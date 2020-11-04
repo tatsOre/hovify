@@ -64,26 +64,20 @@ export default function Home() {
   });
 
   const onLogin = data => {
-    //console.log(data);
-
     getLogin(JSON.stringify(data))
     .then(response => {
       const promiseData = response.json()
       promiseData.then(data => {
         context.token = "Token " + data.token;
-        console.log(context.token);
         getUser(context.token)
         .then(response => {
           const promiseUser = response.json()
           promiseUser.then(dataUser => {
             context.user = dataUser;
-            console.log("get data");
-            console.log(context.user);
             history.push('/builder');
           })
         })
       })
-      console.log(response.status)
     })
     .catch( error => {
       console.log(error)
@@ -101,7 +95,6 @@ export default function Home() {
   // Submit something and move to the next view:
   const onLinked = (data, event) => {
     event.preventDefault();
-    //console.log(data);
     getProfile(JSON.stringify(data))
     .then(response => {
       const promiseProfile = response.json();
@@ -111,7 +104,6 @@ export default function Home() {
         hiddenLinkedin();
         history.push('/hello');
       })
-      console.log(response.status)
     })
   };
   /* Sign in Modal: */
@@ -212,9 +204,6 @@ export default function Home() {
           <p>
             That's how HoviFy comes in handy, saving your time building your resume the best way possible
             increasing your chances to call the attention of recruiters. </p>
-
-          {/* <p>But wait! there's more:</p> */}
-          {/* <p>HoviFy can also help you match with job offers that fit with your professional profile and preferences.</p> */}
           <img className='background-image' src={background} alt="Image" />
 
         </section>
@@ -241,9 +230,6 @@ export default function Home() {
                   aria-describedby="simple-modal-description">
                   {linkForm}
                 </Modal>
-                {/* <button className="btn-primary_zero">
-                  <Link className="btn-primary_zero__link" to="/hello">Start from scratch</Link>
-                </button> */}
               </div>
             </div>
           </div>

@@ -15,7 +15,6 @@ import CountrySelect from '../countryselector/CountrySelector';
 import DayMonthYearPicker from '../datepicker/BirthdayPicker';
 import MuiPhoneNumber from 'material-ui-phone-number';
 
-//import apiuserdata from '../../api/david.json';
 import { context } from '../../App.js';
 
 import { LANGUAGES, TECHSKILLS, SKILL_LEVEL, PROFICIENCY } from '../multiplechipselector/data.js';
@@ -28,8 +27,6 @@ export default function Cvbuilder () {
   /* ------------------------------------------------------ */
   const history = useHistory();
   /* ------------------------------------------------------ */
-  // const x = useContext(context); ?
-  // apiuserdata = x.user; ?
   const apiuserdata = context.user;
 
   const {register, handleSubmit, errors, control } = useForm({
@@ -46,7 +43,6 @@ export default function Cvbuilder () {
     delete newData.TwitterURL;
     newData.User.PortfolioURL = newData.PortfolioURL;
     delete newData.PortfolioURL;
-    // console.log(JSON.stringify(newData))
 
     const parsedData = {
       ...newData,
@@ -58,8 +54,6 @@ export default function Cvbuilder () {
       "Desired_Job_Fields": [],
       "Desired_Job_Location": []
     };
-
-    // console.log(data)
 
     for (let educId in context.user.Education) {
       for (let educ in parsedData.Education) {

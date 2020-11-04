@@ -1,2 +1,0 @@
-Install dependencies:
--> npm install
