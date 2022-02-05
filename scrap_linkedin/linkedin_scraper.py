@@ -18,12 +18,17 @@ class LinkedinScraper(object):
 
     def __init__(self, username=None, password=None, user_agent=None):
         """
+
+        Creates a new browser instance by selecting the username, password
+        to authenticate & user-agent to use.
+
+        Following env variables must be set
+        ENV:
         $USER_LINKEDIN = test@email.com
+
         $PASS_LINKEDIN = password
-        Creates a new browser instance selecting the username,
-        password to authenticate
-        and the user-agent to use.
         """
+
         self.__scale_lang = {
             "ELEMENTARY": "A2",
             "LIMITED_WORKING": "B1",
